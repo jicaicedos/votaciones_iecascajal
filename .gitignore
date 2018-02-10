@@ -1,0 +1,5 @@
+# Ignora los archivos o módulos de Node
+/node_modules
+
+# Ignorar la documentación de la aplicación
+/docs

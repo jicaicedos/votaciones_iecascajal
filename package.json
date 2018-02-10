@@ -11,5 +11,8 @@
     "cascajal"
   ],
   "author": "Javier Ignacio Caicedo Samboni",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
