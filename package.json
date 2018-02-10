@@ -1,0 +1,15 @@
+{
+  "name": "votaciones_iecascajal",
+  "version": "1.0.0",
+  "description": "Aplicacion para manejar el proceso de elecciones de consejo estudiantil en IE Cascajal",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "elecciones",
+    "cascajal"
+  ],
+  "author": "Javier Ignacio Caicedo Samboni",
+  "license": "MIT"
+}
