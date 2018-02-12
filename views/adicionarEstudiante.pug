@@ -1,0 +1,22 @@
+extends ./layout.pug
+
+block contenido
+	header
+		h1 Adicionar nuevo estudiante
+	div(class="container")
+		div(class="row")
+			div(class="col")
+				form(action="/" method="POST")
+					br
+					label(for="codigoEstudiante") Código
+					input(type="text" id="codigoEstudiante" placeholder="1001" class="form-control")
+					label(for="nombreEstudiante") Nombre
+					input(type="text" id="nombreEstudiante" placeholder="Javier" class="form-control")
+					label(for="apellidoEstudiante") Apellido
+					input(type="text" id="apellidoEstudiante" placeholder="Caicedo" class="form-control")
+					label(for="direccionEstudiante") Dirección
+					input(type="text" id="direccionEstudiante" placeholder="Calle 45 # 23 - 15" class="form-control")
+					label(for="fechaNacimientoEstudiante") Fecha de nacimiento
+					input(type="date" id="fechaNacimientoEstudiante" class="form-control")
+					br
+					input(type="submit" value="Adicionar" class="btn btn-primary")

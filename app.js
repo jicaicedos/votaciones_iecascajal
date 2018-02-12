@@ -4,19 +4,25 @@ var cons = require('consolidate')
 
 var app = express()
 
+// Establecemos el motor de vistas, es decir tomamos los archivos ".pug" para que express
+// con Node.js los conviertan a archivos ".html" 
 app.set('view engine', 'pug')
 
-// app.set("views", path.join(__dirname, "views"))
-
+// Se establece el directorio "static" para guardar todos aquellos archivos que van a ser
+// embebidos por los archivos ".pug", como por ejemplo imagenes, .css, .js, etc.
 app.use( express.static( "static" ) );
 
-// app.use("/static", express.static(path.join(__dirname, "public")))
 // // Parametro 
 // // "/" va al raiz
 // // req: petición
 // // res: respuesta
+// Esta es la ruta principal donde colocamos el index.html con index.pug
 app.get('/', (req, res) => {
 	res.render('index', {nombre: "Javier", apellido: "Caicedo"})
+})
+
+app.get('/adicionarEstudiante', (req, res) => {
+	res.render('adicionarEstudiante')
 })
 
 app.listen(8080)
