@@ -21,6 +21,7 @@ app.get('/', (req, res) => {
 	res.render('index', {nombre: "Javier", apellido: "Caicedo"})
 })
 
+// Ruta a el formulario para adicionar nuevo estudiante
 app.get('/adicionarEstudiante', (req, res) => {
 	res.render('adicionarEstudiante')
 })
