@@ -1,0 +1,44 @@
+/*body {
+	background: gray;
+}
+*/
+header {
+	background: green;
+	padding: 10px;
+}
+
+footer {
+	background: green;
+	height: 50px;
+}
+
+footer p {
+	color: white;
+	font-size: 14px;
+	text-align: center;
+}
+
+h1, h3 {
+	color: white;
+	text-align: center;
+}
+
+/**/
+.d-block {
+	height: 380px;
+}
+
+/* Div de mensajes en el carrusel*/
+.carousel-caption {
+	background: gray;
+}
+
+.franja_amarilla_header {
+	background: yellow;
+}
+
+
+#imagen_escudo {
+	width: 150px;
+	height: auto;
+}
