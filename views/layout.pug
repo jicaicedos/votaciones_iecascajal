@@ -3,10 +3,13 @@ html(lang='es')
 	head
 		meta(charset='utf-8')
 		title "Elecciones - IE Cascajal"
-		script(src="js/jquery-3.3.1.min.js")
-		script(src="js/popper.min.js")
-		script(src="bootstrap/js/bootstrap.min.js")
-		link(rel="stylesheet" href="bootstrap/css/bootstrap.min.css")
-		link(rel="stylesheet" href="css/estilos.css")
+		script(src="static/js/jquery-3.3.1.min.js")
+		script(src="static/js/popper.min.js")
+		script(src="static/bootstrap/js/bootstrap.min.js")
+		link(rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css")
+		link(rel="stylesheet" href="static/css/estilos.css")
 body
 	block contenido
+	block footer
+		footer(class="fixed-bottom")
+			p &copy 2018 Institución Educatica Cascajal, Derechos reservados ---

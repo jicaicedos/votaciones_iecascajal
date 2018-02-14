@@ -13,6 +13,7 @@
   "author": "Javier Ignacio Caicedo Samboni",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "consolidate": "^0.15.0",
     "express": "^4.16.2",
     "express-error-handler": "^1.1.0",
