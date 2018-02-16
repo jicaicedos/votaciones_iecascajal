@@ -28,26 +28,63 @@
 	8.5 Conectar a una base de datos
 
 	mongoose.connect('mongodb://localhost/<directorio>')
-	
+
+	Paso 9 - Schemas y Modelos
+
+	Los esquemas son las estructura de nuestros datos en MogoDB
+
+	9.1 Tipos de datos en MongoDB
+
+	Los valores pueden ser de seis tipos:
+	- String o cadena.
+	- Number o número.
+	- Boolean o booleano (true o false)
+	- null.
+	- Array.
+	- Objeto o documento, es decir un objeto JSON puede contener otro documento JSON, 
+	   sin límite de recursividad.
+	- Buffer
+	- Mixed
+
+	Ver: https://docs.mongodb.com/manual/reference/bson-types/
+
+	Ej: Esquema de usuario
+
+	var user_schema = User {
+		email: String,
+		password: password
+	}
+
+	9.2 Modelos: estos deben estar en la carpeta 'models'
+
+	Son instancias para hacer llamados a la base de datos
+
+	// En la bd debe exisitir la entidad en plural
+	var entidad = mongoose.model('<entidad_en_singular>', <schema>) 
+
+	Ej:  var User = mongoose.model('User',user_schema)
+
+	// Se debe exportar el modelo
+	module.exports.User = User
+
+	Finalmente en el 'Main' importarmos o solicitamos el modelo
+	var User = require('./models/user').User
+
 */
 
 const path = require('path')
 var express = require('express')
 var cons = require('consolidate')
 var bodyParser = require('body-parser')
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+var Estudiante = require('./models/estudiante').Estudiante
 
 
-// Para conexión con el motor de base de datos NoSQL - MongoDB
-mongoose.connect('mongodb://localhost/fotos')
+/*	================================================================
+	
+				Inicio de la aplicación : Main
 
-var userSchemaJSON = {
-	email: 'email',
-	pass: 'pass'
-}
-
-var user_schema = new Schema(userSchemaJSON)  // = mongoose.Schema
+	================================================================
+*/
 
 var app = express()
 
