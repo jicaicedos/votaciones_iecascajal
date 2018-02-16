@@ -18,7 +18,10 @@
     "express": "^4.16.2",
     "express-error-handler": "^1.1.0",
     "jade": "^1.11.0",
+    "md5sum": "^0.9.0",
+    "mongoose": "^5.0.5",
     "pug": "^2.0.0-rc.4",
-    "pug-cli": "^1.0.0-alpha6"
+    "pug-cli": "^1.0.0-alpha6",
+    "shasum": "^1.0.2"
   }
 }

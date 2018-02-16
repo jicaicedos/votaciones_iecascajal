@@ -1,25 +1,53 @@
 /*
-	Paso 7 - Instalar "body-parser"
+	Paso 8 - Instalar motor base de datos MongoDB 
 
-	7.1 npm install body-parser --save
-	Instalar este paquete para poder leer los parámetros enviados por el formulario
-	usando el método POST
+	Almacena datos en formato JSON, basado en documentos
 
-	7.2 require("body-parser")
+	8.1 Instalar MongoDB 
 
-	7.3 Montar el middleware  app.use()
-	se necesita para peticiones json => app.use(bodyParser.json())
-	y para decodificar las url => app.use(bodyParser.urlencoded({extended: true}))
-		- extended: true = se puede parsear arreglos y muchos más
-		- extended: false = es limitado la opción de parseo
+	Para windows - descargar el instalador y seguir las instrucciones (ejecutar instalador)
 
-	Para poder leer los parametros se va a tener en cuenta el atributo "name" de las etiquetas
+	Se hará uso de "mongoose" es un ORM (Object Relational Mapping) Mapea de Modelo relacional a objetos
+	mediante una API "ofusca" los datos
 
+	8.2 Instalar mongoose => npm mongoose --save
+	
+	para llamar a este paquete que facilitará la conexión con los datos de mongo ya que serán más legibles
+	var mongoose = require('mongoose')
+
+	8.3 Como ejemplo nos vamos a conectar a 'localhost'
+
+	mongoose.connect('mongodb://localhost/page')
+
+	8.4 Tipos de datos y uso de esquemas
+
+	Se trabaja con documentos, es decir, objetos JSON
+	Se debe trabajar con 'Schema' de mogoose => Schema = mongoose.Schema, sirve para crear un modelo
+	para mapear el objeto o registro
+	
+	8.5 Conectar a una base de datos
+
+	mongoose.connect('mongodb://localhost/<directorio>')
+	
 */
+
 const path = require('path')
 var express = require('express')
 var cons = require('consolidate')
 var bodyParser = require('body-parser')
+var mongoose = require('mongoose')
+var Schema = mongoose.Schema
+
+
+// Para conexión con el motor de base de datos NoSQL - MongoDB
+mongoose.connect('mongodb://localhost/fotos')
+
+var userSchemaJSON = {
+	email: 'email',
+	pass: 'pass'
+}
+
+var user_schema = new Schema(userSchemaJSON)  // = mongoose.Schema
 
 var app = express()
 
@@ -60,6 +88,6 @@ app.post('/resultado', (req, res) => {
 
 app.listen(8080)
 
-console.log("\n\n\nBienvenidos al sistema de votaciones")
-console.log("\n\nInstitución Educativa Cascajal")
-console.log("\n\n¡======== Iniciado servidor ========!")
+console.log('\n\n\nBienvenidos al sistema de votaciones')
+console.log('\n\nInstitución Educativa Cascajal')
+console.log('\n\n¡======== Iniciado servidor ========!')

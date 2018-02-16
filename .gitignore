@@ -3,3 +3,6 @@
 
 # Ignorar la documentación de la aplicación
 /docs
+
+# Ignorar instaladores de MongoDB para windows
+/instaladoresMongoDB
