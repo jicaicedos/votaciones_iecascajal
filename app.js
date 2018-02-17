@@ -1,77 +1,60 @@
 /*
-	Paso 8 - Instalar motor base de datos MongoDB 
+	Paso 10 - Virtuals y Validaciones
 
-	Almacena datos en formato JSON, basado en documentos
+	Paso 10.1 - Virtuals
 
-	8.1 Instalar MongoDB 
+	Se usan cuando se deben realizar validaciones a los campos y una buena práctica es 
+	hacerlas en los Schema. NO en frontend ni Schemas
 
-	Para windows - descargar el instalador y seguir las instrucciones (ejecutar instalador)
+	Ejemplo para validad un campo de confirmación de contraseña o correo electrónico
+	En vez de crear en el esquema dos variables de correo electrónico, se hace con un
+	campo 'virtual'
 
-	Se hará uso de "mongoose" es un ORM (Object Relational Mapping) Mapea de Modelo relacional a objetos
-	mediante una API "ofusca" los datos
+	10.2 Validaciones
 
-	8.2 Instalar mongoose => npm mongoose --save
-	
-	para llamar a este paquete que facilitará la conexión con los datos de mongo ya que serán más legibles
-	var mongoose = require('mongoose')
+	=> Se deben hacer a nivel de Schema
 
-	8.3 Como ejemplo nos vamos a conectar a 'localhost'
+	=> Los errores se deben manejar al momento de almacenar en la base de datos, mediante el
+	callback    <entidad>.save( function(error) {<manejo de errores} )
+	Generalmente va en el Main
 
-	mongoose.connect('mongodb://localhost/page')
+	Primero validar los datos en Schema
 
-	8.4 Tipos de datos y uso de esquemas
+	10.2.1 Uso de 'validate' en el Schema
 
-	Se trabaja con documentos, es decir, objetos JSON
-	Se debe trabajar con 'Schema' de mogoose => Schema = mongoose.Schema, sirve para crear un modelo
-	para mapear el objeto o registro
-	
-	8.5 Conectar a una base de datos
+	var User = new mongoose.Schema ({
+		nombre: {type: String, required: true},
+		password: {	type: String, 
+					required: true,
+					minlength: [8, 'La contraseña no debe ser menor a 8 caracteres']
+					validate: {
+						validator: function(passw) {
+							return this.passw.length >= 8   // Siempre debe retornar, para validar si cumple o no
+						},
+						message: 'La contraseña es muy corta'
+					}
+				}
+	})
 
-	mongoose.connect('mongodb://localhost/<directorio>')
+	Colocar la validación fuera del esquema
+	var validacion_password = {
+									validator: function(passw) {
+										return this.passw.length >= 8   // Siempre debe retornar, para validar si cumple o no
+									},
+									message: 'La contraseña es muy corta'
+								}
 
-	Paso 9 - Schemas y Modelos
 
-	Los esquemas son las estructura de nuestros datos en MogoDB
-
-	9.1 Tipos de datos en MongoDB
-
-	Los valores pueden ser de seis tipos:
-	- String o cadena.
-	- Number o número.
-	- Boolean o booleano (true o false)
-	- null.
-	- Array.
-	- Objeto o documento, es decir un objeto JSON puede contener otro documento JSON, 
-	   sin límite de recursividad.
-	- Buffer
-	- Mixed
-
-	Ver: https://docs.mongodb.com/manual/reference/bson-types/
-
-	Ej: Esquema de usuario
-
-	var user_schema = User {
-		email: String,
-		password: password
-	}
-
-	9.2 Modelos: estos deben estar en la carpeta 'models'
-
-	Son instancias para hacer llamados a la base de datos
-
-	// En la bd debe exisitir la entidad en plural
-	var entidad = mongoose.model('<entidad_en_singular>', <schema>) 
-
-	Ej:  var User = mongoose.model('User',user_schema)
-
-	// Se debe exportar el modelo
-	module.exports.User = User
-
-	Finalmente en el 'Main' importarmos o solicitamos el modelo
-	var User = require('./models/user').User
-
+	var User = new mongoose.Schema ({
+		nombre: {type: String, required: true},
+		password: {	type: String, 
+					required: true,
+					minlength: [8, 'La contraseña no debe ser menor a 8 caracteres'],
+					validate: validacion_password
+				}
+	})
+		
 */
-
 const path = require('path')
 var express = require('express')
 var cons = require('consolidate')
@@ -96,10 +79,11 @@ app.set('view engine', 'pug')
 // embebidos por los archivos ".pug", como por ejemplo imagenes, .css, .js, etc.
 app.use("/static", express.static("static"));
 
-// 
+// Se establece el middleware para reconocer los archivos JSON
 app.use(bodyParser.json())
 
-// 
+// Con este middleware se puede leer correctamente los parametros que vienen en la URL
+// mediante los llamados o enviados con el metodo POST, se debe dejar el valor en 'true'
 app.use(bodyParser.urlencoded({extended: true}))
 
 
@@ -123,8 +107,12 @@ app.post('/resultado', (req, res) => {
 	res.send('Recibidos datos de estudiantes...')
 })
 
+
+
 app.listen(8080)
 
-console.log('\n\n\nBienvenidos al sistema de votaciones')
+console.log('\n\n\n¡===========================================')
+console.log('\n\nBienvenidos al sistema de votaciones')
 console.log('\n\nInstitución Educativa Cascajal')
-console.log('\n\n¡======== Iniciado servidor ========!')
+console.log('\n\nIniciado servidor...')
+console.log('\n\n\n¡===========================================')
