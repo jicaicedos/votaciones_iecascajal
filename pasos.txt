@@ -1,6 +1,65 @@
 
 	==================================================================================================================
 
+	Paso 1 - Crear package.json 
+
+	Mediante el comando $ npm init
+
+
+	==================================================================================================================
+
+	Paso 2 - instalar express 
+
+	npm install express --save
+
+	==================================================================================================================
+
+	Paso 3 - crear un servidor basico que nos responde hola mundo
+
+
+	==================================================================================================================
+
+	Paso 4 - Se instala PUG el nuevo motor de vistas 
+
+	Antes se llamaba JADE con:
+	1- npm install pug --save 
+	2- npm install pug-cli -g --save
+
+
+	==================================================================================================================
+
+	Paso 5 - Se crean interfaz de usuario con paquete pug (antes jade) 
+
+	Se creo layout.pug para colocar encambezados 
+
+	Este archivo contiene la estructura html con sintaxis de 'pug'
+
+
+	==================================================================================================================
+
+	Paso 6 - Crear rutas 
+
+	En el archivo principal del servidor en app.get(ruta)
+
+	==================================================================================================================
+
+	Paso 7 - Instalar "body-parser"
+
+	7.1 npm install body-parser --save
+	Instalar este paquete para poder leer los parámetros enviados por el formulario
+	usando el método POST
+
+	7.2 require("body-parser")
+
+	7.3 Montar el middleware  app.use()
+	se necesita para peticiones json => app.use(bodyParser.json())
+	y para decodificar las url => app.use(bodyParser.urlencoded({extended: true}))
+		- extended: true = se puede parsear arreglos y muchos más
+		- extended: false = es limitado la opción de parseo
+
+	Para poder leer los parametros se va a tener en cuenta el atributo "name" de las etiquetas
+
+	==================================================================================================================
 
 	Paso 8 - Instalar motor base de datos MongoDB 
 
@@ -33,7 +92,6 @@
 	mongoose.connect('mongodb://localhost/<directorio>')
 
 	==================================================================================================================
-
 
 	Paso 9 - Schemas y Modelos
 
@@ -101,6 +159,8 @@
 
 	10.2.1 Uso de 'validate' en el Schema
 
+	== Opción 1
+
 	var User = new mongoose.Schema ({
 		nombre: {type: String, required: true},
 		password: {	type: String, 
@@ -108,21 +168,24 @@
 					minlength: [8, 'La contraseña no debe ser menor a 8 caracteres']
 					validate: {
 						validator: function(passw) {
-							return this.passw.length >= 8   // Siempre debe retornar, para validar si cumple o no
+							// Siempre debe retornar, para validar si cumple o no
+							return this.passw.length >= 8   
 						},
 						message: 'La contraseña es muy corta'
 					}
 				}
-	})
+		})
 
 	Colocar la validación fuera del esquema
 	var validacion_password = {
-									validator: function(passw) {
-										return this.passw.length >= 8   // Siempre debe retornar, para validar si cumple o no
-									},
-									message: 'La contraseña es muy corta'
-								}
+								validator: function(passw) {
+									// Siempre debe retornar, para validar si cumple o no
+									return this.passw.length >= 8   
+								},
+								message: 'La contraseña es muy corta'
+							}
 
+	== Opción 2
 
 	var User = new mongoose.Schema ({
 		nombre: {type: String, required: true},
@@ -133,3 +196,35 @@
 				}
 	})
 	
+	===================================================================================================================
+
+	Paso 11 - Mongoose save
+
+	Guardar el objeto en la base de datos, se necesita un modelo Ej. Estudiante que ya lo tenemos
+
+	var estudiante = new Estudiante({....})		 // Parametro es el objeto JSON
+
+	estudiante.save(callback)
+
+	// Estructura y parámetros
+	estudiante.save( function(error, estudiante, numero) {
+		// No crea objetos sino que actualiza, sobreescribe
+		error: recibe el error generado al guardar
+		estudiante: objeto ya guardado
+		numero: cantidad de filas afectadas
+	})
+
+	Actualmente se usa 'promises' o promesas, significa que en vez de retornar un callback, recibe una promesa
+	y se debe ejecutar el metodo '.then( function(usr) {
+		.....
+		// 'guardado correctamente'		
+		obj.send('Se guardo correctamente')
+	}, function(error) {
+		if(error) {
+			.......
+			// 'no se logró guardar'
+			Ej: console.log(String(err))
+			obj.send('No se pudo guardar en la base de datos')
+		}
+	})'
+

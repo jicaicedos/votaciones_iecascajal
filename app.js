@@ -1,59 +1,51 @@
 /*
-	Paso 10 - Virtuals y Validaciones
+	Paso 11 - Mongoose save
 
-	Paso 10.1 - Virtuals
+	Guardar el objeto en la base de datos, se necesita un modelo Ej. Estudiante que ya lo tenemos
 
-	Se usan cuando se deben realizar validaciones a los campos y una buena práctica es 
-	hacerlas en los Schema. NO en frontend ni Schemas
+	var estudiante = new Estudiante({....})		 // Parametro es el objeto JSON
 
-	Ejemplo para validad un campo de confirmación de contraseña o correo electrónico
-	En vez de crear en el esquema dos variables de correo electrónico, se hace con un
-	campo 'virtual'
+	estudiante.save(callback)
 
-	10.2 Validaciones
+	Ej. 
 
-	=> Se deben hacer a nivel de Schema
-
-	=> Los errores se deben manejar al momento de almacenar en la base de datos, mediante el
-	callback    <entidad>.save( function(error) {<manejo de errores} )
-	Generalmente va en el Main
-
-	Primero validar los datos en Schema
-
-	10.2.1 Uso de 'validate' en el Schema
-
-	var User = new mongoose.Schema ({
-		nombre: {type: String, required: true},
-		password: {	type: String, 
-					required: true,
-					minlength: [8, 'La contraseña no debe ser menor a 8 caracteres']
-					validate: {
-						validator: function(passw) {
-							return this.passw.length >= 8   // Siempre debe retornar, para validar si cumple o no
-						},
-						message: 'La contraseña es muy corta'
-					}
-				}
+	estudiante.save( function(error, estudiante, numero) {
+		// No crea objetos sino que actualiza, sobreescribe
+		error: recibe el error generado al guardar
+		estudiante: objeto ya guardado
+		numero: cantidad de filas afectadas
 	})
 
-	Colocar la validación fuera del esquema
-	var validacion_password = {
-									validator: function(passw) {
-										return this.passw.length >= 8   // Siempre debe retornar, para validar si cumple o no
-									},
-									message: 'La contraseña es muy corta'
-								}
+	Actualmente se usa 'promises' o promesas, significa que en vez de retornar un callback, recibe una promesa
+	y se debe ejecutar el metodo '.then( function(usr) {
+		.....
+		// 'guardado correctamente'		
+		obj.send('Se guardo correctamente')
+	}, function(error) {
+		if(error) {
+			.......
+			// 'no se logró guardar'
+			Ej: console.log(String(err))
+			obj.send('No se pudo guardar en la base de datos')
+		}
+	})'
 
+	// Ejemplo:
 
-	var User = new mongoose.Schema ({
-		nombre: {type: String, required: true},
-		password: {	type: String, 
-					required: true,
-					minlength: [8, 'La contraseña no debe ser menor a 8 caracteres'],
-					validate: validacion_password
-				}
+	var estudiante = new Estudiante({
+		est_ID: req.body.codigoEstudiante,
+		est_nombre: req.body.nombreEstudiante,
+		est_apellidos: req.body.apellidoEstudiante,
+		est_fecha_nacimiento: req.body.fechaNacimientoEstudiante,
+		est_foto: req.body.fotoEstudiante
 	})
-		
+
+	estudiante.save().then( (est) => {
+		res.send("Guadado exitosamente")
+	}, (error) => {
+		res.send("Fallo al guardar en la base de datos")
+	})		
+
 */
 const path = require('path')
 var express = require('express')
@@ -103,16 +95,19 @@ app.get('/adicionarEstudiante', (req, res) => {
 
 // Ruta para recibir los datos enviados por el formulario
 app.post('/resultado', (req, res) => {
-	console.log('Nombre:' + req.body.nombreEstudiante)
-	res.send('Recibidos datos de estudiantes...')
+	var estudiante = new Estudiante({
+		est_ID: req.body.codigoEstudiante,
+		est_nombre: req.body.nombreEstudiante,
+		est_apellidos: req.body.apellidoEstudiante,
+		est_fecha_nacimiento: req.body.fechaNacimientoEstudiante,
+		est_foto: req.body.fotoEstudiante
+	})
+
+	estudiante.save().then( (est) => {
+		res.send("Guadado exitosamente")
+	}, (error) => {
+		res.send("Fallo al guardar en la base de datos")
+	})
 })
 
-
-
 app.listen(8080)
-
-console.log('\n\n\n¡===========================================')
-console.log('\n\nBienvenidos al sistema de votaciones')
-console.log('\n\nInstitución Educativa Cascajal')
-console.log('\n\nIniciado servidor...')
-console.log('\n\n\n¡===========================================')
