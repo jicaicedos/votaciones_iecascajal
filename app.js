@@ -104,6 +104,7 @@ app.get('/consultarEstudiantes', (req, res) => {
 	// Estudiante.find( {est_ID:'10001'}, 'est_nombre est_apellidos est_fecha_nacimiento est_foto', (error, docs) => {
 
 		// res.render('consultarEstudiantes')
+		console.log("Datos: " + docs)
 		res.send(docs)		
 	}, (error) => {
 		console.log("No se pudo cargar los datos de los estudiantes")
