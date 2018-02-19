@@ -1,36 +1,5 @@
 /*
-
-	Paso 11 - Mongoose save
-
-	Guardar el objeto en la base de datos, se necesita un modelo Ej. Estudiante que ya lo tenemos
-
-	var estudiante = new Estudiante({....})		 // Parametro es el objeto JSON
-
-	estudiante.save(callback)
-
-	Ej. 
-
-	estudiante.save( function(error, estudiante, numero) {
-		// No crea objetos sino que actualiza, sobreescribe
-		error: recibe el error generado al guardar
-		estudiante: objeto ya guardado
-		numero: cantidad de filas afectadas
-	})
-
-	Actualmente se usa 'promises' o promesas, significa que en vez de retornar un callback, recibe una promesa
-	y se debe ejecutar el metodo '.then( function(usr) {
-		.....
-		// 'guardado correctamente'		
-		obj.send('Se guardo correctamente')
-	}, function(error) {
-		if(error) {
-			.......
-			// 'no se logró guardar'
-			Ej: console.log(String(err))
-			obj.send('No se pudo guardar en la base de datos')
-		}
-	})'
-
+	Paso 11 - save
 	// Ejemplo:
 
 	var estudiante = new Estudiante({
@@ -46,6 +15,22 @@
 	}, (error) => {
 		res.send("Fallo al guardar en la base de datos")
 	})		
+
+	Paso 12 - find
+
+	app.get('/consultarEstudiantes', (req, res) => {
+		// 1 - Obtener el listado de todos los estudiantes
+		Estudiante.find( {}, 'est_nombre est_apellidos est_fecha_nacimiento est_foto', (error, docs) => {
+
+		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'
+		// Estudiante.find( {est_ID:'10001'}, 'est_nombre est_apellidos est_fecha_nacimiento est_foto', (error, docs) => {
+
+			// res.render('consultarEstudiantes')
+			res.send(docs)		
+		}, (error) => {
+			console.log("No se pudo cargar los datos de los estudiantes")
+		})
+})
 
 */
 const path = require('path')
@@ -108,6 +93,20 @@ app.post('/resultado', (req, res) => {
 		res.send("Guadado exitosamente")
 	}, (error) => {
 		res.send("Fallo al guardar en la base de datos")
+	})
+})
+
+app.get('/consultarEstudiantes', (req, res) => {
+	// 1 - Obtener el listado de todos los estudiantes
+	Estudiante.find( {}, 'est_nombre est_apellidos est_fecha_nacimiento est_foto', (error, docs) => {
+
+	// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'
+	// Estudiante.find( {est_ID:'10001'}, 'est_nombre est_apellidos est_fecha_nacimiento est_foto', (error, docs) => {
+
+		// res.render('consultarEstudiantes')
+		res.send(docs)		
+	}, (error) => {
+		console.log("No se pudo cargar los datos de los estudiantes")
 	})
 })
 
