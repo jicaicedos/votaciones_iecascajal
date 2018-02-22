@@ -39,6 +39,10 @@ h1, h3 {
 	background: yellow;
 }
 
+.imagenEstudiante {
+	width: 50px;
+	height: auto;
+}
 
 #imagen_escudo {
 	width: 150px;

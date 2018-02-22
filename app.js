@@ -71,7 +71,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 // // res: respuesta
 // Esta es la ruta principal donde colocamos el index.html con index.pug
 app.get('/', (req, res) => {
-	res.render('index', {nombre: "Javier", apellido: "Caicedo"})
+	res.render('index')
 })
 
 // Ruta a el formulario para adicionar nuevo estudiante
@@ -86,7 +86,7 @@ app.post('/resultado', (req, res) => {
 		est_nombre: req.body.nombreEstudiante,
 		est_apellidos: req.body.apellidoEstudiante,
 		est_fecha_nacimiento: req.body.fechaNacimientoEstudiante,
-		est_foto: req.body.fotoEstudiante
+		est_foto: '/static/imagenes/fotos_alumnos/'+req.body.fotoEstudiante
 	})
 
 	estudiante.save().then( (est) => {
@@ -98,15 +98,24 @@ app.post('/resultado', (req, res) => {
 
 app.get('/consultarEstudiantes', (req, res) => {
 	// 1 - Obtener el listado de todos los estudiantes
-	Estudiante.find( {}, 'est_nombre est_apellidos est_fecha_nacimiento est_foto', (error, docs) => {
-
-	// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'
-	// Estudiante.find( {est_ID:'10001'}, 'est_nombre est_apellidos est_fecha_nacimiento est_foto', (error, docs) => {
-
-		// res.render('consultarEstudiantes')
-		res.send(docs)		
-	}, (error) => {
-		console.log("No se pudo cargar los datos de los estudiantes")
+	// Parametros:
+	// @{<condición>} = no hay ninguna condición por eso trae todos los registros
+	// @'campos o atributos' = elementos a traer de la base de datos
+	// @callback = función para capturar errores o registros
+	Estudiante.find( {}, 'est_ID est_nombre est_apellidos est_fecha_nacimiento est_foto', (error, docs) => {
+		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'
+		console.log(docs)
+		let estudiantes = []
+		for(let i=0; i<docs.length; i++ ) {
+			estudiantes[i] = {
+				codigo: docs[i].est_ID,
+				nombre: docs[i].est_nombre,
+				apellidos: docs[i].est_apellidos,
+				fecha_nacimiento: docs[i].est_fecha_nacimiento.getDate() + "/" + (docs[i].est_fecha_nacimiento.getMonth()+1) + "/" + docs[i].est_fecha_nacimiento.getFullYear(),
+				foto: docs[i].est_foto
+			}
+		}
+		res.render('consultarEstudiantes', {estudiantes} )
 	})
 })
 
