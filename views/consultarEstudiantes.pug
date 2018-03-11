@@ -1,9 +1,8 @@
 extends ./layout.pug
 
 block contenido
-	header
-		h1 Lista de estudiantes
 	div(class='container')
+		h2 Lista de estudiantes
 		br
 		div(class='row')
 			div(class='col-sm-12')
@@ -24,4 +23,3 @@ block contenido
 								td= estudiante.fecha_nacimiento
 								td
 									img(class='imagenEstudiante' src=estudiante.foto)
-	

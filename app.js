@@ -103,8 +103,7 @@ app.get('/consultarEstudiantes', (req, res) => {
 	// @'campos o atributos' = elementos a traer de la base de datos
 	// @callback = función para capturar errores o registros
 	Estudiante.find( {}, 'est_ID est_nombre est_apellidos est_fecha_nacimiento est_foto', (error, docs) => {
-		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'
-		console.log(docs)
+		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'		
 		let estudiantes = []
 		for(let i=0; i<docs.length; i++ ) {
 			estudiantes[i] = {
@@ -115,6 +114,7 @@ app.get('/consultarEstudiantes', (req, res) => {
 				foto: docs[i].est_foto
 			}
 		}
+		console.log("Lista de estudiantes OK")
 		res.render('consultarEstudiantes', {estudiantes} )
 	})
 })

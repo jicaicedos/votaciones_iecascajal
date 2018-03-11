@@ -20,7 +20,7 @@ footer p {
 	text-align: center;
 }
 
-h1, h3 {
+h4, h6 {
 	color: white;
 	text-align: center;
 }
@@ -39,12 +39,20 @@ h1, h3 {
 	background: yellow;
 }
 
-.imagenEstudiante {
-	width: 50px;
+
+
+#imagen_escudo {
+	width: 80px;
 	height: auto;
 }
 
-#imagen_escudo {
-	width: 150px;
-	height: auto;
+/* Imagen de pagina 'Consultar estudiantes' */
+.imagenEstudiante {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+.imagenEstudiante:hover {
+	width: 100px;
+	height: 100px;
 }

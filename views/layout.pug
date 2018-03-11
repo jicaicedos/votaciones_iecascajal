@@ -9,6 +9,39 @@ html(lang='es')
 		link(rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css")
 		link(rel="stylesheet" href="static/css/estilos.css")
 body
+	header
+		div(class='container')
+			div(class='row justify-content-md-center')
+				div(class='col col-lg-2')
+					img(id="imagen_escudo" src='static/imagenes/escudo_ie_cascajal.png' class="rounded-circle border border-warning")
+				div(class="col-md-auto")
+					h4 Institución Educativa Cascajal
+					h6 Ciencia y cultura
+					h6 Timaná - Huila
+				div(class='col col-lg-2')
+					img(id="imagen_escudo" src='static/imagenes/escudo_ie_cascajal.png' class="rounded-circle border border-warning")
+	div(class="franja_amarilla_header")
+		ul(class="nav nav-tabs justify-content-center")
+			- var crud = ['Adicionar', 'Consultar', 'Modificar', 'Eliminar']
+			li(class="nav-item") 
+				a(class="nav-link" href="#") Inicio
+			li(class="nav-item dropdown") 				
+				a(class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false") Sedes
+				div(class="dropdown-menu")
+					each item in crud
+						a(class="dropdown-item" href="#")= item
+			li(class="nav-item dropdown") 
+				a(class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false") Docentes
+				div(class="dropdown-menu")
+					each item in crud
+						a(class="dropdown-item" href="#")= item
+			li(class="nav-item dropdown") 
+				a(class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false") Estudiantes
+				div(class="dropdown-menu")
+					a(class="dropdown-item" href="adicionarEstudiante") Adicionar
+					a(class="dropdown-item" href="consultarEstudiantes") Consultar
+			li(class="nav-item") 
+				a(class="nav-link" href="#") Votar
 	block contenido
 	block footer
 		footer(class="fixed-bottom")
