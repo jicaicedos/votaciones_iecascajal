@@ -15,27 +15,33 @@ block contenido
 			div(class="row")
 				div(class="col-4")
 					div(class="list-group" id="list-tab" role="tablist")
-						a(class="list-group-item list-group-item-action" id="list-iecascajal-list" data-toggle="list" href="#list-iecascajal" role="tab" aria-controls="iecascajal") Institución Educativa Cascajal
-						a(class="list-group-item list-group-item-action" id="list-sede1-list" data-toggle="list" href="#list-sede1" role="tab" aria-controls="sede1") Sede El Tobo
-						a(class="list-group-item list-group-item-action" id="list-sede2-list" data-toggle="list" href="#list-sede2" role="tab" aria-controls="sede2") Sede La Piragua
-						a(class="list-group-item list-group-item-action" id="list-sede3-list" data-toggle="list" href="#list-sede3" role="tab" aria-controls="sede3") Sede Paquies
-						a(class="list-group-item list-group-item-action" id="list-sede4-list" data-toggle="list" href="#list-sede4" role="tab" aria-controls="sede4") Sede La Esperanza
-						a(class="list-group-item list-group-item-action" id="list-sede5-list" data-toggle="list" href="#list-sede5" role="tab" aria-controls="sede5") Sede La Florida
-						a(class="list-group-item list-group-item-action" id="list-sede6-list" data-toggle="list" href="#list-sede6" role="tab" aria-controls="sede6") Sede Mateo Rico
+						a(class="list-group-item list-group-item-action seleccionSedes" id="list-inicial-list" data-toggle="list" href="#list-inicial" role="tab" aria-controls="inicial") Instrucciones
+						a(class="list-group-item list-group-item-action seleccionSedes" id="list-iecascajal-list" data-toggle="list" href="#list-iecascajal" role="tab" aria-controls="iecascajal") Institución Educativa Cascajal
+						a(class="list-group-item list-group-item-action seleccionSedes" id="list-sede1-list" data-toggle="list" href="#list-sede1" role="tab" aria-controls="sede1") Sede El Tobo
+						a(class="list-group-item list-group-item-action seleccionSedes" id="list-sede2-list" data-toggle="list" href="#list-sede2" role="tab" aria-controls="sede2") Sede La Piragua
+						a(class="list-group-item list-group-item-action seleccionSedes" id="list-sede3-list" data-toggle="list" href="#list-sede3" role="tab" aria-controls="sede3") Sede Paquies
+						a(class="list-group-item list-group-item-action seleccionSedes" id="list-sede4-list" data-toggle="list" href="#list-sede4" role="tab" aria-controls="sede4") Sede La Esperanza
+						a(class="list-group-item list-group-item-action seleccionSedes" id="list-sede5-list" data-toggle="list" href="#list-sede5" role="tab" aria-controls="sede5") Sede La Florida
+						a(class="list-group-item list-group-item-action seleccionSedes" id="list-sede6-list" data-toggle="list" href="#list-sede6" role="tab" aria-controls="sede6") Sede Mateo Rico
 				div(class="col-8")
 					div(class="tab-content" id="nav-tabContent")
+						div(class="tab-pane fade show active" id="list-inicial" role="tabpanel" aria-labelledby="list-inicial-list")
+							h3 Bienvenido(a)
+							hr
+							h5 Pasos
+							p 1) Seleccionar la sede en la cual realizar las elecciones
+							p 2) Seleccionar el grado
+							p 3) Buscar el estudiante por número de identificación
+							p 4) Dar clic en el botón 
+								span(class="badge badge-secondary") Votar
 						div(class="tab-pane fade show" id="list-iecascajal" role="tabpanel" aria-labelledby="list-iecascajal-list")
 							h5 Institución Educativa Cascajal
 							p(class="parrafo_sede") Estado: ANTIGUO-ACTIVO
-							p(class="parrafo_sede") Tipo: INSTITUCIÓN EDUCATIVA
 							p(class="parrafo_sede") Calendario: A
 							p(class="parrafo_sede") Sector: OFICIAL
 							p(class="parrafo_sede") Zona EE: RURAL
-							p(class="parrafo_sede") Estrato: ESTRATO 1
 							p(class="parrafo_sede") Jornada: MAÑANA,COMPLETA,NOCTURNA,FIN DE SEMANA
-							p(class="parrafo_sede") Género: MIXTO
-							p(class="parrafo_sede") Carácter: ACADÉMICO
-							p(class="parrafo_sede") Matrícula Contratada: SI
+							img(class="sede" src="/static/imagenes/colegio.jpg")
 							br
 							form(action="/gradosIECascajal")
 								input(type="submit" value="Ir a votaciones" class="btn btn-info")

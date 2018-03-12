@@ -1,0 +1,36 @@
+extends ./layout.pug
+
+block contenido
+	div(class='container' data-spy="scroll")
+		ul(class="nav nav-tabs justify-content-center")
+			li(class="nav-item")
+				a(class="nav-link" href="/") Inicio
+		h3 Representante del Grado 11°
+		div(class="row")
+			div(class="tarjeton")
+				div(class="votarPersonero")
+					form(action="/representanteGrado11")
+						input(type="submit" value="1" class="btnVotarPersonero")
+				div(class="card" style="width: 12rem;")
+					img(class="card-img-top imagenCard" src="static/imagenes/representante_grado11/LIBARDO ANDRES SANCHEZ CHARRY.jpg" alt="representante11")
+					div(class="card-body")
+						h5(class="card-title") LIBARDO ANDRES SANCHEZ CHARRY
+						p(p class="card-text") Grado 11 A						
+			div(class="tarjeton")
+				div(class="votarPersonero")
+					form(action="/representanteGrado11")
+						input(type="submit" value="2" class="btnVotarPersonero")
+				div(class="card" style="width: 12rem;")
+					img(class="card-img-top imagenCard" src="static/imagenes/representante_grado11/YULY VANESSA GOMEZ VARGAS.jpg" alt="representante11")
+					div(class="card-body")
+						h5(class="card-title") YULY VANESSA GOMEZ VARGAS
+						p(p class="card-text") Grado 11 B						
+			div(class="tarjeton")
+				div(class="votarPersonero")
+					form(action="/representanteGrado11")
+						input(type="submit" value="0"  class="btnVotarPersonero")
+				div(class="card" style="width: 12rem;")
+					img(class="card-img-top imagenCard" src="static/imagenes/representante_grado11/voto blanco.jpeg" alt="representante11")
+					div(class="card-body")
+						h5(class="card-title") VOTO EN BLANCO
+						p(p class="card-text") Vota por mí	

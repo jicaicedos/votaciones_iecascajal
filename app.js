@@ -136,7 +136,15 @@ app.get('/votarIECascajalGrado11', (req, res) => {
 	})
 })
 
+app.get("/personero", (req, res) => {
+	console.log("GET -> personero")
+	res.render("personero")
+})
 
+app.get("/representanteGrado11", (req, res) => {
+	console.log("GET -> representanteGrado11")
+	res.render("representanteGrado11")
+})
 
 app.listen(8080)
 

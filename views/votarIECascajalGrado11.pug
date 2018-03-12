@@ -2,6 +2,9 @@ extends ./layout.pug
 
 block contenido
 	div(class='container' data-spy="scroll")
+		ul(class="nav nav-tabs justify-content-center")
+			li(class="nav-item")
+				a(class="nav-link" href="/") Inicio
 		h2 Lista de estudiantes
 		br
 		div(class='row')
@@ -37,5 +40,6 @@ block contenido
 								td(class="centrar")= estudiante.est_matricula_contratada
 								td(class="centrar")= estudiante.est_fuente_recursos
 								td 
-									input(type="submit" value="Votar" class="btn btn-primary btn-votar")
+									form(action="/personero")
+										input(type="submit" value="Votar" class="btn btn-primary btn-votar")
 							- i = i + 1
