@@ -1,7 +1,12 @@
-/*body {
-	background: gray;
+body {
+	margin-bottom: 100px;
 }
-*/
+
+td, th {
+	font-size: 12px;
+}
+
+
 header {
 	background: green;
 	padding: 10px;
@@ -26,6 +31,11 @@ h4, h6 {
 }
 
 /**/
+.table td {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
 .d-block {
 	height: 380px;
 }
@@ -39,7 +49,15 @@ h4, h6 {
 	background: yellow;
 }
 
+.centrar {
+	text-align: center;
+}
 
+.btn-primary {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	font-size: 12px;
+}
 
 #imagen_escudo {
 	width: 80px;

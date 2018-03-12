@@ -1,5 +1,5 @@
 @echo off
-color 37
+color 27
 title App - Votaciones IE Cascajal
 echo.
 echo.

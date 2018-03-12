@@ -80,6 +80,7 @@ app.get('/adicionarEstudiante', (req, res) => {
 })
 
 // Ruta para recibir los datos enviados por el formulario
+// ADICIONAR....
 app.post('/resultado', (req, res) => {
 	var estudiante = new Estudiante({
 		est_ID: req.body.codigoEstudiante,
@@ -97,24 +98,18 @@ app.post('/resultado', (req, res) => {
 })
 
 app.get('/consultarEstudiantes', (req, res) => {
+	console.log("GET -> consultarEstudiantes: Listado de estudiantes")
 	// 1 - Obtener el listado de todos los estudiantes
 	// Parametros:
-	// @{<condición>} = no hay ninguna condición por eso trae todos los registros
-	// @'campos o atributos' = elementos a traer de la base de datos
-	// @callback = función para capturar errores o registros
-	Estudiante.find( {}, 'est_ID est_nombre est_apellidos est_fecha_nacimiento est_foto', (error, docs) => {
+	// @ find( {<condición>} ) = no hay ninguna condición por eso trae todos los registros
+	// @ select( campos o atributos ) = elementos a traer de la base de datos
+	// @callback = (error, docs) = función para capturar errores o registros
+	Estudiante.
+	find({}).
+	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
+	exec( (error, docs) => {
 		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'		
-		let estudiantes = []
-		for(let i=0; i<docs.length; i++ ) {
-			estudiantes[i] = {
-				codigo: docs[i].est_ID,
-				nombre: docs[i].est_nombre,
-				apellidos: docs[i].est_apellidos,
-				fecha_nacimiento: docs[i].est_fecha_nacimiento.getDate() + "/" + (docs[i].est_fecha_nacimiento.getMonth()+1) + "/" + docs[i].est_fecha_nacimiento.getFullYear(),
-				foto: docs[i].est_foto
-			}
-		}
-		console.log("Lista de estudiantes OK")
+		let estudiantes = docs
 		res.render('consultarEstudiantes', {estudiantes} )
 	})
 })
