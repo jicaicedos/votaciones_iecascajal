@@ -100,18 +100,6 @@ app.post('/resultado', (req, res) => {
 app.get('/consultarEstudiantes', (req, res) => {
 	console.log("GET -> consultarEstudiantes: Listado de estudiantes")
 	// 1 - Obtener el listado de todos los estudiantes
-<<<<<<< HEAD
-	Estudiante.find( {}, 'est_nombre est_apellidos est_fecha_nacimiento est_foto', (error, docs) => {
-
-	// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'
-	// Estudiante.find( {est_ID:'10001'}, 'est_nombre est_apellidos est_fecha_nacimiento est_foto', (error, docs) => {
-
-		// res.render('consultarEstudiantes')
-		console.log("Datos: " + docs)
-		res.send(docs)		
-	}, (error) => {
-		console.log("No se pudo cargar los datos de los estudiantes")
-=======
 	// Parametros:
 	// @ find( {<condición>} ) = no hay ninguna condición por eso trae todos los registros
 	// @ select( campos o atributos ) = elementos a traer de la base de datos
@@ -123,7 +111,6 @@ app.get('/consultarEstudiantes', (req, res) => {
 		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'		
 		let estudiantes = docs
 		res.render('consultarEstudiantes', {estudiantes} )
->>>>>>> consulta_datos_SIMAT
 	})
 })
 
