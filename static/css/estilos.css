@@ -1,7 +1,12 @@
-/*body {
-	background: gray;
+body {
+	margin-bottom: 100px;
 }
-*/
+
+td, th {
+	font-size: 12px;
+}
+
+
 header {
 	background: green;
 	padding: 10px;
@@ -20,12 +25,17 @@ footer p {
 	text-align: center;
 }
 
-h1, h3 {
+h4, h6 {
 	color: white;
 	text-align: center;
 }
 
 /**/
+.table td {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
 .d-block {
 	height: 380px;
 }
@@ -39,8 +49,28 @@ h1, h3 {
 	background: yellow;
 }
 
+.centrar {
+	text-align: center;
+}
+
+.btn-primary {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	font-size: 12px;
+}
 
 #imagen_escudo {
-	width: 150px;
+	width: 80px;
 	height: auto;
+}
+
+/* Imagen de pagina 'Consultar estudiantes' */
+.imagenEstudiante {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+.imagenEstudiante:hover {
+	width: 100px;
+	height: 100px;
 }

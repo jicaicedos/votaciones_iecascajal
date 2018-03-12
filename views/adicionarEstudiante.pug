@@ -1,25 +1,26 @@
 extends ./layout.pug
 
 block contenido
-	header
-		h1 Adicionar nuevo estudiante
+	h2 Adicionar nuevo estudiante
 	div(class="container")
-		div(class="row")
-			div(class="col")
-				form(action="/resultado" method="POST")
-					br
-					label(for="codigoEstudiante") Código
-					input(type="text" id="codigoEstudiante" name="codigoEstudiante" placeholder="1001" class="form-control")
+		form(action="/resultado" method="POST")
+			br
+			div(class="row")
+				div(class="col-sm-6")
 					label(for="nombreEstudiante") Nombre
 					input(type="text" id="nombreEstudiante" name="nombreEstudiante" placeholder="Javier" class="form-control")
+				div(class="col-sm-6")
 					label(for="apellidoEstudiante") Apellido
 					input(type="text" id="apellidoEstudiante" name="apellidoEstudiante" placeholder="Caicedo" class="form-control")
+				div(class="col-sm-6")
+					label(for="codigoEstudiante") Código
+					input(type="text" id="codigoEstudiante" name="codigoEstudiante" placeholder="1001" class="form-control")
+				div(class="col-sm-6")
 					label(for="direccionEstudiante") Dirección
 					input(type="text" id="direccionEstudiante" name="direccionEstudiante" placeholder="Calle 45 # 23 - 15" class="form-control")
-					label(for="fechaNacimientoEstudiante") Fecha de nacimiento
-					input(type="date" id="fechaNacimientoEstudiante" name="fechaNacimientoEstudiante" class="form-control")
-					label(for="fotoEstudiante") Foto
-					input(type="file" id="fotoEstudiante" name="fotoEstudiante" class="form-control")
-					//- FALTA GENERO
-					br
-					input(type="submit" value="Adicionar" class="btn btn-primary")
+			label(for="fechaNacimientoEstudiante") Fecha de nacimiento
+			input(type="date" id="fechaNacimientoEstudiante" name="fechaNacimientoEstudiante" class="form-control")
+			label(for="fotoEstudiante") Foto
+			input(type="file" id="fotoEstudiante" name="fotoEstudiante" class="form-control")
+			br
+			input(type="submit" value="Adicionar" class="btn btn-primary")
