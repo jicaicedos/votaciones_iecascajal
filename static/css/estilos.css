@@ -13,14 +13,17 @@ header {
 }
 
 footer {
-	background: green;
+	background: #F6D209;
+	/*background: green;*/
 	height: 50px;
+	color: gray;
 }
 
 footer p {
 	padding-top: 10px;
 	padding-bottom: 10px;
-	color: white;
+	color: black;
+	/*color: white;*/
 	font-size: 14px;
 	text-align: center;
 }
@@ -47,13 +50,29 @@ h4, h6 {
 
 .franja_amarilla_header {
 	background: yellow;
+	height: 20px;
 }
 
 .centrar {
 	text-align: center;
 }
 
-.btn-primary {
+.separar {
+	height: 20px;
+}
+
+.parrafo_sede {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 14px;
+}
+
+.foto_sede {
+	width: 200px;
+	height: auto;
+}
+
+.btn-votar {
 	padding-top: 0px;
 	padding-bottom: 0px;
 	font-size: 12px;
@@ -62,6 +81,45 @@ h4, h6 {
 #imagen_escudo {
 	width: 80px;
 	height: auto;
+}
+
+.formLogin {
+	background: #F4F5F5;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+.divEntreGrados {
+	background: #E1E4E4;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 2px;
+}
+
+.btnPreescolarPrimeroSegundo {
+	background: #b7e4df;
+	color: teal;
+}
+
+.btnTerceroCuartoQuinto {
+	background: #46B2A2;
+	color: white;
+}
+
+.btnSexto {
+	background: #017067;
+	color: white;
+}
+
+.btnSeptimo {
+	background: #003934;
+	color: white;
+
+}
+
+.grados_8910 {
+	background: #4756A0;
+	color: white;
 }
 
 /* Imagen de pagina 'Consultar estudiantes' */
