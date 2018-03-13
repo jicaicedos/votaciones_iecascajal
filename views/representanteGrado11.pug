@@ -9,26 +9,28 @@ block contenido
 		div(class="row")
 			div(class="tarjeton")
 				div(class="votarPersonero")
-					form(action="/representanteGrado11")
-						input(type="submit" value="1" class="btnVotarPersonero")
+					form(action="/finalProcesoVotacion" method="POST")
+						input(type="submit" value="1" name="representante11" class="btnVotarPersonero")
 				div(class="card" style="width: 12rem;")
 					img(class="card-img-top imagenCard" src="static/imagenes/representante_grado11/LIBARDO ANDRES SANCHEZ CHARRY.jpg" alt="representante11")
 					div(class="card-body")
 						h5(class="card-title") LIBARDO ANDRES SANCHEZ CHARRY
-						p(p class="card-text") Grado 11 A						
+						p(p class="card-text") Grado 11 A	
+
 			div(class="tarjeton")
 				div(class="votarPersonero")
-					form(action="/representanteGrado11")
-						input(type="submit" value="2" class="btnVotarPersonero")
+					form(action="/finalProcesoVotacion" method="POST")
+						input(type="submit" value="2" name="representante11" class="btnVotarPersonero")
 				div(class="card" style="width: 12rem;")
 					img(class="card-img-top imagenCard" src="static/imagenes/representante_grado11/YULY VANESSA GOMEZ VARGAS.jpg" alt="representante11")
 					div(class="card-body")
 						h5(class="card-title") YULY VANESSA GOMEZ VARGAS
-						p(p class="card-text") Grado 11 B						
+						p(p class="card-text") Grado 11 B	
+											
 			div(class="tarjeton")
 				div(class="votarPersonero")
-					form(action="/representanteGrado11")
-						input(type="submit" value="0"  class="btnVotarPersonero")
+					form(action="/finalProcesoVotacion" method="POST")
+						input(type="submit" value="0" name="representante11" class="btnVotarPersonero")
 				div(class="card" style="width: 12rem;")
 					img(class="card-img-top imagenCard" src="static/imagenes/representante_grado11/voto blanco.jpeg" alt="representante11")
 					div(class="card-body")

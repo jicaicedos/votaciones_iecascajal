@@ -1,0 +1,16 @@
+extends ./layout.pug
+
+block contenido
+	div(class='container' data-spy="scroll")
+		ul(class="nav nav-tabs justify-content-center")
+			li(class="nav-item")
+				a(class="nav-link" href="/") Inicio
+		br
+	div(class='container')
+		div(class="col col-sm-12 justify-content-center")
+		br
+		h3 Final del proceso de votación
+		h3 Muchas gracias por participar!
+		br
+		form(action="/")
+			input(type="submit" value="Finalizar" class="btn btn-primary")
