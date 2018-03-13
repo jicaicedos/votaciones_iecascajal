@@ -128,9 +128,9 @@ h4, h6 {
 }
 
 .divEntreGrados {
-	background: #E1E4E4;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	/*background: #E1E4E4;*/
+	padding-top: 5px;
+	padding-bottom: 5px;
 	margin-bottom: 2px;
 }
 
@@ -142,6 +142,10 @@ h4, h6 {
 .btnTerceroCuartoQuinto {
 	background: #46B2A2;
 	color: white;
+}
+
+.btnGrados {
+	width: 100px;
 }
 
 .btnSexto {

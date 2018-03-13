@@ -120,19 +120,21 @@ app.get("/gradosIECascajal", (req, res) => {
 	res.render("gradosIECascajal")
 })
 
-app.get('/votarIECascajalGrado11', (req, res) => {
-	console.log("GET -> votar IECascajal Grado11")
+app.get('/votarIECascajal', (req, res) => {
+	console.log("GET -> votar IECascajal" + req.body.name)
+
+
 	// Parametros:
 	// @ find( {<condición>} ) = no hay ninguna condición por eso trae todos los registros
 	// @ select( campos o atributos ) = elementos a traer de la base de datos
 	// @callback = (error, docs) = función para capturar errores o registros
 	Estudiante.
-	find({"est_grado":"ONCE"}).
+	find({"est_grado": req.body.name}).
 	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
 	exec( (error, docs) => {
 		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'		
 		let estudiantes = docs
-		res.render('votarIECascajalGrado11', {estudiantes} )
+		res.render('votarIECascajal', {estudiantes} )
 	})
 })
 
