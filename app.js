@@ -132,7 +132,7 @@ app.post('/votarIECascajal', (req, res) => {
 
 	console.log("POST -> votar IECascajal" + req.body.gradosIECascajal)
 	Estudiante.
-	find({"est_grado": req.body.gradosIECascajal}).
+	find({"est_grado": req.body.gradosIECascajal, "est_nombre_sede": "IE CASCAJAL"}}).
 	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
 	exec( (error, docs) => {
 		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'		
@@ -195,6 +195,62 @@ app.post('/votarSedePaquies', (req, res) => {
 		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'		
 		let estudiantes = docs
 		res.render('votarSedePaquies', {estudiantes} )
+	})
+})
+// ============================================================================
+// Votar en la Sede El Tobo
+app.get('/votarSedeLaEsperanza', (req, res) => {
+	console.log("GET -> votar votarSedeLaEsperanza" + req.body.gradosSedeLaEsperanza)
+	res.render('votarSedeLaEsperanza')
+})
+
+app.post('/votarSedeLaEsperanza', (req, res) => {
+	console.log("POST -> votar votarSedeLaEsperanza" + req.body.gradosSedeLaEsperanza)
+	Estudiante.
+	find({"est_grado": req.body.gradosSedeLaEsperanza, "est_nombre_sede": "LA ESPERANZA"}).
+	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
+	exec( (error, docs) => {
+		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'		
+		let estudiantes = docs
+		res.render('votarSedeLaEsperanza', {estudiantes} )
+	})
+})
+
+// ============================================================================
+// Votar en la Sede La Florida
+app.get('/votarSedeLaFlorida', (req, res) => {
+	console.log("GET -> votar votarSedeLaFlorida" + req.body.gradosSedeLaEsperanza)
+	res.render('votarSedeLaFlorida')
+})
+
+app.post('/votarSedeLaFlorida', (req, res) => {
+	console.log("POST -> votar votarSedeLaFlorida" + req.body.gradosSedeLaEsperanza)
+	Estudiante.
+	find({"est_grado": req.body.gradosSedeLaEsperanza, "est_nombre_sede": "LA FLORIDA"}).
+	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
+	exec( (error, docs) => {
+		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'		
+		let estudiantes = docs
+		res.render('votarSedeLaFlorida', {estudiantes} )
+	})
+})
+
+// ============================================================================
+// Votar en la Sede Mateo Rico
+app.get('/votarSedeMateoRico', (req, res) => {
+	console.log("GET -> votar votarSedeMateoRico" + req.body.gradosSedeLaEsperanza)
+	res.render('votarSedeMateoRico')
+})
+
+app.post('/votarSedeMateoRico', (req, res) => {
+	console.log("POST -> votar votarSedeMateoRico" + req.body.gradosSedeLaEsperanza)
+	Estudiante.
+	find({"est_grado": req.body.gradosSedeLaEsperanza, "est_nombre_sede": "MATEO RICO"}).
+	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
+	exec( (error, docs) => {
+		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'		
+		let estudiantes = docs
+		res.render('votarSedeMateoRico', {estudiantes} )
 	})
 })
 
