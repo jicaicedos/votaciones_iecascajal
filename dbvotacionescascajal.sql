@@ -10748,6 +10748,8 @@ db.estudiantes.insert({
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
 })
+-- =================================================================================================================
+-- SEDE LA PIRAGUA
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12381,6 +12383,8 @@ db.estudiantes.insert({
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
 })
+-- =================================================================================================================
+-- SEDE EL TOBO
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -13048,9 +13052,21 @@ db.estudiantes.insert({
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
 })
-
+-- =================================================================================================================
+-- 
+-- ESTRUCTURA PARA ALMACENAR VOTOS 
+-- 
+-- db.votaciones.insert({
+--     vot_sede: ,
+--     vot_grado: ,
+--     vot_doc_estudiantes: ,
+--     vot_personero: ,
+--     vot_representante: ,
+--     vot_fecha: new Date()
+-- })
 -- 
 -- 
+-- =================================================================================================================
 
  -- Consultar estudiantes
 db.estudiantes.find({}, {_id:0, Doc:1, est_primer_nombre:1, est_primer_apellido:1, est_segundo_apellido:1})
@@ -13058,3 +13074,33 @@ db.estudiantes.find({}, {_id:0, Doc:1, est_primer_nombre:1, est_primer_apellido:
 -- Consultar por grado
 db.estudiantes.find({"est_grado":"ONCE"}, {_id:0, Doc:1, est_primer_nombre:1, est_primer_apellido:1, est_segundo_apellido:1})
 
+
+-- =================================================================================================================
+
+
+db.votaciones.insert({
+    vot_sede: "CASCAJAL",
+    vot_grado: "GRADO 0",
+    vot_doc_estudiantes: 1079534203,
+    vot_personero: 1,
+    vot_representante: 2,
+    vot_fecha: new Date()
+})
+
+db.votaciones.insert({
+    vot_sede: "CASCAJAL",
+    vot_grado: "GRADO 0",
+    vot_doc_estudiantes: 1084330552,
+    vot_personero: 1,
+    vot_representante: 2,
+    vot_fecha: new Date()
+})
+
+-- ==========================================
+-- JavaScript
+-- ==========================================
+
+-- var fecha = new Date()
+-- fecha.toLocaleDateString().replace(/\//g,'/');
+-- 
+-- ==========================================

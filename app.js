@@ -3,6 +3,8 @@ const path = require('path')
 var cons = require('consolidate')
 var bodyParser = require('body-parser')
 var Estudiante = require('./models/estudiante').Estudiante
+var Votaciones = require("./models/votaciones").Votaciones
+var Votante = require("./models/votante").Votante
 
 
 /*	================================================================
@@ -10,6 +12,14 @@ var Estudiante = require('./models/estudiante').Estudiante
 ================================================================  */
 // Instancia del servidor
 var app = express()
+
+// Variables globales del sistema
+var nom_sede 				// Guarda el nombre de la sede
+var num_grado_estudiante	// Guarda el grado del estudiante
+var num_id_estudiante		// Guarda el número de identificación del estudiante
+var num_personero			// Guarda el número del personero votado
+var num_representante		// Guarda el número del representante votado
+
 
 // Establecemos el motor de vistas, es decir tomamos los archivos ".pug" para que express
 // con Node.js los conviertan a archivos ".html" 
@@ -27,15 +37,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
 
-// // Parametro 
-// // "/" va al raiz
-// // req: petición
-// // res: respuesta
-// Esta es la ruta principal donde colocamos el index.html con index.pug
-// app.get('/', (req, res) => {
-// 	res.render('index')
-// })
-
 // Ruta a el formulario para adicionar nuevo estudiante
 app.get('/adicionarEstudiante', (req, res) => {
 	console.log("GET -> adicionarEstudiante")
@@ -45,6 +46,7 @@ app.get('/adicionarEstudiante', (req, res) => {
 /* ==================================================================
 						ADMINISTRADOR
 ================================================================== */
+// 
 app.get("/administrador", (req, res) => {
 	console.log("GET -> administrador")
 	res.render("administrador")
@@ -70,20 +72,9 @@ app.get("/", (req, res) => {
 
 // ===========================================================================
 // Consultar estudiante para votar
+// 
 app.post('/consultarEstudiantes', (req, res) => {
 	console.log("POST -> consultarEstudiantes: Listado de estudiantes")
-	// Parametros:
-	// @ find( {<condición>} ) = no hay ninguna condición por eso trae todos los registros
-	// @ select( campos o atributos ) = elementos a traer de la base de datos
-	// @callback = (error, docs) = función para capturar errores o registros
-	// Estudiante.
-	// find({}).
-	// select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
-	// exec( (error, docs) => {
-	// 	// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'		
-	// 	let estudiantes = docs
-	// 	res.render('consultarEstudiantes', {estudiantes} )
-	// })
 })
 
 // Consultar estudiantes SOLO IE CASCAJAL
@@ -97,7 +88,6 @@ app.get('/consultarEstudiantes', (req, res) => {
 	find({}).
 	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
 	exec( (error, docs) => {
-		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'		
 		let estudiantes = docs
 		res.render('consultarEstudiantes', {estudiantes} )
 	})
@@ -113,7 +103,6 @@ app.get('/estudiantesIECascajal', (req, res) => {
 	find({}).
 	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
 	exec( (error, docs) => {
-		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'		
 		let estudiantes = docs
 		res.render('estudiantesIECascajal', {estudiantes} )
 	})
@@ -128,17 +117,53 @@ app.get('/votarIECascajal', (req, res) => {
 
 app.post('/votarIECascajal', (req, res) => {
 
-	console.log("REQ->NAME-BUTON: " + req.body.votar)
+	nom_sede = "CASCAJAL"
+	num_grado_estudiante = req.body.gradosIECascajal
 
-	console.log("POST -> votar IECascajal" + req.body.gradosIECascajal)
-	Estudiante.
-	find({"est_grado": req.body.gradosIECascajal, "est_nombre_sede": "IE CASCAJAL"}}).
-	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
-	exec( (error, docs) => {
-		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'		
-		let estudiantes = docs
-		res.render('votarIECascajal', {estudiantes} )
-	})
+	if( req.body.gradosIECascajal=="SEXTO A" ) {
+		Estudiante.
+		find({"est_grupo": 601, "est_nombre_sede": "CASCAJAL"}).
+		select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
+		exec( (error, docs) => {
+			let estudiantes = docs
+			res.render('votarIECascajal', {estudiantes} )
+		})			
+
+	} else if( req.body.gradosIECascajal=="SEXTO B" ) {
+		Estudiante.
+		find({"est_grupo": 602, "est_nombre_sede": "CASCAJAL"}).
+		select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
+		exec( (error, docs) => {
+			let estudiantes = docs
+			res.render('votarIECascajal', {estudiantes} )
+		})	
+	} else if( req.body.gradosIECascajal=="OCTAVO A" ) {
+		Estudiante.
+		find({"est_grupo": 801, "est_nombre_sede": "CASCAJAL"}).
+		select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
+		exec( (error, docs) => {
+			let estudiantes = docs
+			res.render('votarIECascajal', {estudiantes} )
+		})			
+
+	} else if( req.body.gradosIECascajal=="OCTAVO B" ) {
+		Estudiante.
+		find({"est_grupo": 802, "est_nombre_sede": "CASCAJAL"}).
+		select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
+		exec( (error, docs) => {
+			let estudiantes = docs
+			res.render('votarIECascajal', {estudiantes} )
+		})	
+	} else {
+		Estudiante.
+		find({"est_grado": req.body.gradosIECascajal, "est_nombre_sede": "CASCAJAL"}).
+		select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
+		exec( (error, docs) => {
+			let estudiantes = docs
+			res.render('votarIECascajal', {estudiantes} )
+		})		
+	}
+
 })
 
 // ============================================================================
@@ -154,7 +179,6 @@ app.post('/votarSedeElTobo', (req, res) => {
 	find({"est_grado": req.body.gradosSedeElTobo, "est_nombre_sede": "EL TOBO"}).
 	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
 	exec( (error, docs) => {
-		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'		
 		let estudiantes = docs
 		res.render('votarSedeElTobo', {estudiantes} )
 	})
@@ -163,17 +187,16 @@ app.post('/votarSedeElTobo', (req, res) => {
 // ============================================================================
 // Votar en la Sede La Piragua
 app.get('/votarSedeLaPiragua', (req, res) => {
-	console.log("GET -> votar votarSedeLaPiragua" + req.body.gradosSedeElTobo)
+	console.log("GET -> votar votarSedeLaPiragua" + req.body.gradosSedeLaPiragua)
 	res.render('votarSedeLaPiragua')
 })
 
 app.post('/votarSedeLaPiragua', (req, res) => {
-	console.log("POST -> votar votarSedeLaPiragua" + req.body.gradosSedeElTobo)
+	console.log("POST -> votar votarSedeLaPiragua" + req.body.gradosSedeLaPiragua)
 	Estudiante.
-	find({"est_grado": req.body.gradosSedeElTobo, "est_nombre_sede": "LA PIRAGUA"}).
+	find({"est_grado": req.body.gradosSedeLaPiragua, "est_nombre_sede": "LA PIRAGUA"}).
 	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
 	exec( (error, docs) => {
-		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'		
 		let estudiantes = docs
 		res.render('votarSedeLaPiragua', {estudiantes} )
 	})
@@ -182,23 +205,22 @@ app.post('/votarSedeLaPiragua', (req, res) => {
 // ============================================================================
 // Votar en la Sede Paquies
 app.get('/votarSedePaquies', (req, res) => {
-	console.log("GET -> votar votarSedePaquies" + req.body.gradosSedeElTobo)
+	console.log("GET -> votar votarSedePaquies" + req.body.gradosSedePaquies)
 	res.render('votarSedePaquies')
 })
 
 app.post('/votarSedePaquies', (req, res) => {
-	console.log("POST -> votar votarSedePaquies" + req.body.gradosSedeElTobo)
+	console.log("POST -> votar votarSedePaquies" + req.body.gradosSedePaquies)
 	Estudiante.
-	find({"est_grado": req.body.gradosSedeElTobo, "est_nombre_sede": "PAQUIES"}).
+	find({"est_grado": req.body.gradosSedePaquies, "est_nombre_sede": "PAQUIES"}).
 	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
 	exec( (error, docs) => {
-		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'		
 		let estudiantes = docs
 		res.render('votarSedePaquies', {estudiantes} )
 	})
 })
 // ============================================================================
-// Votar en la Sede El Tobo
+// Votar en la Sede La Esperanza
 app.get('/votarSedeLaEsperanza', (req, res) => {
 	console.log("GET -> votar votarSedeLaEsperanza" + req.body.gradosSedeLaEsperanza)
 	res.render('votarSedeLaEsperanza')
@@ -210,7 +232,6 @@ app.post('/votarSedeLaEsperanza', (req, res) => {
 	find({"est_grado": req.body.gradosSedeLaEsperanza, "est_nombre_sede": "LA ESPERANZA"}).
 	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
 	exec( (error, docs) => {
-		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'		
 		let estudiantes = docs
 		res.render('votarSedeLaEsperanza', {estudiantes} )
 	})
@@ -219,17 +240,16 @@ app.post('/votarSedeLaEsperanza', (req, res) => {
 // ============================================================================
 // Votar en la Sede La Florida
 app.get('/votarSedeLaFlorida', (req, res) => {
-	console.log("GET -> votar votarSedeLaFlorida" + req.body.gradosSedeLaEsperanza)
+	console.log("GET -> votar votarSedeLaFlorida" + req.body.gradosSedeLaFlorida)
 	res.render('votarSedeLaFlorida')
 })
 
 app.post('/votarSedeLaFlorida', (req, res) => {
-	console.log("POST -> votar votarSedeLaFlorida" + req.body.gradosSedeLaEsperanza)
+	console.log("POST -> votar votarSedeLaFlorida" + req.body.gradosSedeLaFlorida)
 	Estudiante.
-	find({"est_grado": req.body.gradosSedeLaEsperanza, "est_nombre_sede": "LA FLORIDA"}).
+	find({"est_grado": req.body.gradosSedeLaFlorida, "est_nombre_sede": "LA FLORIDA"}).
 	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
 	exec( (error, docs) => {
-		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'		
 		let estudiantes = docs
 		res.render('votarSedeLaFlorida', {estudiantes} )
 	})
@@ -238,17 +258,16 @@ app.post('/votarSedeLaFlorida', (req, res) => {
 // ============================================================================
 // Votar en la Sede Mateo Rico
 app.get('/votarSedeMateoRico', (req, res) => {
-	console.log("GET -> votar votarSedeMateoRico" + req.body.gradosSedeLaEsperanza)
+	console.log("GET -> votar votarSedeMateoRico" + req.body.gradosSedeMateoRico)
 	res.render('votarSedeMateoRico')
 })
 
 app.post('/votarSedeMateoRico', (req, res) => {
-	console.log("POST -> votar votarSedeMateoRico" + req.body.gradosSedeLaEsperanza)
+	console.log("POST -> votar votarSedeMateoRico" + req.body.gradosSedeMateoRico)
 	Estudiante.
-	find({"est_grado": req.body.gradosSedeLaEsperanza, "est_nombre_sede": "MATEO RICO"}).
+	find({"est_grado": req.body.gradosSedeMateoRico, "est_nombre_sede": "MATEO RICO"}).
 	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
 	exec( (error, docs) => {
-		// 2 - Obtener un estudiante mediante el código de estudiante: 'est_ID'		
 		let estudiantes = docs
 		res.render('votarSedeMateoRico', {estudiantes} )
 	})
@@ -259,8 +278,9 @@ app.post('/votarSedeMateoRico', (req, res) => {
 // 
 app.post("/personero", (req, res) => {
 	console.log("POST -> personero")
-	console.log("No. Identificación estudiante: " + req.body.votar)
-	let est_ID = req.body.votar
+	console.log("No. Identificación estudiante: " + req.body.documentoIdentidadEstudiante)
+	let est_ID = req.body.documentoIdentidadEstudiante
+	num_id_estudiante = req.body.documentoIdentidadEstudiante
 	res.render("personero", {est_ID})
 })
 
@@ -280,6 +300,7 @@ app.post("/representanteGrado11", (req, res) => {
 	let personero = req.body.personero
 	// console.log("ID-EST: "+est_ID)
 	// res.render("representanteGrado11", {est_ID, personero})
+	num_personero = req.body.personero
 	res.render("representanteGrado11", {personero})
 })
 
@@ -288,15 +309,35 @@ app.post("/representanteGrado11", (req, res) => {
 // 
 app.post("/finalProcesoVotacion", (req, res) => {
 	console.log("POST -> finalProcesoVotacion")
-	console.log("OK representante11: " + req.body.representante11)
-	res.render("finalProcesoVotacion")	
-})
 
-// app.get("/finalProcesoVotacion", (req, res) => {
-// 	console.log("GET -> finalProcesoVotacion")
-// 	console.log("representante11: " + req.body.representante11)
-// 	res.render("finalProcesoVotacion")	
-// })
+	num_representante = req.body.representante11
+
+	var votaciones = new Votaciones({
+	    vot_sede: nom_sede,
+	    vot_grado: num_grado_estudiante,
+	    vot_personero: num_personero,
+	    vot_representante: num_representante,
+	    vot_fecha: new Date()
+	});
+
+	var votante = new Votante({
+	    vot_sede: nom_sede,
+	    vot_grado: num_grado_estudiante,
+	    votante_doc_identificacion: num_id_estudiante,
+	    vot_fecha: new Date()
+	});
+
+	// Guardar en la base de datos de VOTACIONES
+	votaciones.save().then( (est) => {	
+		console.log("Votación guardada correctamente!") 
+	}, (error) => { res.send("Error al escibir en la base de datos") })
+
+	// Guardar en la base de datos de VOTANTES
+	votante.save().then( (est) => {
+		res.render("finalProcesoVotacion")
+	}, (error) => { res.send("Error al escibir en la base de datos") })
+
+})
 
 app.listen(8080)
 

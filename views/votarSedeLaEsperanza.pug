@@ -5,7 +5,7 @@ block contenido
 		ul(class="nav nav-tabs justify-content-center")
 			li(class="nav-item")
 				a(class="nav-link" href="/") Inicio
-		h2 Lista de estudiantes
+		h3 Lista de estudiantes La Esperanza
 		br
 		div(class='row')
 			div(class='col-sm-12')
@@ -23,14 +23,15 @@ block contenido
 							th Grupo
 							th Matricula contratada
 							th Fuente recursos
-							th Votar
 					tbody
 						- var i = 1
 						for estudiante in estudiantes
 							tr
 								td(class="centrar")= i
 								td(class="centrar")= estudiante.est_tipo_identificacion
-								td= estudiante.est_doc
+								td(class="centrar")
+									form(action="/personero" method="POST")
+										input(type="submit" value=estudiante.est_doc name="votar" class="btn btn-info btn-votar")
 								td= estudiante.est_primer_apellido
 								td= estudiante.est_segundo_apellido
 								td= estudiante.est_primer_nombre
@@ -39,7 +40,4 @@ block contenido
 								td(class="centrar")= estudiante.est_grupo
 								td(class="centrar")= estudiante.est_matricula_contratada
 								td(class="centrar")= estudiante.est_fuente_recursos
-								td 
-									form(action="/personero")
-										input(type="submit" value="Votar" class="btn btn-primary btn-votar")
 							- i = i + 1
