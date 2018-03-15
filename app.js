@@ -19,6 +19,8 @@ var num_grado_estudiante	// Guarda el grado del estudiante
 var num_id_estudiante		// Guarda el número de identificación del estudiante
 var num_personero			// Guarda el número del personero votado
 var num_representante		// Guarda el número del representante votado
+var ids_estudiantes_ya_votaron = []
+var registros_a_bloquear = []
 
 
 // Establecemos el motor de vistas, es decir tomamos los archivos ".pug" para que express
@@ -110,12 +112,12 @@ app.get('/estudiantesIECascajal', (req, res) => {
 
 // ============================================================================
 // Votar en la I.E. Cascajal
-app.get('/votarIECascajal', (req, res) => {
+app.get('/votaciones', (req, res) => {
 	console.log("GET -> votar IECascajal" + req.body.gradosIECascajal)
-	res.render('votarIECascajal')
+	res.render('votaciones')
 })
 
-app.post('/votarIECascajal', (req, res) => {
+app.post('/votaciones', (req, res) => {
 	let ids_estudiantes_ya_votaron = []
 	let estudiantes = []
 	let registros_a_bloquear = []
@@ -138,7 +140,7 @@ app.post('/votarIECascajal', (req, res) => {
 		exec( (error, docs) => {
 			let estudiantes = docs
 			registros_a_bloquear = bloquearRegistros(estudiantes, ids_estudiantes_ya_votaron)
-			res.render('votarIECascajal', {estudiantes, registros_a_bloquear} )
+			res.render('votaciones', {estudiantes, registros_a_bloquear} )
 		})			
 
 	} else if( req.body.gradosIECascajal=="SEXTO B" ) {
@@ -148,7 +150,7 @@ app.post('/votarIECascajal', (req, res) => {
 		exec( (error, docs) => {
 			let estudiantes = docs
 			registros_a_bloquear = bloquearRegistros(estudiantes, ids_estudiantes_ya_votaron)
-			res.render('votarIECascajal', {estudiantes, registros_a_bloquear} )
+			res.render('votaciones', {estudiantes, registros_a_bloquear} )
 		})	
 	} else if( req.body.gradosIECascajal=="OCTAVO A" ) {
 		Estudiante.
@@ -157,7 +159,7 @@ app.post('/votarIECascajal', (req, res) => {
 		exec( (error, docs) => {
 			let estudiantes = docs
 			registros_a_bloquear = bloquearRegistros(estudiantes, ids_estudiantes_ya_votaron)
-			res.render('votarIECascajal', {estudiantes, registros_a_bloquear} )
+			res.render('votaciones', {estudiantes, registros_a_bloquear} )
 		})			
 
 	} else if( req.body.gradosIECascajal=="OCTAVO B" ) {
@@ -167,7 +169,7 @@ app.post('/votarIECascajal', (req, res) => {
 		exec( (error, docs) => {
 			let estudiantes = docs
 			registros_a_bloquear = bloquearRegistros(estudiantes, ids_estudiantes_ya_votaron)
-			res.render('votarIECascajal', {estudiantes, registros_a_bloquear} )
+			res.render('votaciones', {estudiantes, registros_a_bloquear} )
 		})	
 	} else {
 		Estudiante.
@@ -176,7 +178,7 @@ app.post('/votarIECascajal', (req, res) => {
 		exec( (error, docs) => {
 			estudiantes = docs
 			registros_a_bloquear = bloquearRegistros(estudiantes, ids_estudiantes_ya_votaron)
-			res.render('votarIECascajal', {estudiantes, registros_a_bloquear} )
+			res.render('votaciones', {estudiantes, registros_a_bloquear} )
 		})		
 	}
 
@@ -192,26 +194,12 @@ app.get('/votarSedeElTobo', (req, res) => {
 app.post('/votarSedeElTobo', (req, res) => {
 	console.log("POST -> votar votarSedeElTobo" + req.body.gradosSedeElTobo)
 
-	let ids_estudiantes_ya_votaron = []
-	let estudiantes = []
-	let registros_a_bloquear = []
-
-	nom_sede = "EL TOBO"
-	num_grado_estudiante = req.body.gradosSedeElTobo
-
-	Votante.
-	find({"vot_sede": nom_sede, "vot_grado":num_grado_estudiante}).
-	select( {_id:0, votante_doc_identificacion:1} ).
-	exec( (error, docs) => {
-		ids_estudiantes_ya_votaron = obtener_ids_estudiantes_ya_votaron(docs)
-	})
-
 	Estudiante.
 	find({"est_grado": req.body.gradosSedeElTobo, "est_nombre_sede": "EL TOBO"}).
 	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
 	exec( (error, docs) => {
 		let estudiantes = docs
-		registros_a_bloquear = bloquearRegistros(estudiantes, ids_estudiantes_ya_votaron)
+		registros_a_bloquear = bloquearRegistros(estudiantes, votarSede(nom_sede, num_grado_estudiante))
 		res.render('votarSedeElTobo', {estudiantes, registros_a_bloquear} )
 	})
 })
@@ -230,7 +218,8 @@ app.post('/votarSedeLaPiragua', (req, res) => {
 	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
 	exec( (error, docs) => {
 		let estudiantes = docs
-		res.render('votarSedeLaPiragua', {estudiantes} )
+		registros_a_bloquear = bloquearRegistros(estudiantes, votarSede(nom_sede, num_grado_estudiante))
+		res.render('votarSedeLaPiragua', {estudiantes, registros_a_bloquear} )
 	})
 })
 
@@ -248,7 +237,8 @@ app.post('/votarSedePaquies', (req, res) => {
 	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
 	exec( (error, docs) => {
 		let estudiantes = docs
-		res.render('votarSedePaquies', {estudiantes} )
+		registros_a_bloquear = bloquearRegistros(estudiantes, votarSede(nom_sede, num_grado_estudiante))
+		res.render('votarSedePaquies', {estudiantes, registros_a_bloquear} )
 	})
 })
 // ============================================================================
@@ -265,7 +255,8 @@ app.post('/votarSedeLaEsperanza', (req, res) => {
 	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
 	exec( (error, docs) => {
 		let estudiantes = docs
-		res.render('votarSedeLaEsperanza', {estudiantes} )
+		registros_a_bloquear = bloquearRegistros(estudiantes, votarSede(nom_sede, num_grado_estudiante))
+		res.render('votarSedeLaEsperanza', {estudiantes, registros_a_bloquear} )
 	})
 })
 
@@ -283,7 +274,8 @@ app.post('/votarSedeLaFlorida', (req, res) => {
 	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
 	exec( (error, docs) => {
 		let estudiantes = docs
-		res.render('votarSedeLaFlorida', {estudiantes} )
+		registros_a_bloquear = bloquearRegistros(estudiantes, votarSede(nom_sede, num_grado_estudiante))
+		res.render('votarSedeLaFlorida', {estudiantes, registros_a_bloquear} )
 	})
 })
 
@@ -296,12 +288,17 @@ app.get('/votarSedeMateoRico', (req, res) => {
 
 app.post('/votarSedeMateoRico', (req, res) => {
 	console.log("POST -> votar votarSedeMateoRico" + req.body.gradosSedeMateoRico)
+
+	nom_sede = "MATEO RICO"
+	num_grado_estudiante = req.body.gradosSedeMateoRico
+
 	Estudiante.
 	find({"est_grado": req.body.gradosSedeMateoRico, "est_nombre_sede": "MATEO RICO"}).
 	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
 	exec( (error, docs) => {
 		let estudiantes = docs
-		res.render('votarSedeMateoRico', {estudiantes} )
+		registros_a_bloquear = bloquearRegistros(estudiantes, votarSede(nom_sede, num_grado_estudiante))
+		res.render('votarSedeMateoRico', {estudiantes, registros_a_bloquear} )
 	})
 })
 
@@ -328,10 +325,8 @@ app.post("/personero", (req, res) => {
 
 app.post("/representanteGrado11", (req, res) => {
 	console.log("GET -> representanteGrado11")
-	console.log("OK personero: " + req.body.personero)
+	console.log("personero: " + req.body.personero)
 	let personero = req.body.personero
-	// console.log("ID-EST: "+est_ID)
-	// res.render("representanteGrado11", {est_ID, personero})
 	num_personero = req.body.personero
 	res.render("representanteGrado11", {personero})
 })
@@ -348,8 +343,6 @@ app.post("/finalProcesoVotacion", (req, res) => {
 		num_representante = 3
 	}
 
-	console.log("NUM REPRESENTANTE: " + num_representante)
-
 	var votaciones = new Votaciones({
 	    vot_sede: nom_sede,
 	    vot_grado: num_grado_estudiante,
@@ -364,6 +357,8 @@ app.post("/finalProcesoVotacion", (req, res) => {
 	    votante_doc_identificacion: num_id_estudiante,
 	    vot_fecha: new Date()
 	});
+
+	console.log(votaciones)
 
 	// Guardar en la base de datos de VOTACIONES
 	votaciones.save().then( (est) => {	
@@ -380,6 +375,17 @@ app.post("/finalProcesoVotacion", (req, res) => {
 // ============================================================================
 // 		
 // 
+function votarSede(nom_sede, num_grado_estudiante) {
+	Votante.
+	find({"vot_sede": nom_sede, "vot_grado":num_grado_estudiante}).
+	select( {_id:0, votante_doc_identificacion:1} ).
+	exec( (error, docs) => {
+		ids_estudiantes_ya_votaron = obtener_ids_estudiantes_ya_votaron(docs)
+	})
+
+	return ids_estudiantes_ya_votaron
+}
+
 function obtener_ids_estudiantes_ya_votaron(lista_ya_votaron) {
 	// Arreglo de numeros de identificación de estudiantes que ya votarion
 	var numeros_id_estudiantes = []
@@ -391,6 +397,7 @@ function obtener_ids_estudiantes_ya_votaron(lista_ya_votaron) {
 	return numeros_id_estudiantes
 }
 
+// Función para bloquear registros de aquellos estudiantes que ya votaron
 function bloquearRegistros(estudiantes, estudiantes_ya_votaron) {
 	let regs_a_bloquear = []
 	let bloquear = 1

@@ -31,7 +31,7 @@ block contenido
 								td(class="centrar")= estudiante.est_tipo_identificacion
 								td(class="centrar")
 									form(action="/personero" method="POST")
-										input(type="submit" value=estudiante.est_doc name="votar" class="btn btn-info btn-votar")
+										input(type="submit" value=estudiante.est_doc name="documentoIdentidadEstudiante" class="btn btn-info btn-votar")
 								td= estudiante.est_primer_apellido
 								td= estudiante.est_segundo_apellido
 								td= estudiante.est_primer_nombre
