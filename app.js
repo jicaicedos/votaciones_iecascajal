@@ -154,20 +154,32 @@ app.post('/votarIECascajal', (req, res) => {
 			let estudiantes = docs
 			res.render('votarIECascajal', {estudiantes} )
 		})	
-	} else {
+	} else {	
+		let ids_estudiantes_ya_votaron = []
+		let estudiantes = []
+		let registros_a_bloquear = []
+
+		Votante.
+		find({"vot_sede": nom_sede, "vot_grado":num_grado_estudiante}).
+		select( {_id:0, votante_doc_identificacion:1} ).
+		exec( (error, docs) => {
+			ids_estudiantes_ya_votaron = obtener_ids_estudiantes_ya_votaron(docs)
+		})
+
 		Estudiante.
 		find({"est_grado": req.body.gradosIECascajal, "est_nombre_sede": "CASCAJAL"}).
 		select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
 		exec( (error, docs) => {
-			let estudiantes = docs
-			res.render('votarIECascajal', {estudiantes} )
+			estudiantes = docs
+			registros_a_bloquear = bloquearRegistros(estudiantes, ids_estudiantes_ya_votaron)
+			res.render('votarIECascajal', {estudiantes, registros_a_bloquear} )
 		})		
 	}
 
 })
 
 // ============================================================================
-// Votar en la Sede El Tobo
+// Votar en la Sede 2) El Tobo
 app.get('/votarSedeElTobo', (req, res) => {
 	console.log("GET -> votar votarSedeElTobo" + req.body.gradosSedeElTobo)
 	res.render('votarSedeElTobo')
@@ -338,6 +350,36 @@ app.post("/finalProcesoVotacion", (req, res) => {
 	}, (error) => { res.send("Error al escibir en la base de datos") })
 
 })
+
+// ============================================================================
+// 		
+// 
+function obtener_ids_estudiantes_ya_votaron(lista_ya_votaron) {
+	// Arreglo de numeros de identificación de estudiantes que ya votarion
+	var numeros_id_estudiantes = []
+
+	for( let i=0; i<lista_ya_votaron.length; i++ ) {
+		numeros_id_estudiantes[i] = lista_ya_votaron[i].votante_doc_identificacion
+	}
+
+	return numeros_id_estudiantes
+}
+
+function bloquearRegistros(estudiantes, estudiantes_ya_votaron) {
+	let regs_a_bloquear = []
+	let bloquear = 1
+	let no_bloquear = 0
+	for(let i=0; i<estudiantes.length; i++) {
+		regs_a_bloquear[i] = no_bloquear
+		for(let j=0; j<estudiantes_ya_votaron.length; j++) {
+			if( estudiantes[i].est_doc==estudiantes_ya_votaron[j] ) {
+				regs_a_bloquear[i] = bloquear
+			}
+		}		
+	}
+	console.log(regs_a_bloquear)
+	return regs_a_bloquear
+}
 
 app.listen(8080)
 
