@@ -39,8 +39,17 @@ h4, h6 {
 	padding-bottom: 3px;
 }
 
+.badge-tamano {
+	padding: .8em;
+
+}
+
 .d-block {
 	height: 380px;
+}
+
+.mensaje_iniciar_sesion {
+	margin-top: 5em;
 }
 
 /* Div de mensajes en el carrusel*/

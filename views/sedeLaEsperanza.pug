@@ -1,0 +1,20 @@
+extends ./layout.pug
+
+block contenido
+	div(class="separar")
+	div(class="container")
+		div(class="col-sm-12")
+			div(class="tab-pane fade show" id="list-sede6" role="tabpanel" aria-labelledby="list-sede6-list")
+				h1(class="centrar") Bienvenido a las votaciones Sede La Esperanza
+				div(class="separar")
+				h3 Seleccione un grado
+				div(class="separar")
+			form(action="/votarSedeLaEsperanza" method="POST")
+				div(class="row")
+					div(data-toggle="radio" class="grupoGrados")
+						input(type="submit" class="btn select" value="GRADO 0" name="gradosSedeLaEsperanza" required)
+						input(type="submit" class="btn select" value="PRIMERO" name="gradosSedeLaEsperanza" required)
+						input(type="submit" class="btn select" value="SEGUNDO" name="gradosSedeLaEsperanza" required)
+						input(type="submit" class="btn select" value="TERCERO" name="gradosSedeLaEsperanza" required)
+						input(type="submit" class="btn select" value="CUARTO" name="gradosSedeLaEsperanza" required)
+						input(type="submit" class="btn select" value="QUINTO" name="gradosSedeLaEsperanza" required)

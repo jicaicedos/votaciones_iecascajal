@@ -9,129 +9,23 @@ block contenido
 				input(type="password" class="form-control" name="claveUsuario" placeholder="Contraseña")
 			div(class="col-auto")
 				input(type="submit" value="Inciar sesión" class="btn btn-primary")
-	div(class="separar")
 	div(class='container')
 		div(class='col-sm-12')
+			div(class="separar")
+			h3(class="centrar") Bienvenido a las votaciones Institución Educativa Cascajal
+			div(class="separar")
 			div(class="row")
 				div(class="col-4")
 					div(class="list-group" id="list-tab" role="tablist")
 						a(class="list-group-item list-group-item-action seleccionSedes" id="list-inicial-list" data-toggle="list" href="#list-inicial" role="tab" aria-controls="inicial") Instrucciones
-						a(class="list-group-item list-group-item-action seleccionSedes" id="list-iecascajal-list" data-toggle="list" href="#list-iecascajal" role="tab" aria-controls="iecascajal") Institución Educativa Cascajal
-						a(class="list-group-item list-group-item-action seleccionSedes" id="list-sede1-list" data-toggle="list" href="#list-sede1" role="tab" aria-controls="sede1") Sede El Tobo
-						a(class="list-group-item list-group-item-action seleccionSedes" id="list-sede2-list" data-toggle="list" href="#list-sede2" role="tab" aria-controls="sede2") Sede La Piragua
-						a(class="list-group-item list-group-item-action seleccionSedes" id="list-sede3-list" data-toggle="list" href="#list-sede3" role="tab" aria-controls="sede3") Sede Paquies
-						a(class="list-group-item list-group-item-action seleccionSedes" id="list-sede4-list" data-toggle="list" href="#list-sede4" role="tab" aria-controls="sede4") Sede La Esperanza
-						a(class="list-group-item list-group-item-action seleccionSedes" id="list-sede5-list" data-toggle="list" href="#list-sede5" role="tab" aria-controls="sede5") Sede La Florida
-						a(class="list-group-item list-group-item-action seleccionSedes" id="list-sede6-list" data-toggle="list" href="#list-sede6" role="tab" aria-controls="sede6") Sede Mateo Rico
 				div(class="col-8")
 					div(class="tab-content" id="nav-tabContent")
-						div(class="tab-pane fade show" id="list-inicial" role="tabpanel" aria-labelledby="list-inicial-list")
+						div(class="tab-pane fade show active" id="list-inicial" role="tabpanel" aria-labelledby="list-inicial-list")
 							h3 Bienvenido(a)
 							hr
 							h5 Pasos
-							p 1) Seleccionar la sede en la cual realizar las elecciones
-							p 2) Seleccionar el grado
-							p 3) Buscar el estudiante por número de identificación
-							p 4) Dar clic en el botón con el Numero de identificación Ej: 
-								span(class="badge badge-info") 12123456
-						div(class="tab-pane fade show active" id="list-iecascajal" role="tabpanel" aria-labelledby="list-iecascajal-list")
-							h5(class="centrar") Institución Educativa Cascajal
-							p Seleccione un grado
-							form(action="/votarIECascajal" method="POST")
-								div(class="row")
-									div(data-toggle="radio" class="grupoGrados")
-										input(type="submit" class="btn select" value="GRADO 0" id="grado0" name="gradosIECascajal" required)
-										input(type="submit" class="btn select" value="PRIMERO" name="gradosIECascajal" required)
-										input(type="submit" class="btn select" value="SEGUNDO" name="gradosIECascajal" required)
-										input(type="submit" class="btn select" value="TERCERO" name="gradosIECascajal" required)
-										input(type="submit" class="btn select" value="CUARTO" name="gradosIECascajal" required)
-										input(type="submit" class="btn select" value="QUINTO" name="gradosIECascajal" required)
-										input(type="submit" class="btn select" value="SEXTO A" name="gradosIECascajal" required)
-										input(type="submit" class="btn select" value="SEXTO B" name="gradosIECascajal" required)
-										input(type="submit" class="btn select" value="SEPTIMO" name="gradosIECascajal" required)
-										input(type="submit" class="btn select" value="OCTAVO A" name="gradosIECascajal" required)
-										input(type="submit" class="btn select" value="OCTAVO B" name="gradosIECascajal" required)
-										input(type="submit" class="btn select" value="NOVENO" name="gradosIECascajal" required)
-										input(type="submit" class="btn select" value="DÉCIMO" name="gradosIECascajal" required)
-										input(type="submit" class="btn select" value="ONCE" name="gradosIECascajal" required)
-
-						div(class="tab-pane fade show" id="list-sede1" role="tabpanel" aria-labelledby="list-sede1-list")  
-							h5(class="centrar") Sede El Tobo
-							p Seleccione un grado
-							form(action="/votarSedeElTobo" method="POST")
-								div(class="row")
-									div(data-toggle="radio" class="grupoGrados")
-										input(type="submit" class="btn select" value="GRADO 0" name="gradosSedeElTobo" required)
-										input(type="submit" class="btn select" value="PRIMERO" name="gradosSedeElTobo" required)
-										input(type="submit" class="btn select" value="SEGUNDO" name="gradosSedeElTobo" required)
-										input(type="submit" class="btn select" value="TERCERO" name="gradosSedeElTobo" required)
-										input(type="submit" class="btn select" value="CUARTO" name="gradosSedeElTobo" required)
-										input(type="submit" class="btn select" value="QUINTO" name="gradosSedeElTobo" required)
-						div(class="tab-pane fade show" id="list-sede2" role="tabpanel" aria-labelledby="list-sede2-list")
-							h5(class="centrar") Sede La Piragua
-							p Seleccione un grado
-							form(action="/votarSedeLaPiragua" method="POST")
-								div(class="row")
-									div(data-toggle="radio" class="grupoGrados")
-										input(type="submit" class="btn select" value="GRADO 0" name="gradosSedeLaPiragua" required)
-										input(type="submit" class="btn select" value="PRIMERO" name="gradosSedeLaPiragua" required)
-										input(type="submit" class="btn select" value="SEGUNDO" name="gradosSedeLaPiragua" required)
-										input(type="submit" class="btn select" value="TERCERO" name="gradosSedeLaPiragua" required)
-										input(type="submit" class="btn select" value="CUARTO" name="gradosSedeLaPiragua" required)
-										input(type="submit" class="btn select" value="QUINTO" name="gradosSedeLaPiragua" required)
-
-						div(class="tab-pane fade show" id="list-sede3" role="tabpanel" aria-labelledby="list-sede3-list")
-							h5(class="centrar") Sede Paquies
-							p Seleccione un grado
-							form(action="/votarSedePaquies" method="POST")
-								div(class="row")
-									div(data-toggle="radio" class="grupoGrados")
-										input(type="submit" class="btn select" value="GRADO 0" name="gradosSedePaquies" required)
-										input(type="submit" class="btn select" value="PRIMERO" name="gradosSedePaquies" required)
-										input(type="submit" class="btn select" value="SEGUNDO" name="gradosSedePaquies" required)
-										input(type="submit" class="btn select" value="TERCERO" name="gradosSedePaquies" required)
-										input(type="submit" class="btn select" value="CUARTO" name="gradosSedePaquies" required)
-										input(type="submit" class="btn select" value="QUINTO" name="gradosSedePaquies" required)
-
-
-						div(class="tab-pane fade show" id="list-sede4" role="tabpanel" aria-labelledby="list-sede4-list")  
-							h5(class="centrar") Sede La Esperanza
-							p Seleccione un grado
-							form(action="/votarSedeLaEsperanza" method="POST")
-								div(class="row")
-									div(data-toggle="radio" class="grupoGrados")
-										input(type="submit" class="btn select" value="GRADO 0" name="gradosSedeLaEsperanza" required)
-										input(type="submit" class="btn select" value="PRIMERO" name="gradosSedeLaEsperanza" required)
-										input(type="submit" class="btn select" value="SEGUNDO" name="gradosSedeLaEsperanza" required)
-										input(type="submit" class="btn select" value="TERCERO" name="gradosSedeLaEsperanza" required)
-										input(type="submit" class="btn select" value="CUARTO" name="gradosSedeLaEsperanza" required)
-										input(type="submit" class="btn select" value="QUINTO" name="gradosSedeLaEsperanza" required)
-
-
-						div(class="tab-pane fade show" id="list-sede5" role="tabpanel" aria-labelledby="list-sede5-list")
-							h5(class="centrar") Sede La Florida
-							p Seleccione un grado
-							form(action="/votarSedeLaFlorida" method="POST")
-								div(class="row")
-									div(data-toggle="radio" class="grupoGrados")
-										input(type="submit" class="btn select" value="GRADO 0" name="gradosSedeLaFlorida" required)
-										input(type="submit" class="btn select" value="PRIMERO" name="gradosSedeLaFlorida" required)
-										input(type="submit" class="btn select" value="SEGUNDO" name="gradosSedeLaFlorida" required)
-										input(type="submit" class="btn select" value="TERCERO" name="gradosSedeLaFlorida" required)
-										input(type="submit" class="btn select" value="CUARTO" name="gradosSedeLaFlorida" required)
-										input(type="submit" class="btn select" value="QUINTO" name="gradosSedeLaFlorida" required)
-
-
-						div(class="tab-pane fade show" id="list-sede6" role="tabpanel" aria-labelledby="list-sede6-list")
-							h5(class="centrar") Sede Mateo Rico
-							p Seleccione un grado
-							form(action="/votarSedeMateoRico" method="POST")
-								div(class="row")
-									div(data-toggle="radio" class="grupoGrados")
-										input(type="submit" class="btn select" value="GRADO 0" name="gradosSedeMateoRico" required)
-										input(type="submit" class="btn select" value="PRIMERO" name="gradosSedeMateoRico" required)
-										input(type="submit" class="btn select" value="SEGUNDO" name="gradosSedeMateoRico" required)
-										input(type="submit" class="btn select" value="TERCERO" name="gradosSedeMateoRico" required)
-										input(type="submit" class="btn select" value="CUARTO" name="gradosSedeMateoRico" required)
-										input(type="submit" class="btn select" value="QUINTO" name="gradosSedeMateoRico" required)
-
+							p Iniciar sesión con el usuario y contraseña dados por el Administrador
+							p Seleccionar el grado
+							p Buscar el estudiante por número de identificación
+							p Dar clic en el botón con el Numero de identificación Ej: 
+								span(class="badge badge-info badge-tamano") 12123456

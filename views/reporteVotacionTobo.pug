@@ -8,7 +8,7 @@ block contenido
 				a(class="dropdown-item" href="adicionarDocente") Adicionar
 				a(class="dropdown-item" href="consultarDocentes") Consultar
 				a(class="dropdown-item" href="modificarDocente") Modificar
-		li(class="nav-item dropdown") 
+		li(class="nav-item dropdown")
 			a(class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false") Estudiantes
 			div(class="dropdown-menu")
 				a(class="dropdown-item" href="adicionarEstudiante") Adicionar
@@ -18,3 +18,15 @@ block contenido
 			a(class="nav-link" href="/reporteVotacionTobo") Reportes
 		li(class="nav-item")
 			a(class="nav-link" href="/") Cerrar sesión
+	div(class="container")
+		div(class="col-sm-12")
+		h3 Reporte de votación I. E. Cascajal
+		div(class="row row justify-content-right")
+			div(class="col-sm-8")
+				select(name="gradoEstudiante" class="form-control")
+					option(value="DÉCIMO") Personero
+					option(value="UNDÉCIMO") UNDÉCIMO
+			div(class="col-sm-2")
+				form(action="/reporteVotacionTobo")
+					input(type="submit" value="Ver" class="btn btn-primary form-control")
+		

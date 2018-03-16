@@ -1,0 +1,20 @@
+extends ./layout.pug
+
+block contenido
+	div(class="separar")
+	div(class="container")
+		div(class="col-sm-12")
+			div(class="tab-pane fade show" id="list-sede2" role="tabpanel" aria-labelledby="list-sede2-list")
+				h1(class="centrar") Bienvenido a las votaciones Sede La Piragua
+				div(class="separar")
+				h3 Seleccione un grado
+				div(class="separar")
+			form(action="/votarSedeLaPiragua" method="POST")
+				div(class="row")
+					div(data-toggle="radio" class="grupoGrados")
+						input(type="submit" class="btn select" value="GRADO 0" name="gradosSedeLaPiragua" required)
+						input(type="submit" class="btn select" value="PRIMERO" name="gradosSedeLaPiragua" required)
+						input(type="submit" class="btn select" value="SEGUNDO" name="gradosSedeLaPiragua" required)
+						input(type="submit" class="btn select" value="TERCERO" name="gradosSedeLaPiragua" required)
+						input(type="submit" class="btn select" value="CUARTO" name="gradosSedeLaPiragua" required)
+						input(type="submit" class="btn select" value="QUINTO" name="gradosSedeLaPiragua" required)

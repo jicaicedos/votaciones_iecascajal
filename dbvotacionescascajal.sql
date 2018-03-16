@@ -10150,6 +10150,7 @@ db.estudiantes.insert({
     est_fuente_recursos: "SGP"
 })
 -- ============================================================================================
+-- LA FLORIDA
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11325,6 +11326,8 @@ db.estudiantes.insert({
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
 })
+-- =======================================================================================
+-- SEDE MATEO RICO
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11900,6 +11903,8 @@ db.estudiantes.insert({
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
 })
+-- ==============================================================
+-- PAQUIES
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -13066,35 +13071,97 @@ db.estudiantes.insert({
 -- })
 -- 
 -- 
--- =================================================================================================================
+-- Usuario administrador
+db.usuarios.insert({
+    usu_ID : "Administrador",
+    usu_contraseña: "admin",
+    usu_nombre: "Administrador",
+    usu_sede: "",
+    usu_grado: "",
+    usu_rol: "ADMINISTRADOR"
+})
+-- Usuarios de
+db.usuarios.insert({
+    usu_ID : "12265789",
+    usu_contraseña: "12265789",
+    usu_nombre: "UBER JULIAN BATERO",
+    usu_sede: "CASCAJAL",
+    usu_grado: "OCTAVO",
+    usu_rol: "JURADO"
+})
+db.usuarios.insert({
+    usu_ID : "36453789",
+    usu_contraseña: "36453789",    
+    usu_nombre: "PROFE TRINIDAD",
+    usu_sede: "CASCAJAL",
+    usu_grado: "SEPTIMO",
+    usu_rol: "JURADO"
+})
+db.usuarios.insert({
+    usu_ID : "EL TOBO",
+    usu_contraseña: "tobo123",    
+    usu_nombre: "PROFE EL TOBO",
+    usu_sede: "EL TOBO",
+    usu_grado: "TODOS",
+    usu_rol: "JURADO"
+})
+db.usuarios.insert({
+    usu_ID : "LA PIRAGUA",
+    usu_contraseña: "piragua123",    
+    usu_nombre: "PROFE LA PIRAGUA",
+    usu_sede: "LA PIRAGUA",
+    usu_grado: "TODOS",
+    usu_rol: "JURADO"
+})
+db.usuarios.insert({
+    usu_ID : "MATEO RICO",
+    usu_contraseña: "mateo123",    
+    usu_nombre: "PROFE MATEO RICO",
+    usu_sede: "MATEO RICO",
+    usu_grado: "TODOS",
+    usu_rol: "JURADO"
+})
+db.usuarios.insert({
+    usu_ID : "PAQUIES",
+    usu_contraseña: "paquies123",    
+    usu_nombre: "PROFE PAQUIES",
+    usu_sede: "PAQUIES",
+    usu_grado: "TODOS",
+    usu_rol: "JURADO"
+})
+db.usuarios.insert({
+    usu_ID : "LA FLORIDA",
+    usu_contraseña: "florida123",    
+    usu_nombre: "PROFE LA FLORIDA",
+    usu_sede: "LA FLORIDA",
+    usu_grado: "TODOS",
+    usu_rol: "JURADO"
+})
+db.usuarios.insert({
+    usu_ID : "LA ESPERANZA",
+    usu_contraseña: "esperanza123",    
+    usu_nombre: "PROFE LA ESPERANZA",
+    usu_sede: "LA ESPERANZA",
+    usu_grado: "TODOS",
+    usu_rol: "JURADO"
+})
 
+
+
+-- =================================================================================================================
+-- Remover los usuarios
+db.usuarios.remove({})  // OJO
+
+db.votaciones.remove({})
+db.votantes.remove({})
+
+
+-- =================================================================================================================
  -- Consultar estudiantes
 db.estudiantes.find({}, {_id:0, Doc:1, est_primer_nombre:1, est_primer_apellido:1, est_segundo_apellido:1})
-
 -- Consultar por grado
 db.estudiantes.find({"est_grado":"ONCE"}, {_id:0, Doc:1, est_primer_nombre:1, est_primer_apellido:1, est_segundo_apellido:1})
 
-
--- =================================================================================================================
-
-
-db.votaciones.insert({
-    vot_sede: "CASCAJAL",
-    vot_grado: "GRADO 0",
-    vot_doc_estudiantes: 1079534203,
-    vot_personero: 1,
-    vot_representante: 2,
-    vot_fecha: new Date()
-})
-
-db.votaciones.insert({
-    vot_sede: "CASCAJAL",
-    vot_grado: "GRADO 0",
-    vot_doc_estudiantes: 1084330552,
-    vot_personero: 1,
-    vot_representante: 2,
-    vot_fecha: new Date()
-})
 
 -- ==========================================
 -- JavaScript

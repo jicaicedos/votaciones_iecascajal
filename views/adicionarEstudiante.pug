@@ -1,7 +1,26 @@
 extends ./layout.pug
 
 block contenido
-	h2 Adicionar nuevo estudiante
+	ul(class="nav nav-tabs justify-content-center")
+		li(class="nav-item dropdown")
+			a(class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false") Docentes
+			div(class="dropdown-menu")
+				a(class="dropdown-item" href="adicionarDocente") Adicionar
+				a(class="dropdown-item" href="consultarDocentes") Consultar
+				a(class="dropdown-item" href="modificarDocente") Modificar
+		li(class="nav-item dropdown")
+			a(class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false") Estudiantes
+			div(class="dropdown-menu")
+				a(class="dropdown-item" href="adicionarEstudiante") Adicionar
+				a(class="dropdown-item" href="consultarEstudiantes") Consultar
+				a(class="dropdown-item" href="modificarEstudiante") Modificar
+		li(class="nav-item")
+			a(class="nav-link" href="/reporteVotacionTobo") Reportes
+		li(class="nav-item")
+			a(class="nav-link" href="/") Cerrar sesión
+	div(class="container")
+		div(class="col-sm-12")
+		h3 Adicionar nuevo estudiante
 	div(class="container")
 		form(action="/resultado" method="POST")
 			br
