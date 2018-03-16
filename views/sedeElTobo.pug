@@ -1,10 +1,6 @@
-extends ./layout.pug
+extends ./layoutSedes.pug
 
 block contenido
-	ul(class="nav nav-tabs justify-content-center")
-		li(class="nav-item")
-			a(class="nav-link" href="/") Cerrar sesión	
-	div(class="separar")
 	div(class="container")
 		div(class="col-sm-12")
 			div(class="tab-pane fade show" id="list-sede1" role="tabpanel" aria-labelledby="list-sede1-list")  
@@ -20,3 +16,5 @@ block contenido
 						input(type="submit" class="btn select" value="SEGUNDO" name="gradosSedeElTobo" required)
 						input(type="submit" class="btn select" value="TERCERO" name="gradosSedeElTobo" required)
 						input(type="submit" class="btn select" value="CUARTO" name="gradosSedeElTobo" required)
+						input(type="submit" class="btn select" value="QUINTO" name="gradosSedeElTobo" required)
+
