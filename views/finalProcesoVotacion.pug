@@ -12,5 +12,26 @@ block contenido
 		h3 Final del proceso de votación
 		h3 Muchas gracias por participar!
 		br
-		form(action="/")
-			input(type="submit" value="Finalizar" class="btn btn-primary")
+		h3(class="centrar")= nom_sede
+		div(class="separar")
+		if nom_sede == "CASCAJAL"			
+			form(action="/sedeIECascajal")
+				input(type="submit" value="Finalizar" class="btn btn-primary")
+		if nom_sede == "EL TOBO"
+			form(action="/sedeElTobo")
+				input(type="submit" value="Finalizar" class="btn btn-primary")
+		if nom_sede == "LA ESPERANZA"
+			form(action="/sedeLaEsperanza")
+				input(type="submit" value="Finalizar" class="btn btn-primary")
+		if nom_sede == "LA FLORIDA"
+			form(action="/sedeLaFlorida")
+				input(type="submit" value="Finalizar" class="btn btn-primary")
+		if nom_sede == "LA PIRAGUA"
+			form(action="/sedeLaPiragua")
+				input(type="submit" value="Finalizar" class="btn btn-primary")
+		if nom_sede == "MATEO RICO"
+			form(action="/sedeMateoRico")
+				input(type="submit" value="Finalizar" class="btn btn-primary")
+		if nom_sede == "PAQUIES"
+			form(action="/sedePaquies")
+				input(type="submit" value="Finalizar" class="btn btn-primary")

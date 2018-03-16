@@ -5,7 +5,7 @@ var bodyParser = require('body-parser')
 var Estudiante = require('./models/estudiante').Estudiante
 var Votaciones = require("./models/votaciones").Votaciones
 var Votante = require("./models/votante").Votante
-
+var Usuario = require("./models/usuario").Usuario
 
 /*	================================================================
 				Inicio de la aplicación : Main
@@ -59,12 +59,38 @@ app.get("/administrador", (req, res) => {
 // 
 app.post("/", (req, res) => {
 	console.log("POST /")
-	if( req.body.idUsuario == "Administrador" ) {
-		res.render("administrador")
-	} else {
-		let mensaje = "El usuario o contraseña no coinciden"
-		res.render("index", {mensaje})
-	}
+
+	Usuario.find({"usu_ID": req.body.idUsuario, "usu_contraseña": req.body.claveUsuario}, "usu_nombre usu_sede usu_grado usu_rol", (error, docs) => {
+		let mensaje
+		console.log(docs)
+		if( docs.length==0 ) {
+			mensaje = "Usuario o contraseña no coinciden"
+			res.render("index", {mensaje})
+		} else {
+			if( docs[0].usu_rol=="ADMINISTRADOR" ) {
+				res.render("administrador")
+			} else {				
+				if( docs[0].usu_rol == "JURADO" ) {
+					if( docs[0].usu_sede == "EL TOBO" ) {
+						console.log(docs[0].usu_sede)
+						res.render("sedeElTobo")
+					} else if( docs[0].usu_sede == "LA PIRAGUA" ) {
+						res.render("sedeLaPiragua")
+					} else if( docs[0].usu_sede == "MATEO RICO" ) {
+						res.render("sedeMateoRico")
+					} else if( docs[0].usu_sede == "PAQUIES" ) {
+						res.render("sedePaquies")
+					} else if( docs[0].usu_sede == "LA FLORIDA" ) {
+						res.render("sedeLaFlorida")
+					} else if( docs[0].usu_sede == "LA ESPERANZA" ) {
+						res.render("sedeLaEsperanza")
+					} else if( docs[0].usu_sede == "CASCAJAL" ) {
+						res.render("sedeIECascajal")
+					} 
+				}
+			}
+		}
+	}) 
 })
 
 app.get("/", (req, res) => {
@@ -72,6 +98,11 @@ app.get("/", (req, res) => {
 	res.render("index")
 })
 
+app.get("/reporteVotacionTobo", (req, res) => {
+	// Votaciones.
+	Votaciones
+	res.render("reporteVotacionTobo")
+})
 // ===========================================================================
 // Consultar estudiante para votar
 // 
@@ -131,7 +162,7 @@ app.post('/votaciones', (req, res) => {
 	exec( (error, docs) => {
 		ids_estudiantes_ya_votaron = obtener_ids_estudiantes_ya_votaron(docs)
 	})
-
+	// OJO
 
 	if( req.body.gradosIECascajal=="SEXTO A" ) {
 		Estudiante.
@@ -184,7 +215,29 @@ app.post('/votaciones', (req, res) => {
 
 })
 
+
 // ============================================================================
+app.get("/sedeIECascajal", (req, res) => {
+	res.render("sedeIECascajal")
+})
+app.get("/sedeLaEsperanza", (req, res) => {
+	res.render("sedeLaEsperanza")
+})
+app.get("/sedePaquies", (req, res) => {
+	res.render("sedePaquies")
+})
+app.get("/sedeMateoRico", (req, res) => {
+	res.render("sedeMateoRico")
+})
+app.get("/sedeLaFlorida", (req, res) => {
+	res.render("sedeLaFlorida")
+})
+
+
+// ============================================================================
+app.get("/sedeElTobo", (req, res) => {
+	res.render("sedeElTobo")
+})
 // Votar en la Sede 2) El Tobo
 app.get('/votarSedeElTobo', (req, res) => {
 	console.log("GET -> votar votarSedeElTobo" + req.body.gradosSedeElTobo)
@@ -206,6 +259,10 @@ app.post('/votarSedeElTobo', (req, res) => {
 
 // ============================================================================
 // Votar en la Sede La Piragua
+app.get("/sedeLaPiragua", (req, res) => {
+	res.render("sedeLaPiragua")
+})
+
 app.get('/votarSedeLaPiragua', (req, res) => {
 	console.log("GET -> votar votarSedeLaPiragua" + req.body.gradosSedeLaPiragua)
 	res.render('votarSedeLaPiragua')
@@ -306,8 +363,7 @@ app.post('/votarSedeMateoRico', (req, res) => {
 // Votar por Personero
 // 
 app.post("/personero", (req, res) => {
-	console.log("POST -> personero")
-	console.log("No. Identificación estudiante: " + req.body.documentoIdentidadEstudiante)
+	// console.log("POST -> personero")
 	let est_ID = req.body.documentoIdentidadEstudiante
 	num_id_estudiante = req.body.documentoIdentidadEstudiante
 	res.render("personero", {est_ID, nom_sede})
@@ -325,10 +381,8 @@ app.post("/personero", (req, res) => {
 
 app.post("/representanteGrado11", (req, res) => {
 	console.log("GET -> representanteGrado11")
-	console.log("personero: " + req.body.personero)
-	let personero = req.body.personero
 	num_personero = req.body.personero
-	res.render("representanteGrado11", {personero})
+	res.render("representanteGrado11")
 })
 
 // ============================================================================
@@ -340,6 +394,7 @@ app.post("/finalProcesoVotacion", (req, res) => {
 	if( nom_sede=="CASCAJAL") { // y grado == "TALES"
 		num_representante = req.body.representante11
 	} else {
+		num_personero = req.body.personero
 		num_representante = 3
 	}
 
@@ -367,7 +422,13 @@ app.post("/finalProcesoVotacion", (req, res) => {
 
 	// Guardar en la base de datos de VOTANTES
 	votante.save().then( (est) => {
-		res.render("finalProcesoVotacion")
+		// if( nom_sede=="CASCAJAL" ) {
+		// 	res.render("sedeIECascajal")
+		// 	// res.render("finalProcesoVotacion")
+		// } else if( nom_sede=="EL TOBO" ) {
+		// 	res.render("sedeElTobo")
+		// }
+		res.render("finalProcesoVotacion", {nom_sede})
 	}, (error) => { res.send("Error al escibir en la base de datos. Collection: votantes") })
 
 })

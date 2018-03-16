@@ -1,0 +1,13 @@
+ARREGLAR
+
+Cuando finaliza la votación un alumno de una sede NOOO volver al inicio de sesión
+sino volver a la página de los grados de la sede en la que se está votando
+
+
+REPORTES
+- Agregar formulario para adicionar Personero
+	Mediante un campo de texto buscarlo en la base de datos
+	Permitir máximo dos personeros
+
+- Mostrar los resultados totales de personero
+
