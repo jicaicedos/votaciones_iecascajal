@@ -28,7 +28,7 @@ db.estudiantes.insert({
     est_estado: "RETIRADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -51,7 +51,7 @@ db.estudiantes.insert({
     est_estado: "RETIRADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -74,7 +74,7 @@ db.estudiantes.insert({
     est_estado: "RETIRADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -97,7 +97,7 @@ db.estudiantes.insert({
     est_estado: "RETIRADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -120,7 +120,7 @@ db.estudiantes.insert({
     est_estado: "RETIRADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -143,7 +143,7 @@ db.estudiantes.insert({
     est_estado: "RETIRADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -166,7 +166,7 @@ db.estudiantes.insert({
     est_estado: "RETIRADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -189,7 +189,7 @@ db.estudiantes.insert({
     est_estado: "RETIRADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -212,7 +212,7 @@ db.estudiantes.insert({
     est_estado: "RETIRADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -235,7 +235,7 @@ db.estudiantes.insert({
     est_estado: "RETIRADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -258,7 +258,7 @@ db.estudiantes.insert({
     est_estado: "RETIRADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -281,7 +281,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -304,7 +304,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -327,7 +327,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -350,7 +350,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -373,7 +373,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -396,7 +396,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -419,7 +419,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -442,7 +442,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -465,7 +465,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -488,7 +488,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -511,7 +511,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -534,7 +534,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -557,7 +557,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -580,7 +580,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -603,7 +603,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -626,7 +626,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -649,7 +649,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -672,7 +672,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -695,7 +695,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -718,7 +718,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -741,7 +741,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -764,7 +764,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -787,7 +787,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -810,7 +810,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -833,7 +833,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -856,7 +856,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -879,7 +879,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -902,7 +902,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -925,7 +925,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -948,7 +948,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -971,7 +971,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -994,7 +994,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1017,7 +1017,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1040,7 +1040,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1063,7 +1063,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1086,7 +1086,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1109,7 +1109,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1132,7 +1132,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1155,7 +1155,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1178,7 +1178,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1201,7 +1201,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1224,7 +1224,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1247,7 +1247,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1270,7 +1270,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1293,7 +1293,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1316,7 +1316,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1339,7 +1339,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1362,7 +1362,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1385,7 +1385,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1408,7 +1408,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1431,7 +1431,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1454,7 +1454,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1477,7 +1477,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1500,7 +1500,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1523,7 +1523,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1546,7 +1546,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1569,7 +1569,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1592,7 +1592,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1615,7 +1615,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1638,7 +1638,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1661,7 +1661,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1684,7 +1684,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1707,7 +1707,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1730,7 +1730,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1753,7 +1753,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1776,7 +1776,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1799,7 +1799,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1822,7 +1822,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1845,7 +1845,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1868,7 +1868,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1891,7 +1891,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1914,7 +1914,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1937,7 +1937,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1960,7 +1960,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -1983,7 +1983,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2006,7 +2006,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2029,7 +2029,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2052,7 +2052,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2075,7 +2075,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2098,7 +2098,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2121,7 +2121,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2144,7 +2144,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2167,7 +2167,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2190,7 +2190,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2213,7 +2213,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2236,7 +2236,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2259,7 +2259,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2282,7 +2282,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2305,7 +2305,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2328,7 +2328,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2351,7 +2351,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2374,7 +2374,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2397,7 +2397,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2420,7 +2420,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2443,7 +2443,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2466,7 +2466,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2489,7 +2489,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2512,7 +2512,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2535,7 +2535,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2558,7 +2558,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2581,7 +2581,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2604,7 +2604,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2627,7 +2627,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2650,7 +2650,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2673,7 +2673,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2696,7 +2696,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2719,7 +2719,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2742,7 +2742,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2765,7 +2765,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2788,7 +2788,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2811,7 +2811,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2834,7 +2834,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2857,7 +2857,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2880,7 +2880,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2903,7 +2903,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2926,7 +2926,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2949,7 +2949,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2972,7 +2972,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -2995,7 +2995,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3018,7 +3018,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3041,7 +3041,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3064,7 +3064,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3087,7 +3087,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3110,7 +3110,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3133,7 +3133,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3156,7 +3156,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3179,7 +3179,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3202,7 +3202,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3225,7 +3225,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3248,7 +3248,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3271,7 +3271,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3294,7 +3294,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3317,7 +3317,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3340,7 +3340,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3363,7 +3363,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3386,7 +3386,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3409,7 +3409,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3432,7 +3432,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3455,7 +3455,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3478,7 +3478,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3501,7 +3501,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3524,7 +3524,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3547,7 +3547,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3570,7 +3570,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3593,7 +3593,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3616,7 +3616,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3639,7 +3639,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3662,7 +3662,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3685,7 +3685,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3708,7 +3708,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3731,7 +3731,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3754,7 +3754,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3777,7 +3777,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3800,7 +3800,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3823,7 +3823,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3846,7 +3846,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3869,7 +3869,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3892,7 +3892,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3915,7 +3915,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3938,7 +3938,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3961,7 +3961,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -3984,7 +3984,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4007,7 +4007,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4030,7 +4030,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4053,7 +4053,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4076,7 +4076,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4099,7 +4099,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4122,7 +4122,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4145,7 +4145,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4168,7 +4168,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4191,7 +4191,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4214,7 +4214,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4237,7 +4237,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4260,7 +4260,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4283,7 +4283,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4306,7 +4306,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4329,7 +4329,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4352,7 +4352,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4375,7 +4375,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4398,7 +4398,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4421,7 +4421,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4444,7 +4444,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4467,7 +4467,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4490,7 +4490,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4513,7 +4513,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4536,7 +4536,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4559,7 +4559,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4582,7 +4582,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4605,7 +4605,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4628,7 +4628,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4651,7 +4651,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4674,7 +4674,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4697,7 +4697,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4720,7 +4720,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4743,7 +4743,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4766,7 +4766,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4789,7 +4789,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4812,7 +4812,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4835,7 +4835,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4858,7 +4858,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4881,7 +4881,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4904,7 +4904,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4927,7 +4927,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4950,7 +4950,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4973,7 +4973,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -4996,7 +4996,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5019,7 +5019,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5042,7 +5042,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5065,7 +5065,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5088,7 +5088,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5111,7 +5111,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5134,7 +5134,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5157,7 +5157,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5180,7 +5180,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5203,7 +5203,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5226,7 +5226,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5249,7 +5249,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5272,7 +5272,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5295,7 +5295,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5318,7 +5318,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5341,7 +5341,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5364,7 +5364,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5387,7 +5387,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5410,7 +5410,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5433,7 +5433,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5456,7 +5456,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5479,7 +5479,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5502,7 +5502,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5525,7 +5525,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5548,7 +5548,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5571,7 +5571,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5594,7 +5594,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5617,7 +5617,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5640,7 +5640,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5663,7 +5663,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5686,7 +5686,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5709,7 +5709,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5732,7 +5732,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5755,7 +5755,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5778,7 +5778,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5801,7 +5801,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5824,7 +5824,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5847,7 +5847,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5870,7 +5870,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5893,7 +5893,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5916,7 +5916,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5939,7 +5939,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5962,7 +5962,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -5985,7 +5985,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6008,7 +6008,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6031,7 +6031,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6054,7 +6054,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6077,7 +6077,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6100,7 +6100,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6123,7 +6123,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6146,7 +6146,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6169,7 +6169,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6192,7 +6192,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6215,7 +6215,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6238,7 +6238,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6261,7 +6261,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6284,7 +6284,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6307,7 +6307,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6330,7 +6330,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6353,7 +6353,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6376,7 +6376,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6399,7 +6399,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6422,7 +6422,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6445,7 +6445,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6468,7 +6468,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6491,7 +6491,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6514,7 +6514,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6537,7 +6537,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6560,7 +6560,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6583,7 +6583,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6606,7 +6606,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6629,7 +6629,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6652,7 +6652,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6675,7 +6675,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6698,7 +6698,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6721,7 +6721,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6744,7 +6744,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6767,7 +6767,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6790,7 +6790,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6813,7 +6813,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6836,7 +6836,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6859,7 +6859,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6882,7 +6882,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6905,7 +6905,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6928,7 +6928,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6951,7 +6951,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6974,7 +6974,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -6997,7 +6997,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7020,7 +7020,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7043,7 +7043,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7066,7 +7066,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7089,7 +7089,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7112,7 +7112,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7135,7 +7135,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7158,7 +7158,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7181,7 +7181,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7204,7 +7204,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7227,7 +7227,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7250,7 +7250,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7273,7 +7273,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7296,7 +7296,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7319,7 +7319,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7342,7 +7342,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7365,7 +7365,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7388,7 +7388,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7411,7 +7411,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7434,7 +7434,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7457,7 +7457,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7480,7 +7480,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7503,7 +7503,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7526,7 +7526,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7549,7 +7549,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7572,7 +7572,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7595,7 +7595,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7618,7 +7618,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7641,7 +7641,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7664,7 +7664,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7687,7 +7687,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7710,7 +7710,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7733,7 +7733,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7756,7 +7756,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7779,7 +7779,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7802,7 +7802,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7825,7 +7825,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7848,7 +7848,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7871,7 +7871,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7894,7 +7894,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7917,7 +7917,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7940,7 +7940,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7963,7 +7963,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -7986,7 +7986,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8009,7 +8009,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8032,7 +8032,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8055,7 +8055,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8078,7 +8078,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8101,7 +8101,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8124,7 +8124,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8147,7 +8147,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8170,7 +8170,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8193,7 +8193,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8216,7 +8216,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8239,7 +8239,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8262,7 +8262,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8285,7 +8285,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8308,7 +8308,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8331,7 +8331,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8354,7 +8354,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8377,7 +8377,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8400,7 +8400,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8423,7 +8423,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8446,7 +8446,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8469,7 +8469,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8492,7 +8492,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8515,7 +8515,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8538,7 +8538,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8561,7 +8561,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8584,7 +8584,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8607,7 +8607,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8630,7 +8630,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8653,7 +8653,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8676,7 +8676,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8699,7 +8699,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8722,7 +8722,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8745,7 +8745,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8768,7 +8768,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8791,7 +8791,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8814,7 +8814,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8837,7 +8837,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8860,7 +8860,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8883,7 +8883,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8906,7 +8906,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8929,7 +8929,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8952,7 +8952,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8975,7 +8975,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -8998,7 +8998,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9021,7 +9021,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9044,7 +9044,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9067,7 +9067,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9090,7 +9090,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9113,7 +9113,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9136,7 +9136,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9159,7 +9159,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9182,7 +9182,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9205,7 +9205,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9228,7 +9228,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9251,7 +9251,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9274,7 +9274,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9297,7 +9297,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9320,7 +9320,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9343,7 +9343,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9366,7 +9366,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9389,7 +9389,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9412,7 +9412,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9435,7 +9435,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9458,7 +9458,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9481,7 +9481,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9504,7 +9504,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9527,7 +9527,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9550,7 +9550,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9573,7 +9573,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9596,7 +9596,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9619,7 +9619,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9642,7 +9642,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9665,7 +9665,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9688,7 +9688,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- })
+ });
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9711,7 +9711,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9734,7 +9734,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9757,7 +9757,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9780,7 +9780,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9803,7 +9803,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9826,7 +9826,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9849,7 +9849,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9872,7 +9872,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9895,7 +9895,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9918,7 +9918,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9941,7 +9941,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9964,7 +9964,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -9987,7 +9987,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10010,7 +10010,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10033,7 +10033,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10056,7 +10056,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10079,7 +10079,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10102,7 +10102,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10125,7 +10125,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10148,7 +10148,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 -- ============================================================================================
 -- LA FLORIDA
 db.estudiantes.insert({
@@ -10173,7 +10173,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10196,7 +10196,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10219,7 +10219,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10242,7 +10242,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10265,7 +10265,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10288,7 +10288,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10311,7 +10311,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10334,7 +10334,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10357,7 +10357,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10380,7 +10380,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10403,7 +10403,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10426,7 +10426,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10449,7 +10449,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10472,7 +10472,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10495,7 +10495,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10518,7 +10518,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10541,7 +10541,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10564,7 +10564,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10587,7 +10587,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10610,7 +10610,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10633,7 +10633,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10656,7 +10656,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10679,7 +10679,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10702,7 +10702,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10725,7 +10725,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10748,7 +10748,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 -- =================================================================================================================
 -- SEDE LA PIRAGUA
 db.estudiantes.insert({
@@ -10773,7 +10773,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10796,7 +10796,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10819,7 +10819,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10842,7 +10842,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10865,7 +10865,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10888,7 +10888,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10911,7 +10911,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10934,7 +10934,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10957,7 +10957,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -10980,7 +10980,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11003,7 +11003,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11026,7 +11026,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11049,7 +11049,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11072,7 +11072,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11095,7 +11095,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11118,7 +11118,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11141,7 +11141,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11164,7 +11164,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11187,7 +11187,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11210,7 +11210,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11233,7 +11233,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11256,7 +11256,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11279,7 +11279,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11302,7 +11302,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11325,7 +11325,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 -- =======================================================================================
 -- SEDE MATEO RICO
 db.estudiantes.insert({
@@ -11350,7 +11350,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11373,7 +11373,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11396,7 +11396,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11419,7 +11419,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11442,7 +11442,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11465,7 +11465,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11488,7 +11488,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11511,7 +11511,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11534,7 +11534,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11557,7 +11557,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11580,7 +11580,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11603,7 +11603,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11626,7 +11626,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11649,7 +11649,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11672,7 +11672,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11695,7 +11695,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11718,7 +11718,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11741,7 +11741,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11764,7 +11764,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11787,7 +11787,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11810,7 +11810,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11833,7 +11833,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11856,7 +11856,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11879,7 +11879,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11902,7 +11902,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 -- ==============================================================
 -- PAQUIES
 db.estudiantes.insert({
@@ -11927,7 +11927,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11950,7 +11950,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11973,7 +11973,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -11996,7 +11996,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12019,7 +12019,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12042,7 +12042,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12065,7 +12065,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12088,7 +12088,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12111,7 +12111,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12134,7 +12134,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12157,7 +12157,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12180,7 +12180,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12203,7 +12203,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12226,7 +12226,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12249,7 +12249,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12272,7 +12272,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12295,7 +12295,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12318,7 +12318,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12341,7 +12341,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12364,7 +12364,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12387,7 +12387,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 -- =================================================================================================================
 -- SEDE EL TOBO
 db.estudiantes.insert({
@@ -12412,7 +12412,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12435,7 +12435,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12458,7 +12458,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12481,7 +12481,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12504,7 +12504,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12527,7 +12527,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12550,7 +12550,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12573,7 +12573,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12596,7 +12596,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12619,7 +12619,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12642,7 +12642,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12665,7 +12665,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12688,7 +12688,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12711,7 +12711,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12734,7 +12734,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12757,7 +12757,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12780,7 +12780,7 @@ db.estudiantes.insert({
     est_estado: "RETIRADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12803,7 +12803,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12826,7 +12826,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12849,7 +12849,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12872,7 +12872,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12895,7 +12895,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12918,7 +12918,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12941,7 +12941,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12964,7 +12964,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -12987,7 +12987,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -13010,7 +13010,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -13033,7 +13033,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -13056,7 +13056,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
-})
+});
 -- =================================================================================================================
 -- 
 -- ESTRUCTURA PARA ALMACENAR VOTOS 
@@ -13068,7 +13068,7 @@ db.estudiantes.insert({
 --     vot_personero: ,
 --     vot_representante: ,
 --     vot_fecha: new Date()
--- })
+-- });
 -- 
 -- 
 -- Usuario administrador
@@ -13079,7 +13079,7 @@ db.usuarios.insert({
     usu_sede: "",
     usu_grado: "",
     usu_rol: "ADMINISTRADOR"
-})
+});
 -- Usuarios de
 db.usuarios.insert({
     usu_ID : "12265789",
@@ -13088,7 +13088,7 @@ db.usuarios.insert({
     usu_sede: "CASCAJAL",
     usu_grado: "OCTAVO",
     usu_rol: "JURADO"
-})
+});
 db.usuarios.insert({
     usu_ID : "36453789",
     usu_contraseña: "36453789",    
@@ -13096,7 +13096,7 @@ db.usuarios.insert({
     usu_sede: "CASCAJAL",
     usu_grado: "SEPTIMO",
     usu_rol: "JURADO"
-})
+});
 db.usuarios.insert({
     usu_ID : "EL TOBO",
     usu_contraseña: "tobo123",    
@@ -13104,39 +13104,7 @@ db.usuarios.insert({
     usu_sede: "EL TOBO",
     usu_grado: "TODOS",
     usu_rol: "JURADO"
-})
-db.usuarios.insert({
-    usu_ID : "LA PIRAGUA",
-    usu_contraseña: "piragua123",    
-    usu_nombre: "PROFE LA PIRAGUA",
-    usu_sede: "LA PIRAGUA",
-    usu_grado: "TODOS",
-    usu_rol: "JURADO"
-})
-db.usuarios.insert({
-    usu_ID : "MATEO RICO",
-    usu_contraseña: "mateo123",    
-    usu_nombre: "PROFE MATEO RICO",
-    usu_sede: "MATEO RICO",
-    usu_grado: "TODOS",
-    usu_rol: "JURADO"
-})
-db.usuarios.insert({
-    usu_ID : "PAQUIES",
-    usu_contraseña: "paquies123",    
-    usu_nombre: "PROFE PAQUIES",
-    usu_sede: "PAQUIES",
-    usu_grado: "TODOS",
-    usu_rol: "JURADO"
-})
-db.usuarios.insert({
-    usu_ID : "LA FLORIDA",
-    usu_contraseña: "florida123",    
-    usu_nombre: "PROFE LA FLORIDA",
-    usu_sede: "LA FLORIDA",
-    usu_grado: "TODOS",
-    usu_rol: "JURADO"
-})
+});
 db.usuarios.insert({
     usu_ID : "LA ESPERANZA",
     usu_contraseña: "esperanza123",    
@@ -13144,23 +13112,55 @@ db.usuarios.insert({
     usu_sede: "LA ESPERANZA",
     usu_grado: "TODOS",
     usu_rol: "JURADO"
-})
+});
+db.usuarios.insert({
+    usu_ID : "LA PIRAGUA",
+    usu_contraseña: "piragua123",    
+    usu_nombre: "PROFE LA PIRAGUA",
+    usu_sede: "LA PIRAGUA",
+    usu_grado: "TODOS",
+    usu_rol: "JURADO"
+});
+db.usuarios.insert({
+    usu_ID : "MATEO RICO",
+    usu_contraseña: "mateo123",    
+    usu_nombre: "PROFE MATEO RICO",
+    usu_sede: "MATEO RICO",
+    usu_grado: "TODOS",
+    usu_rol: "JURADO"
+});
+db.usuarios.insert({
+    usu_ID : "PAQUIES",
+    usu_contraseña: "paquies123",    
+    usu_nombre: "PROFE PAQUIES",
+    usu_sede: "PAQUIES",
+    usu_grado: "TODOS",
+    usu_rol: "JURADO"
+});
+db.usuarios.insert({
+    usu_ID : "LA FLORIDA",
+    usu_contraseña: "florida123",    
+    usu_nombre: "PROFE LA FLORIDA",
+    usu_sede: "LA FLORIDA",
+    usu_grado: "TODOS",
+    usu_rol: "JURADO"
+});
 
 
 
 -- =================================================================================================================
 -- Remover los usuarios
-db.usuarios.remove({})  // OJO
+db.usuarios.remove({});  // OJO
 
-db.votaciones.remove({})
-db.votantes.remove({})
+db.votaciones.remove({});
+db.votantes.remove({});
 
 
 -- =================================================================================================================
  -- Consultar estudiantes
-db.estudiantes.find({}, {_id:0, Doc:1, est_primer_nombre:1, est_primer_apellido:1, est_segundo_apellido:1})
+db.estudiantes.find({}, {_id:0, Doc:1, est_primer_nombre:1, est_primer_apellido:1, est_segundo_apellido:1});
 -- Consultar por grado
-db.estudiantes.find({"est_grado":"ONCE"}, {_id:0, Doc:1, est_primer_nombre:1, est_primer_apellido:1, est_segundo_apellido:1})
+db.estudiantes.find({"est_grado":"ONCE"}, {_id:0, Doc:1, est_primer_nombre:1, est_primer_apellido:1, est_segundo_apellido:1});
 
 
 -- ==========================================
