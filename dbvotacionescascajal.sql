@@ -13098,7 +13098,7 @@ db.usuarios.insert({
     usu_rol: "JURADO"
 });
 db.usuarios.insert({
-    usu_ID : "EL TOBO",
+    usu_ID : "tobo",
     usu_contraseña: "tobo123",    
     usu_nombre: "PROFE EL TOBO",
     usu_sede: "EL TOBO",
@@ -13106,7 +13106,7 @@ db.usuarios.insert({
     usu_rol: "JURADO"
 });
 db.usuarios.insert({
-    usu_ID : "LA ESPERANZA",
+    usu_ID : "laesperanza",
     usu_contraseña: "esperanza123",    
     usu_nombre: "PROFE LA ESPERANZA",
     usu_sede: "LA ESPERANZA",
@@ -13114,7 +13114,7 @@ db.usuarios.insert({
     usu_rol: "JURADO"
 });
 db.usuarios.insert({
-    usu_ID : "LA PIRAGUA",
+    usu_ID : "lapiragua",
     usu_contraseña: "piragua123",    
     usu_nombre: "PROFE LA PIRAGUA",
     usu_sede: "LA PIRAGUA",
@@ -13122,7 +13122,7 @@ db.usuarios.insert({
     usu_rol: "JURADO"
 });
 db.usuarios.insert({
-    usu_ID : "MATEO RICO",
+    usu_ID : "mateorico",
     usu_contraseña: "mateo123",    
     usu_nombre: "PROFE MATEO RICO",
     usu_sede: "MATEO RICO",
@@ -13130,7 +13130,7 @@ db.usuarios.insert({
     usu_rol: "JURADO"
 });
 db.usuarios.insert({
-    usu_ID : "PAQUIES",
+    usu_ID : "paquies",
     usu_contraseña: "paquies123",    
     usu_nombre: "PROFE PAQUIES",
     usu_sede: "PAQUIES",
@@ -13138,7 +13138,7 @@ db.usuarios.insert({
     usu_rol: "JURADO"
 });
 db.usuarios.insert({
-    usu_ID : "LA FLORIDA",
+    usu_ID : "laflorida",
     usu_contraseña: "florida123",    
     usu_nombre: "PROFE LA FLORIDA",
     usu_sede: "LA FLORIDA",

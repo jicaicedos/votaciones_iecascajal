@@ -101,6 +101,12 @@ h4, h6 {
 	font-size: 36px;
 	font-weight: bold;
 	border-radius: 5px;
+	color: #70A0B2;
+}
+
+.btnVotarPersonero:hover {
+	background: #FAC40A;
+	color: white;
 }
 
 .yavoto {
