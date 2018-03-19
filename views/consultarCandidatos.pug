@@ -3,7 +3,6 @@ extends ./layoutAdministrador.pug
 block contenido
 	div(class="container justify-content-center")
 		div(class="col-sm-12")
-			h3 Listado de candidatos
 			if mensajeOK == "ERROR"
 				h5= mensaje
 			else
@@ -11,28 +10,61 @@ block contenido
 					h5= mensaje
 				else
 					if mensajeOK = "OK"
+						//- Candidatos a personeros
 						div(class="row")
 							div(class="col-sm-12")
+								h3 Listado de personeros
 								table(class="table table-striped table-bordered table-responsive")
 									thead(class="thead-light")
 										tr(class="centrar")
-											th(class="th-personero") Documento de identidad
-											th(class="th-personero") Primer nombre
-											th(class="th-personero") Segundo nombre
-											th(class="th-personero") Primer apellido
-											th(class="th-personero") Segundo apellido
-											th(class="th-personero") Grado
-											th(class="th-personero") Grupo
-											th(class="th-personero") Tipo candidato
+											th(class="th-candidato") Documento de identidad
+											th(class="th-candidato") Primer nombre
+											th(class="th-candidato") Segundo nombre
+											th(class="th-candidato") Primer apellido
+											th(class="th-candidato") Segundo apellido
+											th(class="th-candidato") Grado
+											th(class="th-candidato") Grupo
+											th(class="th-candidato") Tipo candidato
+											th(class="th-candidato") No. Tarjetón
 									tbody
 										for candidato in candidatos
-											tr
-												td(class="td-personero")= candidato.est_doc
-												td(class="td-personero")= candidato.est_primer_nombre
-												td(class="td-personero")= candidato.est_segundo_nombre
-												td(class="td-personero")= candidato.est_primer_apellido
-												td(class="td-personero")= candidato.est_segundo_apellido
-												td(class="td-personero")= candidato.est_grado
-												td(class="td-personero")= candidato.est_grupo
-												td(class="td-personero")= candidato.est_tipo_candidato
-				
+											if candidato.est_tipo_candidato == "personero"
+												tr
+													td(class="td-personero")= candidato.est_doc
+													td(class="td-personero")= candidato.est_primer_nombre
+													td(class="td-personero")= candidato.est_segundo_nombre
+													td(class="td-personero")= candidato.est_primer_apellido
+													td(class="td-personero")= candidato.est_segundo_apellido
+													td(class="td-personero")= candidato.est_grado
+													td(class="td-personero")= candidato.est_grupo
+													td(class="td-personero")= candidato.est_tipo_candidato
+													td(class="td-personero centrar")= candidato.est_num_tarjeton
+						//- Candidatos a respresentantes
+						div(class="row")
+							div(class="col-sm-12")
+								h3 Listado de representantes
+								table(class="table table-striped table-bordered table-responsive")
+									thead(class="thead-light")
+										tr(class="centrar")
+											th(class="th-candidato") Documento de identidad
+											th(class="th-candidato") Primer nombre
+											th(class="th-candidato") Segundo nombre
+											th(class="th-candidato") Primer apellido
+											th(class="th-candidato") Segundo apellido
+											th(class="th-candidato") Grado
+											th(class="th-candidato") Grupo
+											th(class="th-candidato") Tipo candidato
+											th(class="th-candidato") No. Tarjetón
+									tbody
+										for candidato in candidatos
+											if candidato.est_tipo_candidato == "representante"
+												tr
+													td(class="td-personero")= candidato.est_doc
+													td(class="td-personero")= candidato.est_primer_nombre
+													td(class="td-personero")= candidato.est_segundo_nombre
+													td(class="td-personero")= candidato.est_primer_apellido
+													td(class="td-personero")= candidato.est_segundo_apellido
+													td(class="td-personero")= candidato.est_grado
+													td(class="td-personero")= candidato.est_grupo
+													td(class="td-personero")= candidato.est_tipo_candidato
+													td(class="td-personero centrar")= candidato.est_num_tarjeton

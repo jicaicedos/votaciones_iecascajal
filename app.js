@@ -26,7 +26,7 @@ var ids_estudiantes_ya_votaron = []
 var estudiantes = []
 var registros_a_bloquear = []
 
-var estudiantePersonero 	// Variable para almacenar temporalmente el estudiante como personero => adicionarPersonero
+var estudianteCandidato 	// Variable para almacenar temporalmente el estudiante como personero => adicionarPersonero
 
 
 
@@ -48,7 +48,6 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 // Ruta a el formulario para adicionar nuevo estudiante
 app.get("/adicionarEstudiante", (req, res) => {
-	console.log("GET -> adicionarEstudiante")
 	res.render("adicionarEstudiante")
 })
 
@@ -57,7 +56,6 @@ app.get("/adicionarEstudiante", (req, res) => {
 ================================================================== */
 // 
 app.get("/administrador", (req, res) => {
-	console.log("GET -> administrador")
 	res.render("administrador")
 })
 
@@ -65,8 +63,6 @@ app.get("/administrador", (req, res) => {
 // Pagina inicial: index
 // 
 app.post("/", (req, res) => {
-	console.log("POST /")
-
 	Usuario.
 	find({"usu_ID": req.body.idUsuario, "usu_contraseña": req.body.claveUsuario}).
 	select( {usu_nombre:1, usu_sede:1, usu_grado:1, usu_rol:1}).
@@ -103,7 +99,6 @@ app.post("/", (req, res) => {
 })
 
 app.get("/", (req, res) => {
-	console.log("GET -> /")
 	res.render("index")
 })
 
@@ -125,93 +120,114 @@ app.get("/consultarEstudianteParaCandidato", (req, res) => {
 })
 
 app.post("/consultarEstudianteParaCandidato", (req, res) => {
-	let estudiante
-	let idEstudiante = req.body.idEstudiante
+	var mensaje
+	var idEstudiante = req.body.idEstudiante	
 
 	Estudiante.
 	find({"est_doc": idEstudiante}).
-	select({
-		_id:0, 
-		est_anio:1,
-		est_secretaria:1,
-		est_dane_ie:1,
-		est_nombre_ie:1,
-	    est_dane_sede:1,
-	    est_nombre_sede:1,
-	    est_jornada:1,
-	    est_calendario:1,
-		est_grado:1, 
-		est_sector:1,
-		est_grupo:1,
-		est_modelo_educativo:1,
-		est_tipo_identificacion:1, 
-		est_doc:1, 
-		est_primer_apellido:1, 
-		est_segundo_apellido:1, 
-		est_primer_nombre:1, 
-		est_segundo_nombre:1, 
-		est_estado:1,
-		est_matricula_contratada:1, 
-		est_fuente_recursos:1
-	}).
-	exec( (error, docs) => {
-		estudiantePersonero = docs[0]
-		if( !estudiantePersonero ) {		
-			let mensaje = "El estudiante no se encuentra registrado."
-			res.render("adicionarCandidato", {mensaje})
+	select( {est_doc:1} ).
+	exec( (error, docs) => { 
+		// 1. Verificar que el estudiante está matriculado
+		if( docs.length == 1 ) { 
+			Candidato.
+			find( {"est_doc": idEstudiante} ).
+			select().
+			exec( (error, docs) => { 
+				// 2. Verificar si el candidato ya es un(a) personero(a)/representante
+				// == 0 No es candidato
+				if( docs.length == 0 ) { 
+					// Verificar disponibilidad de número de tarjetón
+
+
+					Estudiante.
+					find({"est_doc": idEstudiante}).
+					select({
+						est_anio: 1, est_secretaria: 1, est_dane_ie: 1, est_nombre_ie: 1,	
+						est_dane_sede: 1, est_nombre_sede: 1, est_jornada: 1, est_calendario: 1,
+						est_grado: 1, est_sector: 1, est_grupo: 1, est_modelo_educativo: 1,
+						est_tipo_identificacion: 1, est_doc: 1, est_primer_apellido: 1,
+						est_segundo_apellido: 1, est_primer_nombre: 1, est_segundo_nombre: 1,
+						est_estado: 1, est_matricula_contratada: 1, est_fuente_recursos: 1
+					}).
+					exec( (error, docs) => {
+						estudianteCandidato = docs[0]
+						res.render("consultarEstudianteParaCandidato", {estudianteCandidato})
+					})
+
+				} else {
+					mensaje = "Este(a) estudiante ya tiene candidatura"
+					res.render("adicionarCandidato", {mensaje})
+				}
+			})
 		} else {
-			res.render("consultarEstudianteParaCandidato", {estudiantePersonero} )
+			mensaje = "Este(a) estudiante no está matriculado en la Institución Educativa."
+			res.render("adicionarCandidato", {mensaje})			
 		}
 	})
 })
 
 app.post("/finalAdicionarCandidato", (req, res) => {
+	let grado = estudianteCandidato.est_grado
+	let grupo = estudianteCandidato.est_grupo
+	let number_tarjeton = req.body.numeroTarjeton
+
 	var est_candidato = new Candidato({
-		est_anio: estudiantePersonero.est_anio,
-		est_secretaria: estudiantePersonero.est_secretaria,
-		est_dane_ie: estudiantePersonero.est_dane_ie,
-		est_nombre_ie: estudiantePersonero.est_nombre_ie,
-		est_dane_sede: estudiantePersonero.est_dane_sede,
-		est_nombre_sede: estudiantePersonero.est_nombre_sede,
-		est_jornada: estudiantePersonero.est_jornada,
-		est_calendario: estudiantePersonero.est_calendario,
-		est_grado: estudiantePersonero.est_grado,
-		est_sector: estudiantePersonero.est_sector,
-		est_grupo: estudiantePersonero.est_grupo,
-		est_modelo_educativo: estudiantePersonero.est_modelo_educativo,
-		est_tipo_identificacion: estudiantePersonero.est_tipo_identificacion,
-		est_doc: estudiantePersonero.est_doc,
-		est_primer_apellido: estudiantePersonero.est_primer_apellido,
-		est_segundo_apellido: estudiantePersonero.est_segundo_apellido,
-		est_primer_nombre: estudiantePersonero.est_primer_nombre,
-		est_segundo_nombre: estudiantePersonero.est_segundo_nombre,
-		est_estado: estudiantePersonero.est_estado,
-		est_matricula_contratada: estudiantePersonero.est_matricula_contratada,
-		est_fuente_recursos: estudiantePersonero.est_fuente_recursos,
-		est_tipo_candidato: req.body.tipo_candidato,
-		est_num_tarjeton: req.body.numeroTarjeton,
-		est_foto: req.body.fotoEstudiante
-	})
+			est_anio: estudianteCandidato.est_anio,
+			est_secretaria: estudianteCandidato.est_secretaria,
+			est_dane_ie: estudianteCandidato.est_dane_ie,
+			est_nombre_ie: estudianteCandidato.est_nombre_ie,
+			est_dane_sede: estudianteCandidato.est_dane_sede,
+			est_nombre_sede: estudianteCandidato.est_nombre_sede,
+			est_jornada: estudianteCandidato.est_jornada,
+			est_calendario: estudianteCandidato.est_calendario,
+			est_grado: estudianteCandidato.est_grado,
+			est_sector: estudianteCandidato.est_sector,
+			est_grupo: estudianteCandidato.est_grupo,
+			est_modelo_educativo: estudianteCandidato.est_modelo_educativo,
+			est_tipo_identificacion: estudianteCandidato.est_tipo_identificacion,
+			est_doc: estudianteCandidato.est_doc,
+			est_primer_apellido: estudianteCandidato.est_primer_apellido,
+			est_segundo_apellido: estudianteCandidato.est_segundo_apellido,
+			est_primer_nombre: estudianteCandidato.est_primer_nombre,
+			est_segundo_nombre: estudianteCandidato.est_segundo_nombre,
+			est_estado: estudianteCandidato.est_estado,
+			est_matricula_contratada: estudianteCandidato.est_matricula_contratada,
+			est_fuente_recursos: estudianteCandidato.est_fuente_recursos,
+			est_tipo_candidato: req.body.tipo_candidato,
+			est_num_tarjeton: req.body.numeroTarjeton,
+			est_foto: req.body.fotoEstudiante
+		})
 
-	est_candidato.save().then( (est) => {
-		res.render("finalAdicionarCandidato")
-	}, (error) => {
-		let mensaje = "No se guardó el registro, por favor intentarlo de nuevo"
-		res.render("finalAdicionarCandidato", {mensaje})
-	})
 
+	Candidato.
+	find({"est_grado":grado, "est_grupo":grupo, "est_num_tarjeton":number_tarjeton}).
+	select({est_grado:1, est_grupo:1, est_num_tarjeton:1}).
+	exec( (error, docs) => {
+		if( docs.length >= 1 ) {
+			mensaje = "Ya existe un candidato del mismo grado y grupo con el número de tarjetón seleccionado"
+			res.render("adicionarCandidato", {mensaje})
+		}
+		else {	
+			est_candidato.save().then( (est) => {
+				res.render("finalAdicionarCandidato")
+			}, (error) => {
+				let mensaje = "No se guardó el registro, por favor intentarlo de nuevo"
+				res.render("finalAdicionarCandidato", {mensaje})
+			})
+		}
+
+	})
 })
 
 // ===========================================================================
 // Consultar estudiante para votar
 // 
-app.post("/consultarEstudiantes", (req, res) => {
-	console.log("POST -> consultarEstudiantes: Listado de estudiantes")
-})
+// app.post("/consultarEstudiantes", (req, res) => {
+// 	console.log("POST -> consultarEstudiantes: Listado de estudiantes")
+// })
 
 // Consultar estudiantes SOLO IE CASCAJAL
 app.get("/consultarEstudiantes", (req, res) => {
-	console.log("GET -> consultarEstudiantes: Listado de estudiantes")
 	Estudiante.
 	find({}).
 	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
@@ -222,7 +238,6 @@ app.get("/consultarEstudiantes", (req, res) => {
 })
 
 app.get("/estudiantesIECascajal", (req, res) => {
-	console.log("GET -> estudiantesIECascajal: Listado de estudiantes")
 	Estudiante.
 	find({}).
 	select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
@@ -239,6 +254,7 @@ app.get("/consultarCandidatos", (req, res) => {
 
 	Candidato.
 	find().
+	sort({est_grupo:1, est_num_tarjeton:1}).
 	exec( (error, docs) => {
 		let candidatos = docs
 		if( docs.length == 0 ) {
@@ -256,9 +272,6 @@ app.get("/consultarCandidatos", (req, res) => {
 	})
 })
 
-
-
-
 // ============================================================================
 // Votar en la I.E. Cascajal
 app.get("/sedeIECascajal", (req, res) => {
@@ -266,12 +279,10 @@ app.get("/sedeIECascajal", (req, res) => {
 })
 
 app.get("/votarIECascajal", (req, res) => {
-	console.log("GET -> votar IECascajal" + req.body.gradosIECascajal)
 	res.render("votarIECascajal")
 })
 
 app.post("/votarIECascajal", (req, res) => {
-
 	nom_sede = "CASCAJAL"
 	num_grado_estudiante = req.body.gradosIECascajal
 

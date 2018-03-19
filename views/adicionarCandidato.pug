@@ -3,14 +3,15 @@ extends ./layoutAdministrador.pug
 block contenido
 	div(class="container")
 		div(class="col-sm-12")
-		h3 Adicionar candidato
-		form(action="/consultarEstudianteParaCandidato" method="POST")
-			br
-			div(class="row")
-				p Buscar por número de identificación
-				div(class="col-sm-4")
-					input(type="number" name="idEstudiante" placeholder="Ej: 1234567" class="form-control" required)
-				div(class="col-sm-2")
-					input(type="submit" value="Buscar" class="form-control btn-primary")
-		div(class="separar")
-		h5= mensaje
+			h3 Adicionar candidato
+			form(action="/consultarEstudianteParaCandidato" method="POST")
+				br
+				div(class="row")
+					p Buscar por número de identificación
+					div(class="col-sm-4")
+						input(type="number" name="idEstudiante" placeholder="Ej: 1234567" class="form-control" required autofocus)
+					div(class="col-sm-2")
+						input(type="submit" value="Buscar" class="form-control btn-primary")
+			div(class="separar")
+			div(class="separar")
+			h5= mensaje
