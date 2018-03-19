@@ -6,6 +6,7 @@ var Estudiante = require("./models/estudiante").Estudiante
 var Votaciones = require("./models/votaciones").Votaciones
 var Votante = require("./models/votante").Votante
 var Usuario = require("./models/usuario").Usuario
+var Candidato  = require("./models/candidato").Candidato
 
 /*	================================================================
 				Inicio de la aplicación : Main
@@ -24,6 +25,8 @@ var num_representante		// Guarda el número del representante votado
 var ids_estudiantes_ya_votaron = []
 var estudiantes = []
 var registros_a_bloquear = []
+
+var estudiantePersonero 	// Variable para almacenar temporalmente el estudiante como personero => adicionarPersonero
 
 
 
@@ -64,9 +67,11 @@ app.get("/administrador", (req, res) => {
 app.post("/", (req, res) => {
 	console.log("POST /")
 
-	Usuario.find({"usu_ID": req.body.idUsuario, "usu_contraseña": req.body.claveUsuario}, "usu_nombre usu_sede usu_grado usu_rol", (error, docs) => {
+	Usuario.
+	find({"usu_ID": req.body.idUsuario, "usu_contraseña": req.body.claveUsuario}).
+	select( {usu_nombre:1, usu_sede:1, usu_grado:1, usu_rol:1}).
+	exec( (error, docs) => {
 		let mensaje
-		console.log(docs)
 		if( docs.length==0 ) {
 			mensaje = "Usuario o contraseña no coinciden"
 			res.render("index", {mensaje})
@@ -104,9 +109,99 @@ app.get("/", (req, res) => {
 
 app.get("/reporteVotacionTobo", (req, res) => {
 	// Votaciones.
-	Votaciones
 	res.render("reporteVotacionTobo")
 })
+// ===========================================================================
+// Gestión de candidatos
+
+
+// Adicionar candidato a personero
+app.get("/adicionarCandidato", (req, res) => {
+	res.render("adicionarCandidato")
+})
+
+app.get("/consultarEstudianteParaCandidato", (req, res) => {
+	res.render("consultarEstudianteParaCandidato")
+})
+
+app.post("/consultarEstudianteParaCandidato", (req, res) => {
+	let estudiante
+	let idEstudiante = req.body.idEstudiante
+
+	Estudiante.
+	find({"est_doc": idEstudiante}).
+	select({
+		_id:0, 
+		est_anio:1,
+		est_secretaria:1,
+		est_dane_ie:1,
+		est_nombre_ie:1,
+	    est_dane_sede:1,
+	    est_nombre_sede:1,
+	    est_jornada:1,
+	    est_calendario:1,
+		est_grado:1, 
+		est_sector:1,
+		est_grupo:1,
+		est_modelo_educativo:1,
+		est_tipo_identificacion:1, 
+		est_doc:1, 
+		est_primer_apellido:1, 
+		est_segundo_apellido:1, 
+		est_primer_nombre:1, 
+		est_segundo_nombre:1, 
+		est_estado:1,
+		est_matricula_contratada:1, 
+		est_fuente_recursos:1
+	}).
+	exec( (error, docs) => {
+		estudiantePersonero = docs[0]
+		if( !estudiantePersonero ) {		
+			let mensaje = "El estudiante no se encuentra registrado."
+			res.render("adicionarCandidato", {mensaje})
+		} else {
+			res.render("consultarEstudianteParaCandidato", {estudiantePersonero} )
+		}
+	})
+})
+
+app.post("/finalAdicionarCandidato", (req, res) => {
+	var est_candidato = new Candidato({
+		est_anio: estudiantePersonero.est_anio,
+		est_secretaria: estudiantePersonero.est_secretaria,
+		est_dane_ie: estudiantePersonero.est_dane_ie,
+		est_nombre_ie: estudiantePersonero.est_nombre_ie,
+		est_dane_sede: estudiantePersonero.est_dane_sede,
+		est_nombre_sede: estudiantePersonero.est_nombre_sede,
+		est_jornada: estudiantePersonero.est_jornada,
+		est_calendario: estudiantePersonero.est_calendario,
+		est_grado: estudiantePersonero.est_grado,
+		est_sector: estudiantePersonero.est_sector,
+		est_grupo: estudiantePersonero.est_grupo,
+		est_modelo_educativo: estudiantePersonero.est_modelo_educativo,
+		est_tipo_identificacion: estudiantePersonero.est_tipo_identificacion,
+		est_doc: estudiantePersonero.est_doc,
+		est_primer_apellido: estudiantePersonero.est_primer_apellido,
+		est_segundo_apellido: estudiantePersonero.est_segundo_apellido,
+		est_primer_nombre: estudiantePersonero.est_primer_nombre,
+		est_segundo_nombre: estudiantePersonero.est_segundo_nombre,
+		est_estado: estudiantePersonero.est_estado,
+		est_matricula_contratada: estudiantePersonero.est_matricula_contratada,
+		est_fuente_recursos: estudiantePersonero.est_fuente_recursos,
+		est_tipo_candidato: req.body.tipo_candidato,
+		est_num_tarjeton: req.body.numeroTarjeton,
+		est_foto: req.body.fotoEstudiante
+	})
+
+	est_candidato.save().then( (est) => {
+		res.render("finalAdicionarCandidato")
+	}, (error) => {
+		let mensaje = "No se guardó el registro, por favor intentarlo de nuevo"
+		res.render("finalAdicionarCandidato", {mensaje})
+	})
+
+})
+
 // ===========================================================================
 // Consultar estudiante para votar
 // 
@@ -136,6 +231,33 @@ app.get("/estudiantesIECascajal", (req, res) => {
 		res.render("estudiantesIECascajal", {estudiantes} )
 	})
 })
+
+// ============================================================================
+// Consultar candidatos
+app.get("/consultarCandidatos", (req, res) => {	
+	let mensaje, mensajeOK
+
+	Candidato.
+	find().
+	exec( (error, docs) => {
+		let candidatos = docs
+		if( docs.length == 0 ) {
+			mensaje = "No hay candidatos inscritos"
+			mensajeOK = "VACIO"
+			res.render("consultarCandidatos", {mensaje})
+		} else {
+			mensajeOK = "OK"
+			res.render("consultarCandidatos", {candidatos, mensajeOK})
+		}		
+	}, (error) => {
+		mensajeOK = "ERROR"
+		mensaje = "No se pudo leer los datos de los candidatos, por favor intentar nuevamente"		
+		res.render("consultarCandidatos", {mensaje} )
+	})
+})
+
+
+
 
 // ============================================================================
 // Votar en la I.E. Cascajal

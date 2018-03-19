@@ -1,0 +1,17 @@
+extends ./layoutAdministrador
+
+block contenido
+	div(class="container")
+		div(class="col-sm-8")
+		div(class="separar")
+		h1 Finalizar adición candidato
+		div(class="separar")
+		h5= mensaje
+		div(class="separar")
+		div(class="separar")
+		div(class="row")
+			div(class="col-sm-2")
+				a(href="/adicionarCandidato" class="btn btn-secondary") Agregar más
+			div(class="col-sm-2")
+				form(action="/administrador")
+					input(type="submit" value="Terminar" class="btn btn-primary form-control")

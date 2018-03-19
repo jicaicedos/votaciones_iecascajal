@@ -1,12 +1,12 @@
 /*
-	Modelo para la entidad Estudiante
+	Modelo para la entidad Personero
 */
-var mongoose = require('mongoose')
+var mongoose = require("mongoose")
 var Schema = mongoose.Schema;
 
-mongoose.connect('mongodb://localhost/dbvotacionescascajal')
+mongoose.connect("mongodb://localhost/dbvotacionescascajal")
 
-var estudiante_schema = new Schema ({
+var candidato_schema = new Schema ({
 	est_anio: {type: Number},
 	est_secretaria: {type: String, maxlength: [100, "el nombre de la secretaría no puede exceder los 30 caracteres"]},
 	est_dane_ie: {type: Number, required: true},
@@ -27,9 +27,12 @@ var estudiante_schema = new Schema ({
 	est_segundo_nombre: {type: String, maxlength: 30},
 	est_estado: {type: String, maxlength: 30},
 	est_matricula_contratada: {type: String, maxlength:20},
-	est_fuente_recursos: {type: String, maxlength:20}
+	est_fuente_recursos: {type: String, maxlength:20},
+	est_tipo_candidato: {type: String, required:true, maxlength: 30},
+	est_num_tarjeton: {type: Number, required:true},
+	est_foto: {type: String, required:true, maxlength:400}
 });
 
-var Estudiante = mongoose.model('Estudiante', estudiante_schema)
+var Candidato = mongoose.model("Candidato", candidato_schema)
 
-module.exports.Estudiante = Estudiante;
+module.exports.Candidato = Candidato;

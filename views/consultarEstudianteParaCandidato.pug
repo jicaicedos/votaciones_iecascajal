@@ -1,0 +1,62 @@
+extends ./layoutAdministrador.pug
+
+block contenido
+	div(class="container justify-content-center")
+		div(class="col-sm-12")
+		h5= estudiantePersonero.est_anio
+		div(class="row")
+			div(class="col-sm-12")
+				table(class="table table-striped table-bordered table-responsive")
+					thead(class="thead-light")
+						tr(class="centrar")
+							th(class="th-personero") Documento de identidad
+							th(class="th-personero") Primer apellido
+							th(class="th-personero") Segundo apellido
+							th(class="th-personero") Primer nombre
+							th(class="th-personero") Segundo nombre
+							th(class="th-personero") Grado
+							th(class="th-personero") Grupo
+							th(class="th-personero") Año
+					tbody
+						tr
+							td(class="td-personero")= estudiantePersonero.est_doc
+							td(class="td-personero")= estudiantePersonero.est_primer_apellido
+							td(class="td-personero")= estudiantePersonero.est_segundo_apellido
+							td(class="td-personero")= estudiantePersonero.est_primer_nombre
+							td(class="td-personero")= estudiantePersonero.est_segundo_nombre
+							td(class="td-personero")= estudiantePersonero.est_grado
+							td(class="td-personero")= estudiantePersonero.est_grupo
+							td(class="td-personero")= estudiantePersonero.est_anio
+		div(class="separar")
+		form(action="/finalAdicionarCandidato" method="POST")
+			div(class="row")
+				div(class="col-sm-4")
+					p Seleccione el tipo de candidato
+					select(name="tipo_candidato" class="form-control")
+						option(value="personero" selected) Personero
+						option(value="representante") Representante
+			div(class="row")
+				div(class="col-sm-4")
+					p Seleccione el número en el tarjetón
+					select(name="numeroTarjeton" class="form-control")
+						option(value="1" selected) Número 1
+						option(value="2") Número 2
+						option(value="3") Número 3
+						option(value="4") Número 4
+						option(value="5") Número 5
+						option(value="6") Número 6
+						option(value="7") Número 7
+						option(value="8") Número 8
+						option(value="9") Número 9
+						option(value="10") Número 10
+			div(class="separar")
+			div(class="row")
+				div(class="col-sm-6")
+					p Foto
+					input(type="file" id="fotoEstudiante" name="fotoEstudiante" class="form-control" required)
+			div(class="separar")
+			div(class="row")
+				div(class="col-sm-1")
+					a(href="/adicionarCandidato" class="btn btn-secondary") Cancelar
+				div(class="col-sm-1")
+					input(type="submit" value="Adicionar" class="btn btn-primary")

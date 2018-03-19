@@ -1,0 +1,38 @@
+extends ./layoutAdministrador.pug
+
+block contenido
+	div(class="container justify-content-center")
+		div(class="col-sm-12")
+			h3 Listado de candidatos
+			if mensajeOK == "ERROR"
+				h5= mensaje
+			else
+				if mensajeOK == "VACIO"
+					h5= mensaje
+				else
+					if mensajeOK = "OK"
+						div(class="row")
+							div(class="col-sm-12")
+								table(class="table table-striped table-bordered table-responsive")
+									thead(class="thead-light")
+										tr(class="centrar")
+											th(class="th-personero") Documento de identidad
+											th(class="th-personero") Primer nombre
+											th(class="th-personero") Segundo nombre
+											th(class="th-personero") Primer apellido
+											th(class="th-personero") Segundo apellido
+											th(class="th-personero") Grado
+											th(class="th-personero") Grupo
+											th(class="th-personero") Tipo candidato
+									tbody
+										for candidato in candidatos
+											tr
+												td(class="td-personero")= candidato.est_doc
+												td(class="td-personero")= candidato.est_primer_nombre
+												td(class="td-personero")= candidato.est_segundo_nombre
+												td(class="td-personero")= candidato.est_primer_apellido
+												td(class="td-personero")= candidato.est_segundo_apellido
+												td(class="td-personero")= candidato.est_grado
+												td(class="td-personero")= candidato.est_grupo
+												td(class="td-personero")= candidato.est_tipo_candidato
+				
