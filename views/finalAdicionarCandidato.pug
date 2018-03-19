@@ -6,7 +6,8 @@ block contenido
 		div(class="separar")
 		h1 Finalizar adición candidato
 		div(class="separar")
-		h5= mensaje
+		if mensaje != "Ya existe un candidato del mismo grado y grupo con el número de tarjetón seleccionado"
+			h5= mensaje
 		div(class="separar")
 		div(class="separar")
 		div(class="row")

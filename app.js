@@ -172,46 +172,46 @@ app.post("/finalAdicionarCandidato", (req, res) => {
 	let number_tarjeton = req.body.numeroTarjeton
 
 	var est_candidato = new Candidato({
-			est_anio: estudianteCandidato.est_anio,
-			est_secretaria: estudianteCandidato.est_secretaria,
-			est_dane_ie: estudianteCandidato.est_dane_ie,
-			est_nombre_ie: estudianteCandidato.est_nombre_ie,
-			est_dane_sede: estudianteCandidato.est_dane_sede,
-			est_nombre_sede: estudianteCandidato.est_nombre_sede,
-			est_jornada: estudianteCandidato.est_jornada,
-			est_calendario: estudianteCandidato.est_calendario,
-			est_grado: estudianteCandidato.est_grado,
-			est_sector: estudianteCandidato.est_sector,
-			est_grupo: estudianteCandidato.est_grupo,
-			est_modelo_educativo: estudianteCandidato.est_modelo_educativo,
-			est_tipo_identificacion: estudianteCandidato.est_tipo_identificacion,
-			est_doc: estudianteCandidato.est_doc,
-			est_primer_apellido: estudianteCandidato.est_primer_apellido,
-			est_segundo_apellido: estudianteCandidato.est_segundo_apellido,
-			est_primer_nombre: estudianteCandidato.est_primer_nombre,
-			est_segundo_nombre: estudianteCandidato.est_segundo_nombre,
-			est_estado: estudianteCandidato.est_estado,
-			est_matricula_contratada: estudianteCandidato.est_matricula_contratada,
-			est_fuente_recursos: estudianteCandidato.est_fuente_recursos,
-			est_tipo_candidato: req.body.tipo_candidato,
-			est_num_tarjeton: req.body.numeroTarjeton,
-			est_foto: req.body.fotoEstudiante
-		})
+		est_anio: estudianteCandidato.est_anio,
+		est_secretaria: estudianteCandidato.est_secretaria,
+		est_dane_ie: estudianteCandidato.est_dane_ie,
+		est_nombre_ie: estudianteCandidato.est_nombre_ie,
+		est_dane_sede: estudianteCandidato.est_dane_sede,
+		est_nombre_sede: estudianteCandidato.est_nombre_sede,
+		est_jornada: estudianteCandidato.est_jornada,
+		est_calendario: estudianteCandidato.est_calendario,
+		est_grado: estudianteCandidato.est_grado,
+		est_sector: estudianteCandidato.est_sector,
+		est_grupo: estudianteCandidato.est_grupo,
+		est_modelo_educativo: estudianteCandidato.est_modelo_educativo,
+		est_tipo_identificacion: estudianteCandidato.est_tipo_identificacion,
+		est_doc: estudianteCandidato.est_doc,
+		est_primer_apellido: estudianteCandidato.est_primer_apellido,
+		est_segundo_apellido: estudianteCandidato.est_segundo_apellido,
+		est_primer_nombre: estudianteCandidato.est_primer_nombre,
+		est_segundo_nombre: estudianteCandidato.est_segundo_nombre,
+		est_estado: estudianteCandidato.est_estado,
+		est_matricula_contratada: estudianteCandidato.est_matricula_contratada,
+		est_fuente_recursos: estudianteCandidato.est_fuente_recursos,
+		est_tipo_candidato: req.body.tipo_candidato,
+		est_num_tarjeton: req.body.numeroTarjeton,
+		est_foto: req.body.fotoEstudiante
+	})
 
 
 	Candidato.
-	find({"est_grado":grado, "est_grupo":grupo, "est_num_tarjeton":number_tarjeton}).
+	find( {"est_grado":grado, "est_grupo":grupo, "est_num_tarjeton":number_tarjeton} ).
 	select({est_grado:1, est_grupo:1, est_num_tarjeton:1}).
 	exec( (error, docs) => {
 		if( docs.length >= 1 ) {
 			mensaje = "Ya existe un candidato del mismo grado y grupo con el número de tarjetón seleccionado"
-			res.render("adicionarCandidato", {mensaje})
+			res.render("consultarEstudianteParaCandidato", {estudianteCandidato, mensaje})
 		}
 		else {	
 			est_candidato.save().then( (est) => {
 				res.render("finalAdicionarCandidato")
 			}, (error) => {
-				let mensaje = "No se guardó el registro, por favor intentarlo de nuevo"
+				let mensaje = "No se guardó el registro, por favor intentarlo de nuevo."
 				res.render("finalAdicionarCandidato", {mensaje})
 			})
 		}

@@ -14,4 +14,5 @@ block contenido
 						input(type="submit" value="Buscar" class="form-control btn-primary")
 			div(class="separar")
 			div(class="separar")
-			h5= mensaje
+			if mensaje != "Ya existe un candidato del mismo grado y grupo con el número de tarjetón seleccionado"
+				h5= mensaje
