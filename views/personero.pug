@@ -8,57 +8,62 @@ block contenido
 		br
 		h3 Personero(a)
 		if nom_sede == "CASCAJAL"
-			div(class="row")
-				div(class="tarjeton")
-					div(class="votarPersonero")
-						form(action="/representanteGrado11" method="POST")
-							input(type="submit" value="1" name="personero" class="btnVotarPersonero")
-					div(class="card" style="width: 12rem;")
-						img(class="card-img-top imagenCard" src="static/imagenes/candidatos/personero/1 - Natalia Correa Sanchez.jpg" alt="Card image cap")
-						div(class="card-body")
-							h5(class="card-title") DIEGO ALBERTO SEMANATE ROMERO
-							p(p class="card-text") Grado 11 A	
+			if conRepresentante == 1
+				div(class="row")
+					for personero in personeros
+						div(class="tarjeton")
+							div(class="votarPersonero")
+								form(action="/representante" method="POST")
+									input(type="submit" value=personero.est_num_tarjeton name="personero" class="btnVotarPersonero")
+							div(class="card" style="width: 12rem;")
+								img(class="card-img-top imagenCard" src="static/imagenes/candidatos/personero/"+personero.est_foto alt="Foto personero")
+								div(class="card-body")
+									h5(class="card-title")= personero.est_primer_nombre + " " + personero.est_segundo_nombre + " " + personero.est_primer_apellido + " " + personero.est_segundo_apellido
+									p(class="card-text")= personero.est_grado + " " + personero.est_grupo
 
-				div(class="tarjeton")
-					div(class="votarPersonero")
-						form(action="/representanteGrado11" method="POST")
-							input(type="submit" value="2" name="personero" class="btnVotarPersonero")
-					div(class="card" style="width: 12rem;")
-						img(class="card-img-top imagenCard" src="static/imagenes/candidatos/personero/2 - Erika Liseth Meneses Campos.jpg" alt="Card image cap")
-						div(class="card-body")
-							h5(class="card-title") ALIX VIVIANA ROJAS SANCHEZ
-							p(p class="card-text") Grado 11 B	
+					div(class="tarjeton")
+						div(class="votarPersonero")
+							form(action="/representante" method="POST")
+								input(type="submit" value="0" name="personero"  class="btnVotarPersonero")
+						div(class="card" style="width: 12rem;")
+							img(class="card-img-top imagenCard" src="static/imagenes/candidatos/voto blanco.jpg" alt="Card image cap")
+							div(class="card-body")
+								h5(class="card-title") VOTO EN BLANCO
+								p(p class="card-text") Vota por mí
+			else
+				div(class="row")
+					for personero in personeros
+						div(class="tarjeton")
+							div(class="votarPersonero")
+								form(action="/finalProcesoVotacion" method="POST")
+									input(type="submit" value=personero.est_num_tarjeton name="personero" class="btnVotarPersonero")
+							div(class="card" style="width: 12rem;")
+								img(class="card-img-top imagenCard" src="static/imagenes/candidatos/personero/"+personero.est_foto alt="Foto personero")
+								div(class="card-body")
+									h5(class="card-title")= personero.est_primer_nombre + " " + personero.est_segundo_nombre + " " + personero.est_primer_apellido + " " + personero.est_segundo_apellido
+									p(class="card-text")= personero.est_grado + " " + personero.est_grupo
 
-				div(class="tarjeton")
-					div(class="votarPersonero")
-						form(action="/representanteGrado11" method="POST")
-							input(type="submit" value="0" name="personero"  class="btnVotarPersonero")
-					div(class="card" style="width: 12rem;")
-						img(class="card-img-top imagenCard" src="static/imagenes/candidatos/voto blanco.jpg" alt="Card image cap")
-						div(class="card-body")
-							h5(class="card-title") VOTO EN BLANCO
-							p(p class="card-text") Vota por mí	
+					div(class="tarjeton")
+						div(class="votarPersonero")
+							form(action="/finalProcesoVotacion" method="POST")
+								input(type="submit" value="0" name="personero"  class="btnVotarPersonero")
+						div(class="card" style="width: 12rem;")
+							img(class="card-img-top imagenCard" src="static/imagenes/candidatos/voto blanco.jpg" alt="Card image cap")
+							div(class="card-body")
+								h5(class="card-title") VOTO EN BLANCO
+								p(p class="card-text") Vota por mí	
 		else
 			div(class="row")
-				div(class="tarjeton")
-					div(class="votarPersonero")
-						form(action="/finalProcesoVotacion" method="POST")
-							input(type="submit" value="1" name="personero" class="btnVotarPersonero")
-					div(class="card" style="width: 12rem;")
-						img(class="card-img-top imagenCard" src="static/imagenes/candidatos/personero/1 - Natalia Correa Sanchez.jpg" alt="Card image cap")
-						div(class="card-body")
-							h5(class="card-title") Natalia Correa Sanchez
-							p(p class="card-text") Grado 11 A	
-
-				div(class="tarjeton")
-					div(class="votarPersonero")
-						form(action="/finalProcesoVotacion" method="POST")
-							input(type="submit" value="2" name="personero" class="btnVotarPersonero")
-					div(class="card" style="width: 12rem;")
-						img(class="card-img-top imagenCard" src="static/imagenes/candidatos/personero/2 - Erika Liseth Meneses Campos.jpg" alt="Card image cap")
-						div(class="card-body")
-							h5(class="card-title") Erika Liseth Meneses Campos
-							p(p class="card-text") Grado 11 B
+				for personero in personeros
+					div(class="tarjeton")
+						div(class="votarPersonero")
+							form(action="/finalProcesoVotacion" method="POST")
+								input(type="submit" value=personero.est_num_tarjeton name="personero" class="btnVotarPersonero")
+						div(class="card" style="width: 12rem;")
+							img(class="card-img-top imagenCard" src="static/imagenes/candidatos/personero/"+personero.est_foto alt="Foto personero")
+							div(class="card-body")
+								h5(class="card-title")= personero.est_primer_nombre + " " + personero.est_segundo_nombre + " " + personero.est_primer_apellido + " " + personero.est_segundo_apellido
+								p(class="card-text")= personero.est_grado + " " + personero.est_grupo
 
 				div(class="tarjeton")
 					div(class="votarPersonero")

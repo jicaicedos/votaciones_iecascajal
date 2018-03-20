@@ -17,11 +17,13 @@ var app = express()
 // Variables globales del sistema
 var nom_sede 				// Guarda el nombre de la sede
 var num_grado_estudiante	// Guarda el grado del estudiante
+var num_grupo				// Guarda el grupo al que pertence el estudiante
 var num_id_estudiante		// Guarda el número de identificación del estudiante
 var num_personero			// Guarda el número del personero votado
 var num_representante		// Guarda el número del representante votado
 
-
+var ruta_foto
+var personeros
 var ids_estudiantes_ya_votaron = []
 var estudiantes = []
 var registros_a_bloquear = []
@@ -170,6 +172,7 @@ app.post("/finalAdicionarCandidato", (req, res) => {
 	let grado = estudianteCandidato.est_grado
 	let grupo = estudianteCandidato.est_grupo
 	let number_tarjeton = req.body.numeroTarjeton
+	let tipo_candidato = req.body.tipo_candidato
 
 	var est_candidato = new Candidato({
 		est_anio: estudianteCandidato.est_anio,
@@ -200,8 +203,8 @@ app.post("/finalAdicionarCandidato", (req, res) => {
 
 
 	Candidato.
-	find( {"est_grado":grado, "est_grupo":grupo, "est_num_tarjeton":number_tarjeton} ).
-	select({est_grado:1, est_grupo:1, est_num_tarjeton:1}).
+	find( {"est_grado":grado, "est_grupo":grupo, "est_num_tarjeton":number_tarjeton, "est_tipo_candidato":tipo_candidato} ).
+	select( {est_grado:1, est_grupo:1, est_num_tarjeton:1, est_tipo_candidato:1} ).
 	exec( (error, docs) => {
 		if( docs.length >= 1 ) {
 			mensaje = "Ya existe un candidato del mismo grado y grupo con el número de tarjetón seleccionado"
@@ -260,7 +263,7 @@ app.get("/consultarCandidatos", (req, res) => {
 		if( docs.length == 0 ) {
 			mensaje = "No hay candidatos inscritos"
 			mensajeOK = "VACIO"
-			res.render("consultarCandidatos", {mensaje})
+			res.render("consultarCandidatos", {mensaje, mensajeOK})
 		} else {
 			mensajeOK = "OK"
 			res.render("consultarCandidatos", {candidatos, mensajeOK})
@@ -268,7 +271,7 @@ app.get("/consultarCandidatos", (req, res) => {
 	}, (error) => {
 		mensajeOK = "ERROR"
 		mensaje = "No se pudo leer los datos de los candidatos, por favor intentar nuevamente"		
-		res.render("consultarCandidatos", {mensaje} )
+		res.render("consultarCandidatos", {mensaje, mensajeOK} )
 	})
 })
 
@@ -308,6 +311,29 @@ app.post("/votarIECascajal", (req, res) => {
 	} else if( req.body.gradosIECascajal=="SEXTO B" ) {
 		Estudiante.
 		find({"est_grupo": 602, "est_nombre_sede": "CASCAJAL"}).
+		select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
+		exec( (error, docs) => {
+			estudiantes = docs
+			registros_a_bloquear = bloquearRegistros(estudiantes, ids_estudiantes_ya_votaron)
+			let sedes = "Listado de estudiantes sede I. E. Cascajal"
+			let volver_a = "/sedeIECascajal"
+			res.render("listarEstudiantesVotacion", {sedes, volver_a, estudiantes, registros_a_bloquear} )
+		})	
+	} else if( req.body.gradosIECascajal=="SEPTIMO A" ) {
+		Estudiante.
+		find({"est_grupo": 701, "est_nombre_sede": "CASCAJAL"}).
+		select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
+		exec( (error, docs) => {
+			estudiantes = docs
+			registros_a_bloquear = bloquearRegistros(estudiantes, ids_estudiantes_ya_votaron)
+			let sedes = "Listado de estudiantes sede I. E. Cascajal"
+			let volver_a = "/sedeIECascajal"
+			res.render("listarEstudiantesVotacion", {sedes, volver_a, estudiantes, registros_a_bloquear} )
+		})			
+
+	} else if( req.body.gradosIECascajal=="SEPTIMO B" ) {
+		Estudiante.
+		find({"est_grupo": 702, "est_nombre_sede": "CASCAJAL"}).
 		select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
 		exec( (error, docs) => {
 			estudiantes = docs
@@ -582,20 +608,69 @@ app.post("/votarSedeMateoRico", (req, res) => {
 // Votar por Personero
 // 
 app.post("/personero", (req, res) => {
-	// console.log("POST -> personero")
-	let est_ID = req.body.documentoIdentidadEstudiante
+	console.log("POST -> personero")
 	num_id_estudiante = req.body.documentoIdentidadEstudiante
-	res.render("personero", {est_ID, nom_sede})
+
+	Estudiante.
+	find({"est_doc":num_id_estudiante}).
+	select({est_grado:1, est_grupo:1}).
+	exec( (error, docs) => {
+		num_grado_estudiante = docs[0].est_grado
+		num_grupo = docs[0].est_grupo
+	})
+
+	// Obtenemos los personeros desde la base de datos
+	Candidato.
+	find({"est_tipo_candidato":"personero"}).
+	sort({est_num_tarjeton:1}).
+	select({
+		est_anio: 1, est_secretaria: 1, est_dane_ie: 1, est_nombre_ie: 1,	
+		est_dane_sede: 1, est_nombre_sede: 1, est_jornada: 1, est_calendario: 1,
+		est_grado: 1, est_sector: 1, est_grupo: 1, est_modelo_educativo: 1,
+		est_tipo_identificacion: 1, est_doc: 1, est_primer_apellido: 1,
+		est_segundo_apellido: 1, est_primer_nombre: 1, est_segundo_nombre: 1,
+		est_estado: 1, est_matricula_contratada: 1, est_fuente_recursos: 1,
+		est_tipo_candidato: 1, est_num_tarjeton: 1, est_foto: 1
+	}).
+	exec( (error, docs) => {
+		personeros = docs
+		// Variable para determinar cuales grados tienen representante
+		let conRepresentante
+		if( num_grupo >= 299 ) {
+			conRepresentante = 1
+			res.render("personero", {personeros, num_id_estudiante, nom_sede, num_grado_estudiante, conRepresentante})
+		} else {
+			conRepresentante = 0
+			res.render("personero", {personeros, num_id_estudiante, nom_sede, num_grado_estudiante, conRepresentante})
+		}		
+	})	
 })
 
 
 // ============================================================================
 // Votar por representante de grado 11
 // 
-app.post("/representanteGrado11", (req, res) => {
-	console.log("GET -> representanteGrado11")
+app.post("/representante", (req, res) => {
 	num_personero = req.body.personero
-	res.render("representanteGrado11")
+
+	// Obtenemos los representantes desde la base de datos
+	Candidato.
+	find({"est_tipo_candidato":"representante", "est_grado":num_grado_estudiante, "est_grupo":num_grupo}).
+	sort({est_num_tarjeton:1}).
+	select({
+		est_anio: 1, est_secretaria: 1, est_dane_ie: 1, est_nombre_ie: 1,	
+		est_dane_sede: 1, est_nombre_sede: 1, est_jornada: 1, est_calendario: 1,
+		est_grado: 1, est_sector: 1, est_grupo: 1, est_modelo_educativo: 1,
+		est_tipo_identificacion: 1, est_doc: 1, est_primer_apellido: 1,
+		est_segundo_apellido: 1, est_primer_nombre: 1, est_segundo_nombre: 1,
+		est_estado: 1, est_matricula_contratada: 1, est_fuente_recursos: 1,
+		est_tipo_candidato: 1, est_num_tarjeton: 1, est_foto: 1
+	}).
+	exec( (error, docs) => {
+		representantes = docs
+		res.render("representante", {representantes, num_grado_estudiante, num_grupo})
+	})
+	// res.render("representante")
 })
 
 // ============================================================================
@@ -604,13 +679,14 @@ app.post("/representanteGrado11", (req, res) => {
 app.post("/finalProcesoVotacion", (req, res) => {
 	console.log("POST -> finalProcesoVotacion")
 
-	if( nom_sede=="CASCAJAL") { // y grado == "TALES"
-		// num_personero = req.body.personero
-		num_representante = req.body.representante11
+	if( nom_sede=="CASCAJAL") { // y grado == "TALES"		
+		num_representante = req.body.representante
 	} else {
 		num_personero = req.body.personero
-		num_representante = 3
+		num_representante = -1
 	}
+
+	console.log("personero: " + num_personero)
 
 	var votaciones = new Votaciones({
 	    vot_sede: nom_sede,
@@ -626,6 +702,8 @@ app.post("/finalProcesoVotacion", (req, res) => {
 	    votante_doc_identificacion: num_id_estudiante,
 	    vot_fecha: new Date()
 	});
+
+	// console.log(votaciones)
 
 	// Guardar en la base de datos de VOTACIONES
 	votaciones.save().then( (est) => {	

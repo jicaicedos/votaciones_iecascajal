@@ -135,6 +135,29 @@ db.estudiantes.insert({
     est_grupo: 602,
     est_modelo_educativo: "POST PRIMARIA",
     est_tipo_identificacion: "TI",
+    est_doc: 1111111111,
+    est_primer_apellido: "ACHURY",
+    est_segundo_apellido: "MOSQUERA",
+    est_primer_nombre: "ANA",
+    est_segundo_nombre: "CATALINA",
+    est_estado: "MATRICULADO",
+    est_matricula_contratada: "N",
+    est_fuente_recursos: "SGP"
+ });
+ db.estudiantes.insert({
+    est_anio: 2018,
+    est_secretaria: "TIMANÁ",
+    est_dane_ie: 241807000079,
+    est_nombre_ie: "IE CASCAJAL",
+    est_dane_sede: 24180700007901,
+    est_nombre_sede: "CASCAJAL",
+    est_jornada: "COMPLETA",
+    est_calendario: "A",
+    est_grado: "SEXTO",
+    est_sector: "OFICIAL",
+    est_grupo: 602,
+    est_modelo_educativo: "POST PRIMARIA",
+    est_tipo_identificacion: "TI",
     est_doc: 1078747799,
     est_primer_apellido: "QUESADA",
     est_segundo_apellido: "BOLAÑOS",
@@ -4962,7 +4985,7 @@ db.estudiantes.insert({
     est_calendario: "A",
     est_grado: "SEXTO",
     est_sector: "OFICIAL",
-    est_grupo: 601,
+    est_grupo: 602,
     est_modelo_educativo: "POST PRIMARIA",
     est_tipo_identificacion: "TI",
     est_doc: 1077845323,
@@ -6273,7 +6296,7 @@ db.estudiantes.insert({
     est_calendario: "A",
     est_grado: "SEPTIMO",
     est_sector: "OFICIAL",
-    est_grupo: 701,
+    est_grupo: 702,
     est_modelo_educativo: "POST PRIMARIA",
     est_tipo_identificacion: "TI",
     est_doc: 1079536838,
@@ -6503,7 +6526,7 @@ db.estudiantes.insert({
     est_calendario: "A",
     est_grado: "SEPTIMO",
     est_sector: "OFICIAL",
-    est_grupo: 701,
+    est_grupo: 702,
     est_modelo_educativo: "POST PRIMARIA",
     est_tipo_identificacion: "TI",
     est_doc: 1083872331,
@@ -6572,7 +6595,7 @@ db.estudiantes.insert({
     est_calendario: "A",
     est_grado: "SEPTIMO",
     est_sector: "OFICIAL",
-    est_grupo: 702,
+    est_grupo: 701,
     est_modelo_educativo: "POST PRIMARIA",
     est_tipo_identificacion: "TI",
     est_doc: 1077845665,
@@ -6833,6 +6856,29 @@ db.estudiantes.insert({
     est_segundo_apellido: "VARGAS",
     est_primer_nombre: "LUIS",
     est_segundo_nombre: "MIGUEL",
+    est_estado: "MATRICULADO",
+    est_matricula_contratada: "N",
+    est_fuente_recursos: "SGP"
+ });
+ db.estudiantes.insert({
+    est_anio: 2018,
+    est_secretaria: "TIMANÁ",
+    est_dane_ie: 241807000079,
+    est_nombre_ie: "IE CASCAJAL",
+    est_dane_sede: 24180700007901,
+    est_nombre_sede: "CASCAJAL",
+    est_jornada: "ÚNICA",
+    est_calendario: "A",
+    est_grado: "OCTAVO",
+    est_sector: "OFICIAL",
+    est_grupo: 801,
+    est_modelo_educativo: "POST PRIMARIA",
+    est_tipo_identificacion: "TI",
+    est_doc: 1080932088,
+    est_primer_apellido: "CORDOBA",
+    est_segundo_apellido: "ANACONA",
+    est_primer_nombre: "JULIANA",
+    est_segundo_nombre: "ANDREA",
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
@@ -7630,7 +7676,7 @@ db.estudiantes.insert({
     est_calendario: "A",
     est_grado: "OCTAVO",
     est_sector: "OFICIAL",
-    est_grupo: 802,
+    est_grupo: 801,
     est_modelo_educativo: "POST PRIMARIA",
     est_tipo_identificacion: "TI",
     est_doc: 1083869902,
@@ -8009,30 +8055,7 @@ db.estudiantes.insert({
     est_estado: "MATRICULADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
- });
- db.estudiantes.insert({
-    est_anio: 2018,
-    est_secretaria: "TIMANÁ",
-    est_dane_ie: 241807000079,
-    est_nombre_ie: "IE CASCAJAL",
-    est_dane_sede: 24180700007901,
-    est_nombre_sede: "CASCAJAL",
-    est_jornada: "ÚNICA",
-    est_calendario: "A",
-    est_grado: "NOVENO",
-    est_sector: "OFICIAL",
-    est_grupo: 901,
-    est_modelo_educativo: "POST PRIMARIA",
-    est_tipo_identificacion: "TI",
-    est_doc: 1080932088,
-    est_primer_apellido: "CORDOBA",
-    est_segundo_apellido: "ANACONA",
-    est_primer_nombre: "JULIANA",
-    est_segundo_nombre: "ANDREA",
-    est_estado: "MATRICULADO",
-    est_matricula_contratada: "N",
-    est_fuente_recursos: "SGP"
- });
+ }); 
  db.estudiantes.insert({
     est_anio: 2018,
     est_secretaria: "TIMANÁ",
@@ -13057,6 +13080,9 @@ db.estudiantes.insert({
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
 });
+
+db.estudiantes.remove({})
+
 -- =================================================================================================================
 -- 
 -- ESTRUCTURA PARA ALMACENAR VOTOS 
@@ -13155,7 +13181,7 @@ db.usuarios.remove({});  // OJO
 db.votaciones.remove({});
 db.votantes.remove({});
 
-
+db.candidatos.remove({});
 -- =================================================================================================================
  -- Consultar estudiantes
 db.estudiantes.find({}, {_id:0, Doc:1, est_primer_nombre:1, est_primer_apellido:1, est_segundo_apellido:1});

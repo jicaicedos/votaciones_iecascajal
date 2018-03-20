@@ -5,3 +5,5 @@ PRUEBAS DE UNIDAD
 - Verificar que el candidato no repita candidatura (personero o representante)
 - Verificar que el estudiante esté matriculado en la Institución Educativa
 - Verificar que el el candidato tome un número diferente a los ya existentes en el tarjetón
+
+
