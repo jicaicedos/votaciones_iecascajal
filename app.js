@@ -95,7 +95,7 @@ app.post("/", (req, res) => {
 	grados_docente = 0
 	nombre_docente = 0
 
-	
+
 	Usuario.
 	find({"usu_ID": req.body.idUsuario, "usu_contraseña": req.body.claveUsuario}).
 	select( {usu_nombre:1, usu_sede:1, usu_rol:1}).
@@ -358,6 +358,7 @@ app.get("/votarIECascajal", (req, res) => {
 })
 
 app.post("/votarIECascajal", (req, res) => {
+	console.log("post -> votarIECascajal => NUM_GRUPO: "+ num_grupo)
 	nom_sede = "CASCAJAL"
 	num_grado_estudiante = req.body.gradosIECascajal
 
@@ -680,16 +681,8 @@ app.post("/votarSedeMateoRico", (req, res) => {
 // Votar por Personero
 // 
 app.post("/personero", (req, res) => {
-	console.log("POST -> personero")
+	// console.log("POST -> personero")
 	num_id_estudiante = req.body.documentoIdentidadEstudiante
-
-	Estudiante.
-	find({"est_doc":num_id_estudiante}).
-	select({est_grado:1, est_grupo:1}).
-	exec( (error, docs) => {
-		num_grado_estudiante = docs[0].est_grado
-		num_grupo = docs[0].est_grupo
-	})
 
 	// Obtenemos los personeros desde la base de datos
 	Candidato.
@@ -706,15 +699,23 @@ app.post("/personero", (req, res) => {
 	}).
 	exec( (error, docs) => {
 		personeros = docs
-		// Variable para determinar cuales grados tienen representante
-		let conRepresentante
-		if( num_grupo >= 299 ) {
-			conRepresentante = 1
-			res.render("personero", {personeros, num_id_estudiante, nom_sede, num_grado_estudiante, conRepresentante})
-		} else {
-			conRepresentante = 0
-			res.render("personero", {personeros, num_id_estudiante, nom_sede, num_grado_estudiante, conRepresentante})
-		}		
+
+		Estudiante.
+		find({"est_doc":num_id_estudiante}).
+		select({est_grado:1, est_grupo:1}).
+		exec( (error, docs) => {
+			num_grado_estudiante = docs[0].est_grado
+			num_grupo = docs[0].est_grupo		
+			// Variable para determinar cuales grados tienen representante
+			let conRepresentante
+			if( num_grupo >= 299 ) {
+				conRepresentante = 1
+				res.render("personero", {personeros, num_id_estudiante, nom_sede, num_grado_estudiante, conRepresentante})
+			} else {
+				conRepresentante = 0
+				res.render("personero", {personeros, num_id_estudiante, nom_sede, num_grado_estudiante, conRepresentante})
+			}
+		})
 	})	
 })
 
@@ -745,49 +746,6 @@ app.post("/representante", (req, res) => {
 	// res.render("representante")
 })
 
-// ============================================================================
-// Final de votación
-// 
-app.post("/finalProcesoVotacion", (req, res) => {
-	console.log("POST -> finalProcesoVotacion")
-
-	if( nom_sede=="CASCAJAL") { // y grado == "TALES"		
-		num_representante = req.body.representante
-	} else {
-		num_personero = req.body.personero
-		num_representante = -1
-	}
-
-	console.log("personero: " + num_personero)
-
-	var votaciones = new Votaciones({
-	    vot_sede: nom_sede,
-	    vot_grado: num_grado_estudiante,
-	    vot_personero: num_personero,
-	    vot_representante: num_representante,
-	    vot_fecha: new Date()
-	});
-
-	var votante = new Votante({
-	    vot_sede: nom_sede,
-	    vot_grado: num_grado_estudiante,
-	    votante_doc_identificacion: num_id_estudiante,
-	    vot_fecha: new Date()
-	});
-
-	// console.log(votaciones)
-
-	// Guardar en la base de datos de VOTACIONES
-	votaciones.save().then( (est) => {	
-		console.log("Votación guardada correctamente!") 
-	}, (error) => { console.log("Error al escibir en la base de datos. Collection: votaciones") })
-
-	// Guardar en la base de datos de VOTANTES
-	votante.save().then( (est) => {
-		res.render("finalProcesoVotacion", {nom_sede})
-	}, (error) => { res.send("Error al escibir en la base de datos. Collection: votantes") })
-
-})
 
 // ============================================================================
 // 		
@@ -818,6 +776,56 @@ function bloquearRegistros(estudiantes, estudiantes_ya_votaron) {
 	}
 	return regs_a_bloquear
 }
+
+
+
+// ============================================================================
+// Final de votación
+// 
+app.post("/finalProcesoVotacion", (req, res) => {
+	console.log("POST -> finalProcesoVotacion")
+
+	if( nom_sede=="CASCAJAL"  ) { // y grado == "TALES"		
+		if( num_grupo < 300 ) {
+			num_representante = -1
+		} else {
+			num_representante = req.body.representante
+		}		
+	} else {
+		num_personero = req.body.personero
+		num_representante = -1
+	}
+
+	var votaciones = new Votaciones({
+	    vot_sede: nom_sede,
+	    vot_grado: num_grado_estudiante,
+	    vot_personero: num_personero,
+	    vot_representante: num_representante,
+	    vot_fecha: new Date()
+	});
+
+	var votante = new Votante({
+	    vot_sede: nom_sede,
+	    vot_grado: num_grado_estudiante,
+	    votante_doc_identificacion: num_id_estudiante,
+	    vot_fecha: new Date()
+	});
+
+	// console.log(votaciones)
+
+	// Guardar en la base de datos de VOTACIONES
+	votaciones.save().then( (est) => {	
+		console.log("Votación guardada correctamente!") 
+	}, (error) => { console.log("Error al escibir en la base de datos. Collection: votaciones") })
+
+	// Guardar en la base de datos de VOTANTES
+	votante.save().then( (est) => {
+		res.render("finalProcesoVotacion", {nom_sede})
+	}, (error) => { res.send("Error al escibir en la base de datos. Collection: votantes") })
+
+})
+
+
 
 app.listen(8080)
 
