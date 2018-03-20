@@ -13298,6 +13298,29 @@ db.estudiantes.find({}, {_id:0, Doc:1, est_primer_nombre:1, est_primer_apellido:
 db.estudiantes.find({"est_grado":"ONCE"}, {_id:0, Doc:1, est_primer_nombre:1, est_primer_apellido:1, est_segundo_apellido:1});
 
 
+-- ==================================================================================================================
+-- REPORTES
+-- EJEMPLO:  db.votaciones.aggregate([{$group: {_id: "$vot_grupo", "cantidad": {$sum:1}  } }])
+
+-- Votos por personeros 1, 2 y voto en blanco
+db.votaciones.aggregate([{$group: {_id: "$vot_personero", "cantidad": {$sum:1}  } }])
+
+
+-- EJEMPLO
+db.people.aggregate( 
+	{ $sort: {name: 1} },
+	{ $group: { _id: {age: "$age", gender: "$gender" }, count: { $sum: 1 } } }
+);
+
+-- CORRECTA... ESTA ES
+db.votaciones.aggregate(
+	{ $sort: {vot_grupo:-1, vot_representante:1} },
+	{ $group: { _id: {grupo: "$vot_grupo", representante: "$vot_representante" }, cantidad: { $sum: 1 } } }
+);
+
+
+
+
 -- ==========================================
 -- JavaScript
 -- ==========================================
@@ -13306,3 +13329,4 @@ db.estudiantes.find({"est_grado":"ONCE"}, {_id:0, Doc:1, est_primer_nombre:1, es
 -- fecha.toLocaleDateString().replace(/\//g,'/');
 -- 
 -- ==========================================
+

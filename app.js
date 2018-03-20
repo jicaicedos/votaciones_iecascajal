@@ -799,6 +799,7 @@ app.post("/finalProcesoVotacion", (req, res) => {
 	var votaciones = new Votaciones({
 	    vot_sede: nom_sede,
 	    vot_grado: num_grado_estudiante,
+	    vot_grupo: num_grupo,
 	    vot_personero: num_personero,
 	    vot_representante: num_representante,
 	    vot_fecha: new Date()
