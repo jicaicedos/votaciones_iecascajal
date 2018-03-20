@@ -176,9 +176,33 @@ app.get("/", (req, res) => {
 	res.render("index")
 })
 
-app.get("/reporteVotacionTobo", (req, res) => {
-	// Votaciones.
-	res.render("reporteVotacionTobo")
+app.get("/reportes", (req, res) => {
+	var reporte_personeros
+	var reporte_representantes
+
+
+
+	Votaciones.
+	aggregate([
+		{ $sort: {vot_sede:1, vot_grupo:-1, vot_representante:-1} },
+		{ $group: { _id: {sede: "$vot_sede", grupo: "$vot_grupo", representante: "$vot_representante" }, cantidad: { $sum: 1 } } }
+	]).
+	exec( (error, docs) => {
+		reporte_representantes = docs
+		// res.render("reportes", {reporte_representantes})
+	})
+
+	Votaciones.
+	aggregate([
+		{ $sort: {vot_sede:1, vot_personero:-1} },
+		{$group: {_id: {sede: "$vot_sede", personero:"$vot_personero"}, "cantidad": {$sum:1}  } }
+	]).
+	exec( (error, docs) => {
+		reporte_personeros = docs
+		// docs = [{"_id":2,"cantidad":24},{"_id":1,"cantidad":11},{"_id":0,"cantidad":8}]
+		res.render("reportes", {reporte_personeros, reporte_representantes})
+	})
+	
 })
 // ===========================================================================
 // Gestión de candidatos
@@ -358,7 +382,6 @@ app.get("/votarIECascajal", (req, res) => {
 })
 
 app.post("/votarIECascajal", (req, res) => {
-	console.log("post -> votarIECascajal => NUM_GRUPO: "+ num_grupo)
 	nom_sede = "CASCAJAL"
 	num_grado_estudiante = req.body.gradosIECascajal
 

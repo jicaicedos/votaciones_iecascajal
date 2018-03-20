@@ -13303,21 +13303,30 @@ db.estudiantes.find({"est_grado":"ONCE"}, {_id:0, Doc:1, est_primer_nombre:1, es
 -- EJEMPLO:  db.votaciones.aggregate([{$group: {_id: "$vot_grupo", "cantidad": {$sum:1}  } }])
 
 -- Votos por personeros 1, 2 y voto en blanco
-db.votaciones.aggregate([{$group: {_id: "$vot_personero", "cantidad": {$sum:1}  } }])
+-- Version 1
+db.votaciones.aggregate([
+	{ $sort: {vot_personero:-1} },
+	{$group: {_id: "$vot_personero", "cantidad": {$sum:1}  } }
+]);
+-- Version 2
+db.votaciones.aggregate([
+	{ $sort: {vot_sede:1, vot_personero:-1} },
+	{$group: {_id: "$vot_personero", "cantidad": {$sum:1}  } }
+]);
 
-
--- EJEMPLO
-db.people.aggregate( 
-	{ $sort: {name: 1} },
-	{ $group: { _id: {age: "$age", gender: "$gender" }, count: { $sum: 1 } } }
-);
 
 -- CORRECTA... ESTA ES
-db.votaciones.aggregate(
-	{ $sort: {vot_grupo:-1, vot_representante:1} },
+-- Version 1
+db.votaciones.aggregate([
+	{ $sort: {vot_grupo:-1, vot_representante:-1} },
 	{ $group: { _id: {grupo: "$vot_grupo", representante: "$vot_representante" }, cantidad: { $sum: 1 } } }
-);
+]);
 
+-- Version 2
+db.votaciones.aggregate([
+	{ $sort: {vot_sede:1, vot_grupo:-1, vot_representante:-1} },
+	{ $group: { _id: {sede: "$vot_sede", grupo: "$vot_grupo", representante: "$vot_representante" }, cantidad: { $sum: 1 } } }
+]);
 
 
 
