@@ -6,23 +6,33 @@ block contenido
 			div(class="tab-pane fade show" id="list-iecascajal" role="tabpanel" aria-labelledby="list-iecascajal-list")
 				h1(class="centrar") Bienvenido a las votaciones Sede I. E. Cascajal
 				div(class="separar")
-				h3 Seleccione un grado
+				h3= "Nombre docente: " + nombre_docente
+				div(class="separar")
+				h5 Seleccione un grado
 				div(class="separar")
 			form(action="/votarIECascajal" method="POST")
 				div(class="row")
 					div(data-toggle="radio" class="grupoGrados")
-						input(type="submit" class="btn select" value="GRADO 0" id="grado0" name="gradosIECascajal" required)
-						input(type="submit" class="btn select" value="PRIMERO" name="gradosIECascajal" required)
-						input(type="submit" class="btn select" value="SEGUNDO" name="gradosIECascajal" required)
-						input(type="submit" class="btn select" value="TERCERO" name="gradosIECascajal" required)
-						input(type="submit" class="btn select" value="CUARTO" name="gradosIECascajal" required)
-						input(type="submit" class="btn select" value="QUINTO" name="gradosIECascajal" required)
-						input(type="submit" class="btn select" value="SEXTO A" name="gradosIECascajal" required)
-						input(type="submit" class="btn select" value="SEXTO B" name="gradosIECascajal" required)
-						input(type="submit" class="btn select" value="SEPTIMO A" name="gradosIECascajal" required)
-						input(type="submit" class="btn select" value="SEPTIMO B" name="gradosIECascajal" required)
-						input(type="submit" class="btn select" value="OCTAVO A" name="gradosIECascajal" required)
-						input(type="submit" class="btn select" value="OCTAVO B" name="gradosIECascajal" required)
-						input(type="submit" class="btn select" value="NOVENO" name="gradosIECascajal" required)
-						input(type="submit" class="btn select" value="DÉCIMO" name="gradosIECascajal" required)
-						input(type="submit" class="btn select" value="ONCE" name="gradosIECascajal" required)
+						case grados_docente
+							when 0
+								input(type="submit" class="btn select" value="GRADO 0" id="grado0" name="gradosIECascajal" required)
+								input(type="submit" class="btn select" value="PRIMERO" name="gradosIECascajal" required)
+								input(type="submit" class="btn select" value="SEGUNDO" name="gradosIECascajal" required)
+							when 1
+								input(type="submit" class="btn select" value="TERCERO" name="gradosIECascajal" required)
+								input(type="submit" class="btn select" value="CUARTO" name="gradosIECascajal" required)
+							when 2
+								input(type="submit" class="btn select" value="QUINTO" name="gradosIECascajal" required)
+								input(type="submit" class="btn select" value="SEXTO A" name="gradosIECascajal" required)
+							when 3
+								input(type="submit" class="btn select" value="SEXTO B" name="gradosIECascajal" required)
+								input(type="submit" class="btn select" value="SEPTIMO A" name="gradosIECascajal" required)
+								input(type="submit" class="btn select" value="SEPTIMO B" name="gradosIECascajal" required)
+							when 4
+								input(type="submit" class="btn select" value="OCTAVO A" name="gradosIECascajal" required)
+								input(type="submit" class="btn select" value="ONCE" name="gradosIECascajal" required)
+							when 5
+								input(type="submit" class="btn select" value="OCTAVO B" name="gradosIECascajal" required)
+								input(type="submit" class="btn select" value="NOVENO" name="gradosIECascajal" required)
+							when 6
+								input(type="submit" class="btn select" value="DÉCIMO" name="gradosIECascajal" required)

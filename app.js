@@ -31,6 +31,13 @@ var registros_a_bloquear = []
 var estudianteCandidato 	// Variable para almacenar temporalmente el estudiante como personero => adicionarPersonero
 
 
+// ========================================================
+// Para cargar los grados correspondientes según el usuario
+var id_docente
+var grados_docente
+var nombre_docente
+
+
 
 // Establecemos el motor de vistas, es decir tomamos los archivos ".pug" para que express
 // con Node.js los conviertan a archivos ".html" 
@@ -65,9 +72,33 @@ app.get("/administrador", (req, res) => {
 // Pagina inicial: index
 // 
 app.post("/", (req, res) => {
+	// Variables globales del sistema
+	nom_sede = 0 				// Guarda el nombre de la sede
+	num_grado_estudiante = 0	// Guarda el grado del estudiante
+	num_grupo = 0				// Guarda el grupo al que pertence el estudiante
+	num_id_estudiante = 0		// Guarda el número de identificación del estudiante
+	num_personero = 0			// Guarda el número del personero votado
+	num_representante = 0		// Guarda el número del representante votado
+
+	ruta_foto = ""
+	personeros = []
+	ids_estudiantes_ya_votaron = []
+	estudiantes = []
+	registros_a_bloquear = []
+
+	estudianteCandidato = []	// Variable para almacenar temporalmente el estudiante como personero => adicionarPersonero
+
+
+	// ========================================================
+	// Para cargar los grados correspondientes según el usuario
+	id_docente = 0
+	grados_docente = 0
+	nombre_docente = 0
+
+	
 	Usuario.
 	find({"usu_ID": req.body.idUsuario, "usu_contraseña": req.body.claveUsuario}).
-	select( {usu_nombre:1, usu_sede:1, usu_grado:1, usu_rol:1}).
+	select( {usu_nombre:1, usu_sede:1, usu_rol:1}).
 	exec( (error, docs) => {
 		let mensaje
 		if( docs.length==0 ) {
@@ -92,7 +123,25 @@ app.post("/", (req, res) => {
 					} else if( docs[0].usu_sede == "LA ESPERANZA" ) {
 						res.render("sedeLaEsperanza")
 					} else if( docs[0].usu_sede == "CASCAJAL" ) {
-						res.render("sedeIECascajal")
+						id_docente = req.body.idUsuario
+						grados_docente
+						nombre_docente = docs[0].usu_nombre
+						if ( id_docente=="39567986" | id_docente=="36280861" ) {
+							grados_docente = 0
+						} else if ( id_docente=="1083880333" | id_docente=="83231140" ) {
+							grados_docente = 1
+						} else if ( id_docente=="22632790" | id_docente=="36274515" ) {
+							grados_docente = 2
+						} else if ( id_docente=="12232229" | id_docente=="12130633" ) {
+							grados_docente = 3
+						} else if ( id_docente=="79685926" | id_docente=="1075221503" ) {
+							grados_docente = 4
+						} else if ( id_docente=="39695420" | id_docente=="36164540" ) {
+							grados_docente = 5
+						} else if ( id_docente=="93391630" | id_docente=="55183643" ) {
+							grados_docente = 6
+						}
+						res.render("sedeIECascajal", {grados_docente, nombre_docente} )
 					} 
 				}
 			}
@@ -101,6 +150,29 @@ app.post("/", (req, res) => {
 })
 
 app.get("/", (req, res) => {
+	// Variables globales del sistema
+	nom_sede = 0 				// Guarda el nombre de la sede
+	num_grado_estudiante = 0	// Guarda el grado del estudiante
+	num_grupo = 0				// Guarda el grupo al que pertence el estudiante
+	num_id_estudiante = 0		// Guarda el número de identificación del estudiante
+	num_personero = 0			// Guarda el número del personero votado
+	num_representante = 0		// Guarda el número del representante votado
+
+	ruta_foto = ""
+	personeros = []
+	ids_estudiantes_ya_votaron = []
+	estudiantes = []
+	registros_a_bloquear = []
+
+	estudianteCandidato = []	// Variable para almacenar temporalmente el estudiante como personero => adicionarPersonero
+
+
+	// ========================================================
+	// Para cargar los grados correspondientes según el usuario
+	id_docente = 0
+	grados_docente = 0
+	nombre_docente = 0
+
 	res.render("index")
 })
 
@@ -278,7 +350,7 @@ app.get("/consultarCandidatos", (req, res) => {
 // ============================================================================
 // Votar en la I.E. Cascajal
 app.get("/sedeIECascajal", (req, res) => {
-	res.render("sedeIECascajal")
+	res.render("sedeIECascajal", {nombre_docente, grados_docente})
 })
 
 app.get("/votarIECascajal", (req, res) => {

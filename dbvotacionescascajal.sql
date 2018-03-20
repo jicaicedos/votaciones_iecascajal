@@ -13106,23 +13106,130 @@ db.usuarios.insert({
     usu_grado: "",
     usu_rol: "ADMINISTRADOR"
 });
--- Usuarios de
+-- Usuarios docentes
+
+-- Preescolar, Primero y Segundo
 db.usuarios.insert({
-    usu_ID : "12265789",
-    usu_contraseña: "12265789",
-    usu_nombre: "UBER JULIAN BATERO",
+    usu_ID : "39567986",
+    usu_contraseña: "39567986",
+    usu_nombre: "CARMEN LUCIA CÓRDOBA",
     usu_sede: "CASCAJAL",
-    usu_grado: "OCTAVO",
     usu_rol: "JURADO"
 });
 db.usuarios.insert({
-    usu_ID : "36453789",
-    usu_contraseña: "36453789",    
-    usu_nombre: "PROFE TRINIDAD",
+    usu_ID : "36280861",
+    usu_contraseña: "36280861",
+    usu_nombre: "NORMA YINETH ARTUNDUAGA",
     usu_sede: "CASCAJAL",
-    usu_grado: "SEPTIMO",
+    usu_rol: "JURADO"
+
+});
+
+-- Tercero y Cuarto
+db.usuarios.insert({
+    usu_ID : "1083880333",
+    usu_contraseña: "1083880333",
+    usu_nombre: "CARMEN ALEJANDRA MURCIA",
+    usu_sede: "CASCAJAL",
+    usu_rol: "JURADO"
+
+});
+db.usuarios.insert({
+    usu_ID : "83231140",
+    usu_contraseña: "83231140",
+    usu_nombre: "JOSE ALIRIO VALDERRAMA",
+    usu_sede: "CASCAJAL",
+    usu_rol: "JURADO"
+
+});
+
+-- Quinto y 601
+db.usuarios.insert({
+    usu_ID : "22632790",
+    usu_contraseña: "22632790",
+    usu_nombre: "CARMEN CECILIA ALVAREZ",
+    usu_sede: "CASCAJAL",
+    usu_rol: "JURADO"
+
+});
+db.usuarios.insert({
+    usu_ID : "36274515",
+    usu_contraseña: "36274515",
+    usu_nombre: "LUZ MARY PARRA",
+    usu_sede: "CASCAJAL",
+    usu_rol: "JURADO"
+
+});
+
+-- 602 Y 7º
+db.usuarios.insert({
+    usu_ID : "12232229",
+    usu_contraseña: "12232229",
+    usu_nombre: "JESÚS ANTONIO ORTIZ",
+    usu_sede: "CASCAJAL",
+    usu_rol: "JURADO"
+
+});
+db.usuarios.insert({
+    usu_ID : "12130633",
+    usu_contraseña: "12130633",
+    usu_nombre: "ROBERTO ARTURO BOTINA",
+    usu_sede: "CASCAJAL",
+    usu_rol: "JURADO"
+
+});
+
+-- 801 Y 11º
+db.usuarios.insert({
+    usu_ID : "79685926",
+    usu_contraseña: "79685926",
+    usu_nombre: "CARLOS JAVIER LOSADA",
+    usu_sede: "CASCAJAL",
+    usu_rol: "JURADO"
+
+});
+db.usuarios.insert({
+    usu_ID : "1075221503",
+    usu_contraseña: "1075221503",
+    usu_nombre: "ELIZABETH TENGONO ZAMORA",
+    usu_sede: "CASCAJAL",
     usu_rol: "JURADO"
 });
+
+-- -- 802 Y 9º
+db.usuarios.insert({
+    usu_ID : "39695420",
+    usu_contraseña: "39695420",
+    usu_nombre: "NUBIA STELLA CASTIBLANCO",
+    usu_sede: "CASCAJAL",
+    usu_rol: "JURADO"
+});
+db.usuarios.insert({
+    usu_ID : "36164540",
+    usu_contraseña: "36164540",
+    usu_nombre: "YUBANY SUAREZ PUYO",
+    usu_sede: "CASCAJAL",
+    usu_rol: "JURADO"
+});
+
+
+-- 10º
+db.usuarios.insert({
+    usu_ID : "93391630",
+    usu_contraseña: "93391630",
+    usu_nombre: "YERY IGNACIO BARRIOS SANCHEZ",
+    usu_sede: "CASCAJAL",
+    usu_rol: "JURADO"
+});
+db.usuarios.insert({
+    usu_ID : "55183643",
+    usu_contraseña: "55183643",
+    usu_nombre: "ELIANA YAMILETH PAZ MONTAÑEZ",
+    usu_sede: "CASCAJAL",
+    usu_rol: "JURADO"
+});
+
+
 db.usuarios.insert({
     usu_ID : "tobo",
     usu_contraseña: "tobo123",    
@@ -13177,11 +13284,13 @@ db.usuarios.insert({
 -- =================================================================================================================
 -- Remover los usuarios
 db.usuarios.remove({});  // OJO
+db.usuarios.find().count()
+
 
 db.votaciones.remove({});
 db.votantes.remove({});
 
-db.candidatos.remove({});
+db.candidatos.remove({});   // OJO
 -- =================================================================================================================
  -- Consultar estudiantes
 db.estudiantes.find({}, {_id:0, Doc:1, est_primer_nombre:1, est_primer_apellido:1, est_segundo_apellido:1});
