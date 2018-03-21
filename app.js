@@ -361,30 +361,7 @@ app.post("/votarIECascajal", (req, res) => {
 			let volver_a = "/sedeIECascajal"
 			res.render("listarEstudiantesVotacion", {sedes, volver_a, estudiantes, registros_a_bloquear} )
 		})	
-	} else if( req.body.gradosIECascajal=="SEPTIMO A" ) {
-		Estudiante.
-		find({"est_grupo": 701, "est_nombre_sede": "CASCAJAL"}).
-		select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
-		exec( (error, docs) => {
-			estudiantes = docs
-			registros_a_bloquear = bloquearRegistros(estudiantes, ids_estudiantes_ya_votaron)
-			let sedes = "Listado de estudiantes sede I. E. Cascajal"
-			let volver_a = "/sedeIECascajal"
-			res.render("listarEstudiantesVotacion", {sedes, volver_a, estudiantes, registros_a_bloquear} )
-		})			
-
-	} else if( req.body.gradosIECascajal=="SEPTIMO B" ) {
-		Estudiante.
-		find({"est_grupo": 702, "est_nombre_sede": "CASCAJAL"}).
-		select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).
-		exec( (error, docs) => {
-			estudiantes = docs
-			registros_a_bloquear = bloquearRegistros(estudiantes, ids_estudiantes_ya_votaron)
-			let sedes = "Listado de estudiantes sede I. E. Cascajal"
-			let volver_a = "/sedeIECascajal"
-			res.render("listarEstudiantesVotacion", {sedes, volver_a, estudiantes, registros_a_bloquear} )
-		})	
-	} else if( req.body.gradosIECascajal=="OCTAVO A" ) {
+	}  else if( req.body.gradosIECascajal=="OCTAVO A" ) {
 		Estudiante.
 		find({"est_grupo": 801, "est_nombre_sede": "CASCAJAL"}).
 		select({est_tipo_identificacion:1, est_doc:1, est_primer_apellido:1, est_segundo_apellido:1, est_primer_nombre:1, est_segundo_nombre:1, est_grado:1, est_grupo:1, est_matricula_contratada:1, est_fuente_recursos:1}).

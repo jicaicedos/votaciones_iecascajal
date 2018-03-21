@@ -40,11 +40,9 @@ Grado 7° - 1
 1084331441 - 2 - Grado 7-1 - Kevin Jimenez Cruz
 1059594822 - 3 - Grado 7-1 - Tatiana Cantero Manquillo
 1077845665 - 4 - Grado 7-1 - Emerson Sneider Burbano Paredes
-
-Grado 7° - 2
-1079536838 - 1 - Grado 7-2 - Cristian Fernando Imbachi Calderon
-1080931737 - 2 - Grado 7-2 - Kelly Yuritza Riascos
-1083872331 - 3 - Grado 7-2 - Janin Lucia Semanate Tovar (SIN FOTO)
+1079536838 - 5 - Grado 7-2 - Cristian Fernando Imbachi Calderon
+1080931737 - 6 - Grado 7-2 - Kelly Yuritza Riascos
+1083872331 - 7 - Grado 7-2 - Janin Lucia Semanate Tovar (SIN FOTO)
 
 ========================== DOS GRUPOS
 Grado 8° - 1
