@@ -4,7 +4,55 @@ use dbvotacionescascajal;
 db.dropDatabase();
 
 use dbvotacionescascajal;
+-- == GRABAR.....
 
+-- Caritas -> emoticones
+db.estudiantes.insert({
+    est_anio: 2018,
+    est_secretaria: "TIMANÁ",
+    est_dane_ie: 241807000079,
+    est_nombre_ie: "IE CASCAJAL",
+    est_dane_sede: 24180700007901,
+    est_nombre_sede: "CASCAJAL",
+    est_jornada: "COMPLETA",
+    est_calendario: "A",
+    est_grado: "GRADO-0-PRIMERO-SEGUNDO",
+    est_sector: "OFICIAL",
+    est_grupo: 1,
+    est_modelo_educativo: "POST PRIMARIA",
+    est_tipo_identificacion: "TI",
+    est_doc: 11,
+    est_primer_apellido: "FELIZ",
+    est_segundo_apellido: "",
+    est_primer_nombre: "CARITA",
+    est_segundo_nombre: "",
+    est_estado: "MATRICULADO",
+    est_matricula_contratada: "N",
+    est_fuente_recursos: "SGP"
+});
+db.estudiantes.insert({
+    est_anio: 2018,
+    est_secretaria: "TIMANÁ",
+    est_dane_ie: 241807000079,
+    est_nombre_ie: "IE CASCAJAL",
+    est_dane_sede: 24180700007901,
+    est_nombre_sede: "CASCAJAL",
+    est_jornada: "COMPLETA",
+    est_calendario: "A",
+    est_grado: "GRADO-0-PRIMERO-SEGUNDO",
+    est_sector: "OFICIAL",
+    est_grupo: 1,
+    est_modelo_educativo: "POST PRIMARIA",
+    est_tipo_identificacion: "TI",
+    est_doc: 12,
+    est_primer_apellido: "TRISTE",
+    est_segundo_apellido: "",
+    est_primer_nombre: "CARITA",
+    est_segundo_nombre: "",
+    est_estado: "MATRICULADO",
+    est_matricula_contratada: "N",
+    est_fuente_recursos: "SGP"
+});
 -- Estudiantes
 db.estudiantes.insert({
     est_anio: 2018,
