@@ -8,12 +8,12 @@ td, th {
 
 
 header {
-	background: green;
+	background: #563B7E;
 	padding: 10px;
 }
 
 footer {
-	background: #F6D209;
+	background: #563B7E;
 	/*background: green;*/
 	height: 50px;
 	color: gray;
@@ -22,7 +22,7 @@ footer {
 footer p {
 	padding-top: 10px;
 	padding-bottom: 10px;
-	color: black;
+	color: white;
 	/*color: white;*/
 	font-size: 14px;
 	text-align: center;

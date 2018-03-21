@@ -30,7 +30,6 @@ var registros_a_bloquear = []
 
 var estudianteCandidato 	// Variable para almacenar temporalmente el estudiante como personero => adicionarPersonero
 
-
 // ========================================================
 // Para cargar los grados correspondientes según el usuario
 var id_docente
@@ -72,30 +71,6 @@ app.get("/administrador", (req, res) => {
 // Pagina inicial: index
 // 
 app.post("/", (req, res) => {
-	// Variables globales del sistema
-	nom_sede = 0 				// Guarda el nombre de la sede
-	num_grado_estudiante = 0	// Guarda el grado del estudiante
-	num_grupo = 0				// Guarda el grupo al que pertence el estudiante
-	num_id_estudiante = 0		// Guarda el número de identificación del estudiante
-	num_personero = 0			// Guarda el número del personero votado
-	num_representante = 0		// Guarda el número del representante votado
-
-	ruta_foto = ""
-	personeros = []
-	ids_estudiantes_ya_votaron = []
-	estudiantes = []
-	registros_a_bloquear = []
-
-	estudianteCandidato = []	// Variable para almacenar temporalmente el estudiante como personero => adicionarPersonero
-
-
-	// ========================================================
-	// Para cargar los grados correspondientes según el usuario
-	id_docente = 0
-	grados_docente = 0
-	nombre_docente = 0
-
-
 	Usuario.
 	find({"usu_ID": req.body.idUsuario, "usu_contraseña": req.body.claveUsuario}).
 	select( {usu_nombre:1, usu_sede:1, usu_rol:1}).
@@ -105,12 +80,13 @@ app.post("/", (req, res) => {
 			mensaje = "Usuario o contraseña no coinciden"
 			res.render("index", {mensaje})
 		} else {
-			if( docs[0].usu_rol=="ADMINISTRADOR" ) {
-				res.render("administrador")
+			if( docs[0].usu_rol=="ADMINISTRADOR" ) {				
+				res.render("administrador")				
 			} else {				
 				if( docs[0].usu_rol == "JURADO" ) {
+					nom_sede = docs[0].usu_sede
 					if( docs[0].usu_sede == "EL TOBO" ) {
-						console.log(docs[0].usu_sede)
+						console.log("\nBienvenidos a la sede: " + docs[0].usu_sede)
 						res.render("sedeElTobo")
 					} else if( docs[0].usu_sede == "LA PIRAGUA" ) {
 						res.render("sedeLaPiragua")
@@ -150,29 +126,6 @@ app.post("/", (req, res) => {
 })
 
 app.get("/", (req, res) => {
-	// Variables globales del sistema
-	nom_sede = 0 				// Guarda el nombre de la sede
-	num_grado_estudiante = 0	// Guarda el grado del estudiante
-	num_grupo = 0				// Guarda el grupo al que pertence el estudiante
-	num_id_estudiante = 0		// Guarda el número de identificación del estudiante
-	num_personero = 0			// Guarda el número del personero votado
-	num_representante = 0		// Guarda el número del representante votado
-
-	ruta_foto = ""
-	personeros = []
-	ids_estudiantes_ya_votaron = []
-	estudiantes = []
-	registros_a_bloquear = []
-
-	estudianteCandidato = []	// Variable para almacenar temporalmente el estudiante como personero => adicionarPersonero
-
-
-	// ========================================================
-	// Para cargar los grados correspondientes según el usuario
-	id_docente = 0
-	grados_docente = 0
-	nombre_docente = 0
-
 	res.render("index")
 })
 
@@ -180,27 +133,23 @@ app.get("/reportes", (req, res) => {
 	var reporte_personeros
 	var reporte_representantes
 
-
-
 	Votaciones.
 	aggregate([
 		{ $sort: {vot_sede:1, vot_grupo:-1, vot_representante:-1} },
 		{ $group: { _id: {sede: "$vot_sede", grupo: "$vot_grupo", representante: "$vot_representante" }, cantidad: { $sum: 1 } } }
 	]).
-	exec( (error, docs) => {
-		reporte_representantes = docs
-		// res.render("reportes", {reporte_representantes})
-	})
+	exec( (error, docs) => { reporte_representantes = docs } )
 
 	Votaciones.
 	aggregate([
-		{ $sort: {vot_sede:1, vot_personero:-1} },
-		{$group: {_id: {sede: "$vot_sede", personero:"$vot_personero"}, "cantidad": {$sum:1}  } }
+		{ $sort: {vot_sede:1, vot_grupo:-1, vot_personero:-1} },
+		{ $group: {_id: {sede: "$vot_sede", grupo: "$vot_grupo", personero:"$vot_personero"}, "cantidad": {$sum:1} } }
 	]).
 	exec( (error, docs) => {
 		reporte_personeros = docs
 		// docs = [{"_id":2,"cantidad":24},{"_id":1,"cantidad":11},{"_id":0,"cantidad":8}]
-		res.render("reportes", {reporte_personeros, reporte_representantes})
+		res.render("reportes", {reporte_personeros, reporte_representantes, nom_sede} )
+		
 	})
 	
 })
@@ -320,10 +269,7 @@ app.post("/finalAdicionarCandidato", (req, res) => {
 
 // ===========================================================================
 // Consultar estudiante para votar
-// 
-// app.post("/consultarEstudiantes", (req, res) => {
-// 	console.log("POST -> consultarEstudiantes: Listado de estudiantes")
-// })
+
 
 // Consultar estudiantes SOLO IE CASCAJAL
 app.get("/consultarEstudiantes", (req, res) => {
@@ -483,13 +429,13 @@ app.get("/sedeElTobo", (req, res) => {
 })
 
 app.get("/votarSedeElTobo", (req, res) => {
-	console.log("GET -> votar votarSedeElTobo" + req.body.gradosSedeElTobo)
+	// console.log("GET -> votar votarSedeElTobo" + req.body.gradosSedeElTobo)
 	num_id_estudiante = req.body.documentoIdentidadEstudiante
 	res.render("listarEstudiantesVotacion")
 })
 
 app.post("/votarSedeElTobo", (req, res) => {
-	console.log("POST -> votar votarSedeElTobo" + req.body.gradosSedeElTobo)
+	// console.log("POST -> votar votarSedeElTobo" + req.body.gradosSedeElTobo)
 
 	nom_sede = "EL TOBO"
 	num_grado_estudiante = req.body.gradosSedeElTobo
@@ -519,13 +465,13 @@ app.get("/sedeLaEsperanza", (req, res) => {
 })
 
 app.get("/votarSedeLaEsperanza", (req, res) => {
-	console.log("GET -> votar votarSedeLaEsperanza" + req.body.gradosSedeLaEsperanza)
+	// console.log("GET -> votar votarSedeLaEsperanza" + req.body.gradosSedeLaEsperanza)
 	num_id_estudiante = req.body.documentoIdentidadEstudiante
 	res.render("votarSedeLaEsperanza")
 })
 
 app.post("/votarSedeLaEsperanza", (req, res) => {
-	console.log("POST -> votar votarSedeLaEsperanza" + req.body.gradosSedeLaEsperanza)
+	// console.log("POST -> votar votarSedeLaEsperanza" + req.body.gradosSedeLaEsperanza)
 
 	nom_sede = "LA ESPERANZA"
 	num_grado_estudiante = req.body.gradosSedeLaEsperanza
@@ -557,13 +503,13 @@ app.get("/sedeLaPiragua", (req, res) => {
 })
 
 app.get("/votarSedeLaPiragua", (req, res) => {
-	console.log("GET -> votar votarSedeLaPiragua" + req.body.gradosSedeLaPiragua)
+	// console.log("GET -> votar votarSedeLaPiragua" + req.body.gradosSedeLaPiragua)
 	num_id_estudiante = req.body.documentoIdentidadEstudiante
 	res.render("votarSedeLaPiragua")
 })
 
 app.post("/votarSedeLaPiragua", (req, res) => {
-	console.log("POST -> votar votarSedeLaPiragua" + req.body.gradosSedeLaPiragua)
+	// console.log("POST -> votar votarSedeLaPiragua" + req.body.gradosSedeLaPiragua)
 
 	nom_sede = "LA PIRAGUA"
 	num_grado_estudiante = req.body.gradosSedeLaPiragua
@@ -594,13 +540,13 @@ app.get("/sedePaquies", (req, res) => {
 })
 
 app.get("/votarSedePaquies", (req, res) => {
-	console.log("GET -> votar votarSedePaquies" + req.body.gradosSedePaquies)
+	// console.log("GET -> votar votarSedePaquies" + req.body.gradosSedePaquies)
 	num_id_estudiante = req.body.documentoIdentidadEstudiante
 	res.render("votarSedePaquies")
 })
 
 app.post("/votarSedePaquies", (req, res) => {
-	console.log("POST -> votar votarSedePaquies" + req.body.gradosSedePaquies)
+	// console.log("POST -> votar votarSedePaquies" + req.body.gradosSedePaquies)
 
 	nom_sede = "PAQUIES"
 	num_grado_estudiante = req.body.gradosSedePaquies
@@ -632,13 +578,13 @@ app.get("/sedeLaFlorida", (req, res) => {
 })
 
 app.get("/votarSedeLaFlorida", (req, res) => {
-	console.log("GET -> votar votarSedeLaFlorida" + req.body.gradosSedeLaFlorida)
+	// console.log("GET -> votar votarSedeLaFlorida" + req.body.gradosSedeLaFlorida)
 	num_id_estudiante = req.body.documentoIdentidadEstudiante
 	res.render("votarSedeLaFlorida")
 })
 
 app.post("/votarSedeLaFlorida", (req, res) => {
-	console.log("POST -> votar votarSedeLaFlorida" + req.body.gradosSedeLaFlorida)
+	// console.log("POST -> votar votarSedeLaFlorida" + req.body.gradosSedeLaFlorida)
 
 	nom_sede = "LA FLORIDA"
 	num_grado_estudiante = req.body.gradosSedeLaFlorida
@@ -670,13 +616,13 @@ app.get("/sedeMateoRico", (req, res) => {
 })
 
 app.get("/votarSedeMateoRico", (req, res) => {
-	console.log("GET -> votar votarSedeMateoRico" + req.body.gradosSedeMateoRico)
+	// console.log("GET -> votar votarSedeMateoRico" + req.body.gradosSedeMateoRico)
 	num_id_estudiante = req.body.documentoIdentidadEstudiante
 	res.render("votarSedeMateoRico")
 })
 
 app.post("/votarSedeMateoRico", (req, res) => {
-	console.log("POST -> votar votarSedeMateoRico" + req.body.gradosSedeMateoRico)
+	// console.log("POST -> votar votarSedeMateoRico" + req.body.gradosSedeMateoRico)
 
 	nom_sede = "MATEO RICO"
 	num_grado_estudiante = req.body.gradosSedeMateoRico
@@ -806,7 +752,7 @@ function bloquearRegistros(estudiantes, estudiantes_ya_votaron) {
 // Final de votación
 // 
 app.post("/finalProcesoVotacion", (req, res) => {
-	console.log("POST -> finalProcesoVotacion")
+	// console.log("POST -> finalProcesoVotacion")
 
 	if( nom_sede=="CASCAJAL"  ) { // y grado == "TALES"		
 		if( num_grupo < 300 ) {
@@ -839,7 +785,7 @@ app.post("/finalProcesoVotacion", (req, res) => {
 
 	// Guardar en la base de datos de VOTACIONES
 	votaciones.save().then( (est) => {	
-		console.log("Votación guardada correctamente!") 
+		// console.log("Votación guardada correctamente!") 
 	}, (error) => { console.log("Error al escibir en la base de datos. Collection: votaciones") })
 
 	// Guardar en la base de datos de VOTANTES

@@ -1,36 +1,94 @@
-extends ./layout.pug
+extends ./layoutSedes.pug
 
 block contenido
-	div(class='container' data-spy="scroll")
-		ul(class="nav nav-tabs justify-content-center")
-			li(class="nav-item")
-				a(class="nav-link" href="/") Inicio
+	div(class="container" data-spy="scroll")
 		br
-		h3 Personero(a)
-		if nom_sede == "CASCAJAL"
-			if conRepresentante == 1
-				div(class="row")
-					for personero in personeros
+		if num_grado_estudiante == "GRADO 0" | num_grado_estudiante == "PRIMERO" | num_grado_estudiante == "SEGUNDO" 
+			div(class="row justify-content-center")
+				div(class="tarjeton")
+					div(class="votarPersonero")
+						form(action="/finalProcesoVotacion" method="POST")
+							input(type="submit" value="1" name="personero"  class="btnVotarPersonero")
+					div(class="card" style="width: 12rem;")
+						img(class="card-img-top imagenCard" src="static/imagenes/candidatos/carita_feliz.jpg" alt="carita_feliz")
+						div(class="card-body")
+							h5(class="card-title") CARITA FELIZ
+							p(p class="card-text") Vota por mí
+
+				div(class="tarjeton")
+					div(class="votarPersonero")
+						form(action="/finalProcesoVotacion" method="POST")
+							input(type="submit" value="2" name="personero"  class="btnVotarPersonero")
+					div(class="card" style="width: 12rem;")
+						img(class="card-img-top imagenCard" src="static/imagenes/candidatos/carita_triste.jpg" alt="carita_triste")
+						div(class="card-body")
+							h5(class="card-title") CARITA TRISTE
+							p(p class="card-text") Vota por mí
+		else
+			h3 Personero(a)
+			if nom_sede == "CASCAJAL"
+				a(class="nav-link" href="sedeIECascajal") << Volver
+				if conRepresentante == 1
+					div(class="row")
+						for personero in personeros
+							div(class="tarjeton")
+								div(class="votarPersonero")
+									form(action="/representante" method="POST")
+										input(type="submit" value=personero.est_num_tarjeton name="personero" class="btnVotarPersonero")
+								div(class="card" style="width: 12rem;")
+									img(class="card-img-top imagenCard" src="static/imagenes/candidatos/personero/"+personero.est_foto alt="Foto personero")
+									div(class="card-body")
+										h5(class="card-title")= personero.est_primer_nombre + " " + personero.est_segundo_nombre + " " + personero.est_primer_apellido + " " + personero.est_segundo_apellido
+										p(class="card-text")= personero.est_grado + " " + personero.est_grupo
+
 						div(class="tarjeton")
 							div(class="votarPersonero")
 								form(action="/representante" method="POST")
-									input(type="submit" value=personero.est_num_tarjeton name="personero" class="btnVotarPersonero")
+									input(type="submit" value="0" name="personero"  class="btnVotarPersonero")
 							div(class="card" style="width: 12rem;")
-								img(class="card-img-top imagenCard" src="static/imagenes/candidatos/personero/"+personero.est_foto alt="Foto personero")
+								img(class="card-img-top imagenCard" src="static/imagenes/candidatos/voto blanco.jpg" alt="Card image cap")
 								div(class="card-body")
-									h5(class="card-title")= personero.est_primer_nombre + " " + personero.est_segundo_nombre + " " + personero.est_primer_apellido + " " + personero.est_segundo_apellido
-									p(class="card-text")= personero.est_grado + " " + personero.est_grupo
+									h5(class="card-title") VOTO EN BLANCO
+									p(p class="card-text") Vota por mí
+				else				
+					div(class="row")
+						for personero in personeros
+							div(class="tarjeton")
+								div(class="votarPersonero")
+									form(action="/finalProcesoVotacion" method="POST")
+										input(type="submit" value=personero.est_num_tarjeton name="personero" class="btnVotarPersonero")
+								div(class="card" style="width: 12rem;")
+									img(class="card-img-top imagenCard" src="static/imagenes/candidatos/personero/"+personero.est_foto alt="Foto personero")
+									div(class="card-body")
+										h5(class="card-title")= personero.est_primer_nombre + " " + personero.est_segundo_nombre + " " + personero.est_primer_apellido + " " + personero.est_segundo_apellido
+										p(class="card-text")= personero.est_grado + " " + personero.est_grupo
 
-					div(class="tarjeton")
-						div(class="votarPersonero")
-							form(action="/representante" method="POST")
-								input(type="submit" value="0" name="personero"  class="btnVotarPersonero")
-						div(class="card" style="width: 12rem;")
-							img(class="card-img-top imagenCard" src="static/imagenes/candidatos/voto blanco.jpg" alt="Card image cap")
-							div(class="card-body")
-								h5(class="card-title") VOTO EN BLANCO
-								p(p class="card-text") Vota por mí
+						div(class="tarjeton")
+							div(class="votarPersonero")
+								form(action="/finalProcesoVotacion" method="POST")
+									input(type="submit" value="0" name="personero"  class="btnVotarPersonero")
+							div(class="card" style="width: 12rem;")
+								img(class="card-img-top imagenCard" src="static/imagenes/candidatos/voto blanco.jpg" alt="Card image cap")
+								div(class="card-body")
+									h5(class="card-title") VOTO EN BLANCO
+									p(p class="card-text") Vota por mí	
 			else
+				- var volver_a
+				if nom_sede == "EL TOBO"
+					- volver_a = "sedeElTobo"
+				if nom_sede == "LA FLORIDA"
+					- volver_a = "sedeLaFlorida"
+				if nom_sede == "LA ESPERANZA"
+					- volver_a = "sedeLaEsperanza"
+				if nom_sede == "LA FLORIDA"
+					- volver_a = "sedeLaFlorida"
+				if nom_sede == "LA PIRAGUA"
+					- volver_a = "sedeLaPiragua"
+				if nom_sede == "MATEO RICO"
+					- volver_a = "sedeMateoRico"
+				if nom_sede == "PAQUIES"
+					- volver_a = "sedePaquies"
+				a(class="nav-link" href=volver_a) << Volver
 				div(class="row")
 					for personero in personeros
 						div(class="tarjeton")
@@ -52,26 +110,4 @@ block contenido
 							div(class="card-body")
 								h5(class="card-title") VOTO EN BLANCO
 								p(p class="card-text") Vota por mí	
-		else
-			div(class="row")
-				for personero in personeros
-					div(class="tarjeton")
-						div(class="votarPersonero")
-							form(action="/finalProcesoVotacion" method="POST")
-								input(type="submit" value=personero.est_num_tarjeton name="personero" class="btnVotarPersonero")
-						div(class="card" style="width: 12rem;")
-							img(class="card-img-top imagenCard" src="static/imagenes/candidatos/personero/"+personero.est_foto alt="Foto personero")
-							div(class="card-body")
-								h5(class="card-title")= personero.est_primer_nombre + " " + personero.est_segundo_nombre + " " + personero.est_primer_apellido + " " + personero.est_segundo_apellido
-								p(class="card-text")= personero.est_grado + " " + personero.est_grupo
-
-				div(class="tarjeton")
-					div(class="votarPersonero")
-						form(action="/finalProcesoVotacion" method="POST")
-							input(type="submit" value="0" name="personero"  class="btnVotarPersonero")
-					div(class="card" style="width: 12rem;")
-						img(class="card-img-top imagenCard" src="static/imagenes/candidatos/voto blanco.jpg" alt="Card image cap")
-						div(class="card-body")
-							h5(class="card-title") VOTO EN BLANCO
-							p(p class="card-text") Vota por mí	
-			
+				

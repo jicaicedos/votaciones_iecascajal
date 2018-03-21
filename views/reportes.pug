@@ -1,9 +1,9 @@
-extends ./layoutAdministrador.pug
+extends ./layoutSedes.pug
 
 block contenido
 	div(class="container justify-content-center")
 		div(class="col-sm-12")
-			h3 Reporte de votación I. E. Cascajal
+			h3= "Reporte de votación sede " + nom_sede
 			div(class="separar")
 			div(class="row")
 				div(class="col-sm-12")
@@ -12,14 +12,17 @@ block contenido
 						thead(class='thead-light')
 							tr(class="centrar")
 								th(class="th-candidato") Sede
+								th(class="th-candidato") Grupo
 								th(class="th-candidato") No. Personero
 								th(class="th-candidato") Cantidad de votos
 						tbody
 							for reporte_personero in reporte_personeros
-								tr
-									td(class="td-personero centrar")= reporte_personero._id.sede
-									td(class="td-personero centrar")= reporte_personero._id.personero
-									td(class="td-personero centrar")= reporte_personero.cantidad
+								if reporte_personero._id.sede == nom_sede
+									tr
+										td(class="td-personero centrar")= reporte_personero._id.sede
+										td(class="td-personero centrar")= reporte_personero._id.grupo
+										td(class="td-personero centrar")= reporte_personero._id.personero
+										td(class="td-personero centrar")= reporte_personero.cantidad
 
 			div(class="separar")
 			div(class="row")
@@ -30,16 +33,14 @@ block contenido
 							tr(class="centrar")
 								th(class="th-candidato") Sede
 								th(class="th-candidato") Grupo
-								th(class="th-candidato") Representante
+								th(class="th-candidato") No. Representante
 								th(class="th-candidato") Cantidad de votos
 						tbody
 							for reporte_representante in reporte_representantes
 								if reporte_representante._id.representante != -1
-									tr
-										td(class="td-personero centrar")= reporte_representante._id.sede
-										td(class="td-personero centrar")= reporte_representante._id.grupo
-										td(class="td-personero centrar")= reporte_representante._id.representante
-										td(class="td-personero centrar")= reporte_representante.cantidad
-
-
-
+									if reporte_representante._id.sede == nom_sede
+										tr
+											td(class="td-personero centrar")= reporte_representante._id.sede
+											td(class="td-personero centrar")= reporte_representante._id.grupo
+											td(class="td-personero centrar")= reporte_representante._id.representante
+											td(class="td-personero centrar")= reporte_representante.cantidad
