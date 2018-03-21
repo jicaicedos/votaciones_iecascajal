@@ -1,20 +1,21 @@
-SEDES:
-
-CASCAJAL - Institución Educativa Cascajal
-EL TOBO
-LA ESPERANZA
-LA FLORIDA
-LA PIRAGUA
-MATEO RICO
-PAQUIES
-
-
 REPORTES
 - Agregar formulario para adicionar Personero
 	Mediante un campo de texto buscarlo en la base de datos
 	Permitir máximo dos personeros
 
 - Mostrar los resultados totales de personero
+
+
+====================================================
+- Cada sede podrá ver los resultados (ver reporte)
+
+- EMOTICOS
+  0, 1 Y 2
+
+- hacer VIDEOS...
+
+- un SOLO SÉPTIMO...
+====================================================
 
 Datos de estudiantes
 Ejemplo:
@@ -39,3 +40,13 @@ Ejemplo:
     est_estado: "RETIRADO",
     est_matricula_contratada: "N",
     est_fuente_recursos: "SGP"
+
+SEDES:
+
+CASCAJAL - Institución Educativa Cascajal
+EL TOBO
+LA ESPERANZA
+LA FLORIDA
+LA PIRAGUA
+MATEO RICO
+PAQUIES

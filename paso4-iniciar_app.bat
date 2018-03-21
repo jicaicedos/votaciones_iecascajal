@@ -18,6 +18,6 @@ echo No cerrar esta ventana por favor
 
 "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe" "http://localhost:8080"
 
-node c:/wamp/www/votaciones_iecascajal/app.js
+node c:/votaciones_iecascajal/app.js
 
 pause 
