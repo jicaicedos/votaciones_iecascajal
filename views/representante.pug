@@ -1,10 +1,7 @@
-extends ./layout.pug
+extends ./layoutSedes.pug
 
 block contenido
 	div(class='container' data-spy="scroll")
-		ul(class="nav nav-tabs justify-content-center")
-			li(class="nav-item")
-				a(class="nav-link" href="/") Inicio
 		h3= "Representante: " + num_grado_estudiante + " " + num_grupo
 		div(class="row")
 			for representante in representantes
@@ -15,8 +12,6 @@ block contenido
 					div(class="card" style="width: 12rem;")
 						- var ruta = "static/imagenes/candidatos/representante/" + num_grado_estudiante + "/" + representante.est_foto
 						if num_grado_estudiante == "SEXTO"
-							- ruta = "static/imagenes/candidatos/representante/" + num_grado_estudiante + "/" + num_grupo + "/" + representante.est_foto
-						if num_grado_estudiante == "SEPTIMO"
 							- ruta = "static/imagenes/candidatos/representante/" + num_grado_estudiante + "/" + num_grupo + "/" + representante.est_foto
 						if num_grado_estudiante == "OCTAVO"
 							- ruta = "static/imagenes/candidatos/representante/" + num_grado_estudiante + "/" + num_grupo + "/" + representante.est_foto
