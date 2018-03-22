@@ -1,10 +1,36 @@
+USUARIOS:
+
+1083880333 - CARMEN ALEJANDRA MURCIA - 3° y 4°
+83231140   - JOSE ALIRIO VALDERRAMA - 3° y 4°
+
+22632790 - CARMEN CECILIA ALVAREZ - 5° y 6°-1       NO BLOQUEA pero SI muestra los candidatos del 6-1
+36274515 - LUZ MARY PARRA - 5° y 6°-1
+
+12232229 - JESÚS ANTONIO ORTIZ - 6°-2 Y 7º          NO BLOQUEA pero SI muestra los candidatos del 6-2
+12130633 - ROBERTO ARTURO BOTINA - 6°-2 Y 7º
+
+79685926 - CARLOS JAVIER LOSADA - 8°-1 Y 11º        NO BLOQUEA pero SI muestra los candidatos del 8-2
+1075221503 - ELIZABETH TENGONO ZAMORA - 8°-1 Y 11º  
+
+
+39695420 - NUBIA STELLA CASTIBLANCO - 8°-2 Y 9º     SI BLOQUEA (=OJO=) pero no muestra los candidatos de 8-2 (solo voto en blanco)
+36164540 - YUBANY SUAREZ PUYO - 8°-2 Y 9º
+
+93391630 - YERY IGNACIO BARRIOS SANCHEZ - 10°
+55183643 - ELIANA YAMILETH PAZ MONTAÑEZ - 10°
+
+
+=====================================================================================================
+db.votaciones.remove({})
+db.votantes.remove({})
+
+=====================================================================================================
+
 REPORTES
 
+- mostrar nombre de candidatos y tarjeton en el reporte de votaciones
 
-====================================================
-- hacer VIDEOS...
 
-- un SOLO SÉPTIMO...
 ====================================================
 
 Datos de estudiantes
