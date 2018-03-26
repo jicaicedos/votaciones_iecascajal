@@ -23,7 +23,6 @@ footer p {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	color: white;
-	/*color: white;*/
 	font-size: 14px;
 	text-align: center;
 }
@@ -37,6 +36,11 @@ h4, h6 {
 .table td {
 	padding-top: 3px;
 	padding-bottom: 3px;
+}
+
+.thead-blue {
+	background: #007BFF;
+	color: white;
 }
 
 .td-personero {

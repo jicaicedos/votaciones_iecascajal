@@ -36,6 +36,12 @@ var id_docente
 var grados_docente
 var nombre_docente
 
+// ================================================================
+// Para reportes
+var reporte_personeros
+var reporte_representantes
+var candidatos_reporte_representante = []
+var candidatos_reporte_personero = []
 
 
 // Establecemos el motor de vistas, es decir tomamos los archivos ".pug" para que express
@@ -85,8 +91,8 @@ app.post("/", (req, res) => {
 			} else {				
 				if( docs[0].usu_rol == "JURADO" ) {
 					nom_sede = docs[0].usu_sede
-					if( docs[0].usu_sede == "EL TOBO" ) {
-						console.log("\nBienvenidos a la sede: " + docs[0].usu_sede)
+					console.log("\nBienvenidos a la sede: " + docs[0].usu_sede)
+					if( docs[0].usu_sede == "EL TOBO" ) {						
 						res.render("sedeElTobo")
 					} else if( docs[0].usu_sede == "LA PIRAGUA" ) {
 						res.render("sedeLaPiragua")
@@ -100,7 +106,6 @@ app.post("/", (req, res) => {
 						res.render("sedeLaEsperanza")
 					} else if( docs[0].usu_sede == "CASCAJAL" ) {
 						id_docente = req.body.idUsuario
-						grados_docente
 						nombre_docente = docs[0].usu_nombre
 						if ( id_docente=="39567986" | id_docente=="36280861" ) {
 							grados_docente = 0
@@ -129,33 +134,119 @@ app.get("/", (req, res) => {
 	res.render("index")
 })
 
-app.get("/reportes", (req, res) => {
-	var reporte_personeros
-	var reporte_representantes
 
+app.get("/reportes", (req, res) => {
+
+	// REPRESENTANTES Consultar candidatos a representantes por grado
+	Candidato.
+	find({est_nombre_sede: nom_sede, est_tipo_candidato: "representante"}).
+	select({ _id:0,
+		est_primer_apellido: 1, est_segundo_apellido: 1,
+		est_primer_nombre: 1, est_segundo_nombre: 1,
+		est_sede:1, est_grado: 1, est_grupo: 1,
+		est_num_tarjeton: 1
+	}).
+	exec( (error, docs) => { candidatos_reporte_representante = docs })
+
+	// PERSONERO: Consultar candidatos a personero
+	Candidato.
+	find({est_nombre_sede: nom_sede, est_tipo_candidato: "personero"}).
+	select({ _id:0,
+		est_primer_apellido: 1, est_segundo_apellido: 1,
+		est_primer_nombre: 1, est_segundo_nombre: 1,
+		est_sede:1, est_grado: 1, est_grupo: 1,
+		est_num_tarjeton: 1
+	}).
+	exec( (error, docs) => { candidatos_reporte_personero = docs })
+
+	// REPRESENTANTE: Odenar los resultados por sede, grupo y representante
 	Votaciones.
 	aggregate([
 		{ $sort: {vot_sede:1, vot_grupo:-1, vot_representante:-1} },
 		{ $group: { _id: {sede: "$vot_sede", grupo: "$vot_grupo", representante: "$vot_representante" }, cantidad: { $sum: 1 } } }
 	]).
-	exec( (error, docs) => { reporte_representantes = docs } )
+	exec( (error, docs) => {
+		reporte_representantes = docs
 
+		establecerNombreReprsentantes(reporte_representantes, candidatos_reporte_representante)
+
+	})
+
+	// PERSONERO: ordenados
 	Votaciones.
 	aggregate([
-		{ $sort: {vot_sede:1, vot_grupo:-1, vot_personero:-1} },
+		{ $sort: {vot_personero:-1, vot_sede:1, vot_grupo:-1} },
 		{ $group: {_id: {sede: "$vot_sede", grupo: "$vot_grupo", personero:"$vot_personero"}, "cantidad": {$sum:1} } }
 	]).
 	exec( (error, docs) => {
+		// Personeros
 		reporte_personeros = docs
-		// docs = [{"_id":2,"cantidad":24},{"_id":1,"cantidad":11},{"_id":0,"cantidad":8}]
-		res.render("reportes", {reporte_personeros, reporte_representantes, nom_sede} )
-		
+
+		establecerNombrePersoneros(reporte_personeros, candidatos_reporte_personero)
+
+		var total_votos_personeros
+		total_votos_personeros = obtenerTotalVotosPersonero(candidatos_reporte_personero.length+1)
+
+		// res.send(total_votos_personeros)
+		res.render("reportes", {reporte_personeros, reporte_representantes, nom_sede, total_votos_personeros} )
 	})
-	
 })
+
+function obtenerTotalVotosPersonero(cantidad_personeros) {
+	var totales_votos_personeros = new Array(cantidad_personeros)
+
+	for (var i = 0; i < totales_votos_personeros.length; i++) { 
+		totales_votos_personeros[i] = 0
+		for (var j = 0; j < reporte_personeros.length; j++) {
+			if ( i == reporte_personeros[j]._id.personero ) {
+				totales_votos_personeros[i] = totales_votos_personeros[i] + reporte_personeros[j].cantidad
+			}
+			
+		}
+	}
+
+	return totales_votos_personeros
+}
+
+
+function establecerNombreReprsentantes(reporte_representantes, candidatos_reporte_representante) {
+	// Representantes
+	for (var i = 0; i < reporte_representantes.length; i++) {
+		for (var j = 0; j < candidatos_reporte_representante.length; j++) {
+			if(reporte_representantes[i]._id.representante == 0) {
+				reporte_representantes[i]._id.nombre_representante = "VOTO EN BLANCO"
+			}
+			if( reporte_representantes[i]._id.representante == candidatos_reporte_representante[j].est_num_tarjeton &&
+				reporte_representantes[i]._id.grupo == candidatos_reporte_representante[j].est_grupo ) 
+			{					
+				reporte_representantes[i]._id.nombre_representante = candidatos_reporte_representante[j].est_primer_nombre + " " +
+															 candidatos_reporte_representante[j].est_segundo_nombre + " " +
+															 candidatos_reporte_representante[j].est_primer_apellido + " " +
+															 candidatos_reporte_representante[j].est_segundo_apellido
+			}
+		}
+	}
+}
+
+function establecerNombrePersoneros(reporte_personeros, candidatos_reporte_personero) {
+	for (var i = 0; i < reporte_personeros.length; i++) {
+		for (var j = 0; j < candidatos_reporte_personero.length; j++) {
+			if(reporte_personeros[i]._id.personero == 0) {
+				reporte_personeros[i]._id.nombre_personero = "VOTO EN BLANCO"
+			}
+			if( reporte_personeros[i]._id.personero == candidatos_reporte_personero[j].est_num_tarjeton )
+			{
+				reporte_personeros[i]._id.nombre_personero = candidatos_reporte_personero[j].est_primer_nombre + " " +
+															 candidatos_reporte_personero[j].est_segundo_nombre + " " +
+															 candidatos_reporte_personero[j].est_primer_apellido + " " +
+															 candidatos_reporte_personero[j].est_segundo_apellido
+			}
+		}
+	}	
+}
+
 // ===========================================================================
 // Gestión de candidatos
-
 
 // Adicionar candidato a personero
 app.get("/adicionarCandidato", (req, res) => {
@@ -713,7 +804,18 @@ function bloquearRegistros(estudiantes, estudiantes_ya_votaron) {
 	return regs_a_bloquear
 }
 
+// ============================================================================
+function reportePersoneroConNombre(reporte_personeros, candidatos_reporte_personero) {
+	let resultado = []
+	for (var i = 0; i < reporte_personeros.length; i++) {
+		for (var i = 0; i < candidatos_reporte_personero.length; i++) {
+			if( reporte_personeros[i].vot_sede == candidatos_reporte_personero ) {
 
+			}
+		}	
+		
+	}
+}
 
 // ============================================================================
 // Final de votación
