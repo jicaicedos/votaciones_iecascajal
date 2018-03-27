@@ -39,6 +39,7 @@ var nombre_docente
 // ================================================================
 // Para reportes
 var reporte_personeros
+var reporte_personeros_por_grupo
 var reporte_representantes
 var candidatos_reporte_representante = []
 var candidatos_reporte_personero = []
@@ -135,7 +136,7 @@ app.get("/", (req, res) => {
 })
 
 
-app.get("/reportes", (req, res) => {
+app.get("/reporteRepresentantes", (req, res) => {
 
 	// REPRESENTANTES Consultar candidatos a representantes por grado
 	Candidato.
@@ -146,66 +147,45 @@ app.get("/reportes", (req, res) => {
 		est_sede:1, est_grado: 1, est_grupo: 1,
 		est_num_tarjeton: 1
 	}).
-	exec( (error, docs) => { candidatos_reporte_representante = docs })
-
-	// PERSONERO: Consultar candidatos a personero
-	Candidato.
-	find({est_nombre_sede: nom_sede, est_tipo_candidato: "personero"}).
-	select({ _id:0,
-		est_primer_apellido: 1, est_segundo_apellido: 1,
-		est_primer_nombre: 1, est_segundo_nombre: 1,
-		est_sede:1, est_grado: 1, est_grupo: 1,
-		est_num_tarjeton: 1
-	}).
-	exec( (error, docs) => { candidatos_reporte_personero = docs })
+	exec( (error, docs) => { candidatos_reporte_representante = docs } )
 
 	// REPRESENTANTE: Odenar los resultados por sede, grupo y representante
 	Votaciones.
 	aggregate([
-		{ $sort: {vot_sede:1, vot_grupo:-1, vot_representante:-1} },
-		{ $group: { _id: {sede: "$vot_sede", grupo: "$vot_grupo", representante: "$vot_representante" }, cantidad: { $sum: 1 } } }
+		{ 	$sort : {vot_grupo : -1, vot_representante:-1} },
+		{			
+			$group: 
+			{
+				_id : { sede : "$vot_sede", grupo : "$vot_grupo", representante : "$vot_representante" }, "cantidad" : { $sum : 1 },
+				reduce : function(curr, result) { result.cantidad += curr.cantidad }
+			}
+		}
 	]).
 	exec( (error, docs) => {
 		reporte_representantes = docs
 
 		establecerNombreReprsentantes(reporte_representantes, candidatos_reporte_representante)
 
+		ordenarResultadoRepresentantes(reporte_representantes)
+
+		// res.send(reporte_representantes)
+		res.render("reporteRepresentantes", {reporte_representantes, nom_sede} )
 	})
 
-	// PERSONERO: ordenados
-	Votaciones.
-	aggregate([
-		{ $sort: {vot_personero:-1, vot_sede:1, vot_grupo:-1} },
-		{ $group: {_id: {sede: "$vot_sede", grupo: "$vot_grupo", personero:"$vot_personero"}, "cantidad": {$sum:1} } }
-	]).
-	exec( (error, docs) => {
-		// Personeros
-		reporte_personeros = docs
-
-		establecerNombrePersoneros(reporte_personeros, candidatos_reporte_personero)
-
-		var total_votos_personeros
-		total_votos_personeros = obtenerTotalVotosPersonero(candidatos_reporte_personero.length+1)
-
-		// res.send(total_votos_personeros)
-		res.render("reportes", {reporte_personeros, reporte_representantes, nom_sede, total_votos_personeros} )
-	})
 })
 
-function obtenerTotalVotosPersonero(cantidad_personeros) {
-	var totales_votos_personeros = new Array(cantidad_personeros)
-
-	for (var i = 0; i < totales_votos_personeros.length; i++) { 
-		totales_votos_personeros[i] = 0
-		for (var j = 0; j < reporte_personeros.length; j++) {
-			if ( i == reporte_personeros[j]._id.personero ) {
-				totales_votos_personeros[i] = totales_votos_personeros[i] + reporte_personeros[j].cantidad
-			}
-			
+function ordenarResultadoRepresentantes(reporte_representantes) {
+	var temp = []
+	let long = reporte_representantes.length-1
+	for (let i = 0; i < long; i++) {
+		for (let j = 0; j < long; j++) {
+			if( reporte_representantes[j]._id.grupo > reporte_representantes[j+1]._id.grupo  ) {
+				temp = reporte_representantes[j+1]
+				reporte_representantes[j+1] = reporte_representantes[j]
+				reporte_representantes[j] = temp
+			}		
 		}
 	}
-
-	return totales_votos_personeros
 }
 
 
@@ -223,6 +203,81 @@ function establecerNombreReprsentantes(reporte_representantes, candidatos_report
 															 candidatos_reporte_representante[j].est_segundo_nombre + " " +
 															 candidatos_reporte_representante[j].est_primer_apellido + " " +
 															 candidatos_reporte_representante[j].est_segundo_apellido
+			}
+		}
+	}
+}
+
+app.get("/reportePersoneros", (req, res) => {
+	// PERSONERO: Consultar candidatos a personero
+	Candidato.
+	find({est_nombre_sede: nom_sede, est_tipo_candidato: "personero"}).
+	select({ _id:0,
+		est_primer_apellido: 1, est_segundo_apellido: 1,
+		est_primer_nombre: 1, est_segundo_nombre: 1,
+		est_sede : 1, est_grado: 1, est_grupo: 1,
+		est_num_tarjeton: 1
+	}).
+	exec( (error, docs) => { candidatos_reporte_personero = docs })
+
+	// PERSONERO: calcula los resultados totales
+	Votaciones.
+	aggregate([
+		{ 	$sort: { vot_personero:1 }	},
+		{ 	$group: 
+			{
+				_id: {sede: "$vot_sede", grupo: "$vot_grupo", personero: "$vot_personero"}, "cantidad": { $sum: 1 }
+			}
+		}
+	]).
+	exec( (error, docs) => {
+		// Personeros
+		reporte_personeros_por_grupo = docs
+
+		establecerNombrePersonerosPorGrupo(reporte_personeros_por_grupo, candidatos_reporte_personero)
+	})
+
+	// PERSONERO: calcula los resultados totales
+	Votaciones.
+	aggregate([
+		{ $sort: {vot_personero:1} },
+		{ $group: 
+			{
+				_id: {sede : "$vot_sede", personero:"$vot_personero"}, "cantidad": { $sum: 1 },
+				reduce: function (curr, result) { result.cantidad += curr.cantidad 	}
+			} 
+		}
+	]).
+	exec( (error, docs) => {
+		// Personeros
+		reporte_personeros = docs
+
+		// // Establecer nombres a los personeros
+		establecerNombrePersoneros(reporte_personeros, candidatos_reporte_personero)
+
+		let mensaje
+		let total_votos = reporte_personeros.length
+		if ( total_votos == 0 ) {
+			mensaje = "Todavía no hay votos por ningún candidato"
+		}
+
+		// res.send(reporte_personeros)
+		res.render("reportePersoneros", {reporte_personeros_por_grupo, reporte_personeros, nom_sede, total_votos, mensaje} )
+	})
+})
+
+function establecerNombrePersonerosPorGrupo(reporte_personeros_por_grupo, candidatos_reporte_personero) {
+	for (var i = 0; i < reporte_personeros_por_grupo.length; i++) {
+		for (var j = 0; j < candidatos_reporte_personero.length; j++) {
+			if(reporte_personeros_por_grupo[i]._id.personero == 0) {
+				reporte_personeros_por_grupo[i]._id.nombre_personero = "VOTO EN BLANCO"
+			}
+			if( reporte_personeros_por_grupo[i]._id.personero == candidatos_reporte_personero[j].est_num_tarjeton )
+			{
+				reporte_personeros_por_grupo[i]._id.nombre_personero = candidatos_reporte_personero[j].est_primer_nombre + " " +
+															 candidatos_reporte_personero[j].est_segundo_nombre + " " +
+															 candidatos_reporte_personero[j].est_primer_apellido + " " +
+															 candidatos_reporte_personero[j].est_segundo_apellido
 			}
 		}
 	}
@@ -437,9 +492,7 @@ app.post("/votarIECascajal", (req, res) => {
 			num_grado_estudiante = num_grado_estudiante.split(" ")[0]
 			num_grupo = 802
 		}
-		// num_grado_estudiante = num_grado_estudiante.split(" ")[0]
-		// num_grupo = 802
-		
+
 		Votante.
 		find( {"vot_sede": nom_sede, "vot_grado": num_grado_estudiante} ).
 		select( {_id:0, vot_doc:1} ).
@@ -825,14 +878,29 @@ app.post("/finalProcesoVotacion", (req, res) => {
 
 	if( nom_sede=="CASCAJAL"  ) { // y grado == "TALES"		
 		if( num_grupo < 300 ) {
+			if( req.body.personero == 1 ) {
+				num_personero = 1000
+			} else if ( req.body.personero == 2 ) {
+				num_personero = 2000
+			}
+			// Se le coloca -1 debido a que los grados 0°, 1° y 2° no eligen representante
 			num_representante = -1
-		} else {
+		}
+		else {
 			num_representante = req.body.representante
-		}		
+		}
 	} else {
-		num_personero = req.body.personero
+		if( num_grupo < 300 && req.body.personero == 1 ) {
+			num_personero = 1000
+		} else if ( num_grupo < 300 && req.body.personero == 2 ) {
+			num_personero = 2000
+		}
+		else {
+			num_personero = req.body.personero
+		}
 		num_representante = -1
 	}
+
 
 	var votaciones = new Votaciones({
 	    vot_sede: nom_sede,
@@ -850,12 +918,12 @@ app.post("/finalProcesoVotacion", (req, res) => {
 	    vot_fecha: new Date()
 	});
 
-	// console.log(votaciones)
+	// res.send(votaciones)
 
 	// Guardar en la base de datos de VOTACIONES
 	votaciones.save().then( (est) => {	
 		// console.log("Votación guardada correctamente!") 
-	}, (error) => { console.log("Error al escibir en la base de datos. Collection: votaciones") })
+	}, (error) => { res.send("Error al escibir en la base de datos. Collection: votaciones") })
 
 	// Guardar en la base de datos de VOTANTES
 	votante.save().then( (est) => {

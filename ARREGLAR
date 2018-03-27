@@ -1,5 +1,8 @@
 USUARIOS:
 
+39567986 - CARMEN LUCIA CÓRDOBA - 0°, 1° y 2°
+36280861 - NORMA YINETH ARTUNDUAGA - 0°, 1° y 2°
+
 1083880333 - CARMEN ALEJANDRA MURCIA - 3° y 4°
 83231140   - JOSE ALIRIO VALDERRAMA - 3° y 4°
 
@@ -21,8 +24,40 @@ USUARIOS:
 
 
 =====================================================================================================
+/* CONSULTAS */
+
+
+use dbvotacionescascajal
+
+
 db.votaciones.remove({})
 db.votantes.remove({})
+
+
+db.votaciones.distinct("vot_grupo")
+
+db.votaciones.group({
+    key: { vot_grupo:1, vot_personero:1 },
+    cond: {},
+    reduce: function (curr, result) {
+        result.cantidad = curr.item.qty;
+    },
+    initial: { cantidad: 0 }
+})
+
+db.votaciones.group({   
+            {
+                _id: { grupo: "$vot_grupo", sede: "$vot_sede", representante: "$vot_representante" }, cantidad: { $sum: 1 }
+            }
+});
+
+db.votaciones.group({
+    key: { vot_grupo:1, vot_representante:1 },
+    reduce: function (curr, result) { 
+        result.cantidad++
+    },
+    initial: { cantidad: 0 }
+});
 
 =====================================================================================================
 
@@ -67,3 +102,25 @@ LA FLORIDA
 LA PIRAGUA
 MATEO RICO
 PAQUIES
+
+
+
+var arreglo = [8, -4, 9, 0, 3, 5, 1, 7, 2, 6, -1, 30, -9]
+
+function ordenar(arreglo) {
+    var temp = 0
+    for (var i = 0; i < arreglo.length-1; i++) {
+        for (var j = 0; j < arreglo.length-1; j++) {
+            if( arreglo[j] > arreglo[j+1] ) {
+                temp = arreglo[j+1]
+                arreglo[j+1] = arreglo[j]
+                arreglo[j] = temp            
+            }
+        } 
+        console.log(arreglo)   
+    }
+    return arreglo
+}
+
+
+
