@@ -1,4 +1,5 @@
-# votaciones_iecascajal
+# Sistema de elecciones de Gobierno Escolar
+
 Nueva version de votaciones IE Cascajal - 2018
 
 ### Probado en Windows 8/10
